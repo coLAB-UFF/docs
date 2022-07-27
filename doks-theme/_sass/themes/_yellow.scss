@@ -37,7 +37,7 @@
 /* ----- Section ----- */
 .yellow {
 	.section--darker-theme-color-bg {
-		background-color: darken(.yellow, 3%);
+		background-color: darken($color-theme-yellow, 3%);
 	}
 }
 
