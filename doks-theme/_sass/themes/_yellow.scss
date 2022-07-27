@@ -19,7 +19,7 @@
 		}
 }
 
-.yellow .section--darker-theme-color-bg { background-color: darken(.yellow, 3%); }
+.yellow .section--darker-theme-color-bg { background-color: darken($color-theme-yellow, 3%); }
 
 /* ----- Nav grid ----- */
 .yellow {
