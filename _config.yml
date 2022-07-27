@@ -1,33 +1,29 @@
 # Theme settings
 doks:
     baseurl: /docs
-    color_theme: yellow
+    color_theme: grey
     header:
         logo:
-            text: Project name
+            text: DDoS Lab
             image:
         nav:
-            - item_name: Item 1
-              item_url: '#'
-            - item_name: Item 2
-              item_url: '#'
-            - item_name: Item 3
-              item_url: '#'
+            - item_name: Sobre o DDoS Lab
+              item_url: 'https://colab-uff.github.io/ddoslab/'
+            - item_name: Sobre o coLAB
+              item_url: 'https://colab-uff.github.io/'
+
     footer:
         content:
             logo:
-                text: Project name
+                text: DDoS Lab
                 image:
-            copyright: Copyright &copy; 2017. - Project name <br>All rights reserved.
+            copyright: Copyright &copy; 2022. - DDoS Lab <br>Todos os direitos reservados.
         social_list:
-            - network_name: facebook
-              profile_url: '#'
             - network_name: twitter
-              profile_url: '#'
+              profile_url: 'https://twitter.com/ddoslab1'
             - network_name: instagram
-              profile_url: '#'
-            - network_name: youtube
-              profile_url: '#'
+              profile_url: 'https://instagram.com/ddoslab'
+
     google_analytics:
         tracking_code: # Add your Google Analytics tracking code to activate Google Analytics
     comments:
