@@ -5,19 +5,31 @@
 /* ----- Hero subheader ----- */
 .yellow {
 	.hero-subheader {
-		background-color: $color-theme-yellow;
+		background-color: #FFB351;
+		color: #4d4d4d;
+	.site-header__logo {
+		color: #4d4d4d;
+		}
 	}
 }
+
+.yellow {
+.btn--dark, .hero-subheader .btn--github, .hero-subheader .btn--w-arrow-down {
+			background-color: #8d8d8d;
+		}
+}
+
+.yellow .section--darker-theme-color-bg { background-color: darken(#FFB351;, 3%); }
 
 /* ----- Nav grid ----- */
 .yellow {
 	.nav-grid__item {
-		background-color: $color-theme-yellow;
+		background-color: #FFB351;
 
 		&:hover,
 		&:active,
 		&:focus {
-			background-color: $color-theme-yellow;
+			background-color: #FFB351;
 		}
 	}
 }
@@ -25,20 +37,27 @@
 /* ----- Section ----- */
 .yellow {
 	.section--darker-theme-color-bg {
-		background-color: darken($color-theme-yellow, 3%);
+		background-color: darken(#FFB351;, 3%);
 	}
 }
 
 /* ----- Page nav ----- */
 .yellow {
 	.page-nav {
-		background-color: $color-theme-yellow;
+		background-color: #FFB351;
+		color: #4d4d4d;
+	}
+}
+
+.yellow {
+	.micro-nav {
+		background-color: #4d4d4d;
 	}
 }
 
 /* ----- Error 404 ----- */
 .yellow {
 	&.error-404 {
-		background-color: $color-theme-yellow;
+		background-color: #FFB351;
 	}
 }
