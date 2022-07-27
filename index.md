@@ -27,11 +27,11 @@ grid_navigation:
     - title: Grid navigation
       excerpt: Section description
       cta: Read more
-      url: 'https://colab-uff.github.io/docs/default'
+      url: '/default'
     - title: Teste
       excerpt: Description
       cta: Read more +
-      url: 'default'
+      url: '/default'
     - title: Teste2
       excerpt: Description
       cta: Read more +
@@ -39,6 +39,6 @@ grid_navigation:
     - title: Teste3
       excerpt: Description
       cta: Read more +
-      url: './default'
+      url: '/default'
       
 ---
