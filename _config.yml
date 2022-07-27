@@ -8,9 +8,9 @@ doks:
             image:
         nav:
             - item_name: Sobre o DDoS Lab
-              item_url: '../ddoslab'
+              item_url: '/../ddoslab'
             - item_name: Sobre o coLAB
-              item_url: '../'
+              item_url: '/../'
 
     footer:
         content:
