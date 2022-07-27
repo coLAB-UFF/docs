@@ -8,7 +8,7 @@ doks:
             image:
         nav:
             - item_name: Sobre o DDoS Lab
-              external_url: 'https://colab-uff.github.io/ddoslab/'
+              url: 'https://colab-uff.github.io/ddoslab/'
             - item_name: Sobre o coLAB
               item_url: 'https://colab-uff.github.io/'
 
