@@ -16,21 +16,13 @@ author:
 
 # Grid navigation
 grid_navigation:
-    - title: Grid navigation
-      excerpt: Section description
-      cta: Read more
-      url: '/default'
-    - title: Teste
-      excerpt: Description
-      cta: Read more +
-      url: '/default'
-    - title: Teste2
-      excerpt: Description
-      cta: Read more +
-      url: '/default'
-    - title: Teste3
-      excerpt: Description
-      cta: Read more +
-      url: '/default'
+    - title: Oficina de rwhatsapp
+      excerpt: Coleta e tratamento de dados do WhatsApp
+      cta: Mais
+      url: '/rwhatsapp'
+    - title: Oficina de Linguagem de Memes
+      excerpt: Introdução e princípios básicos
+      cta: Mais
+      url: '#'
       
 ---
