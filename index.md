@@ -31,5 +31,5 @@ grid_navigation:
     - title: Teste
       excerpt: Description
       cta: Read more +
-      url: '#'
+      url: 'default'
 ---
