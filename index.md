@@ -28,8 +28,6 @@ grid_navigation:
       excerpt: Section description
       cta: Read more
       url: '#'
-      
-grid_navigation:
     - title: Teste
       excerpt: Description
       cta: Read more +
