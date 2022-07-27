@@ -10,7 +10,7 @@ doks:
             - item_name: Sobre o DDoS Lab
               url: 'https://colab-uff.github.io/ddoslab/'
             - item_name: Sobre o coLAB
-              item_url: 'https://colab-uff.github.io/'
+              external_url: 'https://colab-uff.github.io/'
 
     footer:
         content:
