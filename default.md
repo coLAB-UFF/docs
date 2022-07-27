@@ -5,15 +5,15 @@ keywords:
 comments: false
 
 # Hero section
-title: Page title
-description: Page description
+title: rwhatsapp
+description: Curso de coleta e tratamento de dados do WhatsApp
 
 # Author box
 author:
-    title: About Author
-    title_url: '#'
+    title: DDoS Lab
+    title_url: '[#](https://colab-uff.github.io/ddoslab/)'
     external_url: true
-    description: Author description
+    description: Laboratório de Combate à Desinformação e ao Discurso de Ódio em Sistemas de Comunicação em Rede
 
 # Micro navigation
 micro_nav: true
