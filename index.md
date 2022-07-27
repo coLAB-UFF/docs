@@ -29,7 +29,6 @@ grid_navigation:
       cta: Read more
       url: '#'
       
-# Teste de card
 grid_navigation:
     - title: Teste
       excerpt: Description
