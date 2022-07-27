@@ -4,8 +4,8 @@ layout: homepage
 keywords:
 
 # Hero section
-title: DDoS Lab Cursos
-description: Workshops de Métodos Digitais
+title: DDoS Lab &middot; Cursos & Oficinas
+description: Oficinas de Métodos Digitais &middot; Conteúdos programáticos e tutoriais utilizados nos cursos e oficinas do projeto DDoS Lab e demais projetos associados ao Laboratório de Pesquisa em Comunicação, Culturas Políticas e Economia da Colaboração (coLAB), da Universidade Federal Fluminense (UFF).
 
 # Author box
 author:
