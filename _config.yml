@@ -1,7 +1,7 @@
 # Theme settings
 doks:
     baseurl: /docs
-    color_theme: grey
+    color_theme: colab
     header:
         logo:
             text: DDoS Lab
