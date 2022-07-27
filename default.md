@@ -11,7 +11,7 @@ description: Curso de coleta e tratamento de dados do WhatsApp
 # Author box
 author:
     title: DDoS Lab
-    title_url: '[#](https://colab-uff.github.io/ddoslab/)'
+    title_url: 'https://colab-uff.github.io/ddoslab/'
     external_url: true
     description: Laboratório de Combate à Desinformação e ao Discurso de Ódio em Sistemas de Comunicação em Rede
 
