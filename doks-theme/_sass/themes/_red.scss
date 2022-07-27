@@ -19,7 +19,7 @@
 		}
 }
 
-.red .section--darker-theme-color-bg { background-color: darken(#FFB351;, 3%); }
+.red .section--darker-theme-color-bg { background-color: darken(.red, 3%); }
 
 /* ----- Nav grid ----- */
 .red {
@@ -37,7 +37,7 @@
 /* ----- Section ----- */
 .red {
 	.section--darker-theme-color-bg {
-		background-color: darken(#FFB351;, 3%);
+		background-color: darken(.red, 3%);
 	}
 }
 
