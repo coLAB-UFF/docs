@@ -4,23 +4,15 @@ layout: homepage
 keywords:
 
 # Hero section
-title: DDoS Lab
-description: Laboratório de Combate à Desinformação e ao Discurso de Ódio em Sistemas de Comunicação em Rede
-buttons:
-    - content: Button
-      url: '#'
-      external_url: false
-    - icon: github
-      content: Button with icon
-      url: '#'
-      external_url: true
+title: DDoS Lab Cursos
+description: Workshops de Métodos Digitais
 
 # Author box
 author:
     title: Sobre o DDoS Lab
     title_url: 'https://colab-uff.github.io/ddoslab/'
     external_url: true
-    description: O DDoS Lab tem como objetivo mapear redes de influência e identificar dinâmicas de ação política que estejam associadas à disseminação de desinformação e discurso de ódio, comportamentos inautênticos e agendas antidemocráticas.
+    description: Laboratório de Combate à Desinformação e ao Discurso de Ódio em Sistemas de Comunicação em Rede
 
 # Grid navigation
 grid_navigation:
