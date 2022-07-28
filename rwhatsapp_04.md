@@ -21,7 +21,7 @@ micro_nav: false
 # Page navigation
 page_nav:
     prev:
-        content: Manipulação de Dados
+        content: Manipulação de Dados 1
         url: '/rwhatsapp_03'
     next:
         content: Visualização de Dados
