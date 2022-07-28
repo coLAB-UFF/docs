@@ -32,6 +32,7 @@ page_nav:
 
 Este é um curso de curta duração cujo principal objetivo é apresentar, em uma linguagem objetiva e instrumental, técnicas de extração e tratamento de dados obtidos a partir de chats do WhatsApp. A oficina não se propõe a introduzir princípios e fundamentos da linguagem R ou da ciência de dados, mas alguns desses tópicos podem ser discutidos ao longo das aulas. No geral, pretende-se trabalhar com a exportação nativa de chats do WhatsApp, a inserção desses dados no software R Studio como um dataframe, e subsequente modelagem, transformação e visualização desses dados. Os alunos serão levados a exercitar essas habilidades e produzir análises exploratórias dos dados com estatísticas descritivas.
 
+
 # Requisitos e Funcionamento
 
 O curso tem caráter de oficina. Serão ministradas duas aulas síncronas com 4h de duração cada. Os alunos receberão material de apoio, documentação e scripts com os principais comandos executados a cada aula, por meio de um grupo da oficina no próprio WhatsApp. É necessário ter um computador (desktop ou laptop) com acesso à internet para o curso. Solicita-se a instalação prévia dos seguintes softwares, todos opensource:
@@ -41,14 +42,14 @@ O curso tem caráter de oficina. Serão ministradas duas aulas síncronas com 4h
 
 Instale sempre primeiro o software R e depois o R Studio. Usuários de Mac Os devem instalar também o [X Quartz <https://www.xquartz.org/>](https://www.xquartz.org/). Durante o curso, outros pacotes e plugins serão instalados, conforme orientação do(a) professor(a) responsável.
 
+
 # Recursos da Oficina
 
-* Google Meet
+* [Google Meet](https://meet.google.com/aoj-cfwt-efu)
 
-* Grupo do WhatsApp
+* [Grupo do WhatsApp](https://chat.whatsapp.com/GHOrAENnQhE7qaeZhQN8z0)
 
 <img src="https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/shared_qr_code.png" width="400">
-
 
 
 # Principais Pacotes a Serem Trabalhados no Curso
@@ -74,6 +75,7 @@ Instale sempre primeiro o software R e depois o R Studio. Usuários de Mac Os de
 O WhatsApp possui uma ferramenta nativa de exportação individual de chats. Os arquivos resultantes possuem o formato TXT e não são parseados, isto é, não possuem uma estrutura lógica de banco de dados. É possível ler esses arquivos em qualquer software de bloco de notas, mas, para trabalhar com os seus dados de forma quantitativa, é preciso, antes de mais nada, converter o formato de arquivo em um CSV (comma-separated values).
 
 O primeiro exercício do curso é, portanto, o de exportar os dados e convertê-los em formato CSV.
+
 
 ## Exportando Chats do WhatsApp
 
