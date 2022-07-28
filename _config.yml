@@ -15,7 +15,7 @@ doks:
     footer:
         content:
             logo:
-                text: DDoS Lab
+                text: DDoS Lab &middot; Cursos & Oficinas
                 image:
             copyright: Copyright &copy; 2022. - DDoS Lab <br>Todos os direitos reservados.
         social_list:
