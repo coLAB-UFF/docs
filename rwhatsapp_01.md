@@ -28,14 +28,14 @@ page_nav:
         url: '/rwhatsapp_02'
 ---
 
-# Formato de Exportação de Dados do WhatsApp
+# Formato de Exportação Nativa de Chats do WhatsApp
 
 O WhatsApp possui uma ferramenta nativa de exportação individual de chats. Os arquivos resultantes possuem o formato TXT e não são parseados, isto é, não possuem uma estrutura lógica de banco de dados. É possível ler esses arquivos em qualquer software de bloco de notas, mas, para trabalhar com os seus dados de forma quantitativa, é preciso, antes de mais nada, converter o formato de arquivo em um CSV (comma-separated values).
 
 O primeiro exercício do curso é, portanto, o de exportar os dados e convertê-los em formato CSV.
 
 
-## Exportando Chats do WhatsApp
+# Exportando Chats
 
 <div class="callout callout--warning">
     <p><strong>ATENÇÃO!</strong></p>
@@ -77,10 +77,20 @@ A seguir, um extrato (com dados pessoais omitidos) de um grupo real:
 
 ```
 01/11/2020 12:34 - +55 21 99**-****: <Arquivo de mídia oculto>
-01/11/2020 12:35 - +55 77 98**-****: Excelente vídeo.
-01/11/2020 12:36 - +55 77 99**-****: Também recebi de um outro grupo.
+01/11/2020 18:11 - +55 77 98**-****: Excelente vídeo.
+02/11/2020 00:03 - +55 77 99**-****: Também recebi de um outro grupo.
 ```
 
+Embora seja possível interpretar os chats exportados em TXT, o formato não-parseado dificulta a importação desses dados em softwares de planilhas e banco de dados. Isso ocorre porque a separação entre as colunas não utiliza o mesmo operador. Data e hora são separadas apenas por um espaço, data e telefone por um hífen, e telefone e mensagem de texto por um sinal gráfico de dois-pontos. Para tratar esses dados, é preciso separar as tabelas. O pacote **rwhatsapp** fará este trabalho. Espera-se que o resultado de saída dos dados seja semelhante a este abaixo:
 
-
+```
+#> # A tibble: 5 x 6
+#>   time                author   text             source          emoji emoji_name
+#>   <dttm>              <fct>    <chr>            <chr>           <lis> <list>    
+#> 1 2020-08-01 12:00:00 <NA>     "Messages to th… /home/conversa… <NUL… <NULL>    
+#> 2 2020-08-01 12:00:00 <NA>     "You created gr… /home/conversa… <NUL… <NULL>    
+#> 3 2020-11-01 12:34:16 Youtuber "<Media omitted… /home/conversa… <NUL… <NULL>    
+#> 4 2020-11-01 18:11:37 Tiozão…  "Excelente víde… /home/conversa… <chr… <chr [2]> 
+#> 5 2020-11-02 00:03:59 Tiazona… "Também recebi … /home/conversa… <NUL… <NULL>    
+```
 
