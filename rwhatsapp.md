@@ -56,7 +56,7 @@ Instale sempre primeiro o software R e depois o R Studio. Usuários de Mac Os de
 **dplyr** &middot; # O dplyr é um dos pacotes do Tidyverse e é voltado especificamente para o trabalho de manipulação de dados. O dplyr se estrutura em torno de um conjunto de verbos, que operam como funções para a manipulação de grandes bancos de dados. Para mais detalhes, acesse: https://dplyr.tidyverse.org/
 
 
-# Outras Referências Adicionais:
+# Referências Adicionais:
 
 * Aquino, Jakson Alves de. [R para cientistas sociais](http://www.uesc.br/editora/livrosdigitais_20140513/r_cientistas.pdf). Ilhéus: Editora da UESC, 2014.
 
