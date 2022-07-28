@@ -21,8 +21,8 @@ micro_nav: false
 # Page navigation
 page_nav:
     next:
-        content: Exportação de Dados
-        url: '/rwhatsapp_01'
+        content: Exportação de Chats
+        url: '/rwhatsapp_01.md'
 ---
 
 # Proposta do Curso
