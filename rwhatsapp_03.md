@@ -240,3 +240,11 @@ dados_aves %>%
 Vamos fazer exercícios com outro conjunto de dados agora??
 
 
+# EXERCÍCIO
+
+Com base nos dados disponíveis no gitHUB e exportados do WhatsApp, disponíveis no seguinte [link](https://raw.githubusercontent.com/ombudsmanviktor/workshop_rstats/main/aula8/Conversa%20do%20WhatsApp%20com%20Rstats.txt), 
+
+1. Monte uma tabela indicando que são os usuários que mais enviam mensagens para o grupo.
+
+2. Monte uma tabela indicando quais são os emojis mais utilizados em mensagens.
+
