@@ -41,6 +41,34 @@ O curso tem caráter de oficina. Serão ministradas duas aulas síncronas com 4h
 
 Instale sempre primeiro o software R e depois o R Studio. Usuários de Mac Os devem instalar também o [X Quartz <https://www.xquartz.org/>](https://www.xquartz.org/). Durante o curso, outros pacotes e plugins serão instalados, conforme orientação do(a) professor(a) responsável.
 
+# Recursos da Oficina
+
+* Google Meet
+
+* Grupo do WhatsApp
+
+<img src="https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/shared_qr_code.png" width="400">
+
+
+
+# Principais Pacotes a Serem Trabalhados no Curso
+
+**rwhatsapp** &middot; # O rwhatsapp é um script desenvolvido por Johannes Gruber para manipulação e parse de dados exportados a partir de chats do WhatsApp. Para mais informações, consulte: https://github.com/JBGruber/rwhatsapp
+
+**dplyr** &middot; # O dplyr é um dos pacotes do Tidyverse e é voltado especificamente para o trabalho de manipulação de dados. O dplyr se estrutura em torno de um conjunto de verbos, que operam como funções para a manipulação de grandes bancos de dados. Para mais detalhes, acesse: https://dplyr.tidyverse.org/
+
+
+# Outras Referências Adicionais:
+
+* Aquino, Jakson Alves de. [R para cientistas sociais](http://www.uesc.br/editora/livrosdigitais_20140513/r_cientistas.pdf). Ilhéus: Editora da UESC, 2014.
+
+* Oliveira, Paulo Felipe de; Guerra, Saulo; McDonell, Robert. [Ciência de Dados com R: Introdução](https://ibpad.com.br/publicacoes/ciencia-de-dados-com-r-introducao/). Brasília: Editora IBPad, 2018.
+
+* Wickham, Hadley; Grolemund, Garrett. [R para data science](https://r4ds.had.co.nz/). Rio de Janeiro: Alta Books, 2019.
+
+* [R Graph Gallery](https://www.r-graph-gallery.com/).
+
+
 # Formato de Exportação de Dados do WhatsApp
 
 O WhatsApp possui uma ferramenta nativa de exportação individual de chats. Os arquivos resultantes possuem o formato TXT e não são parseados, isto é, não possuem uma estrutura lógica de banco de dados. É possível ler esses arquivos em qualquer software de bloco de notas, mas, para trabalhar com os seus dados de forma quantitativa, é preciso, antes de mais nada, converter o formato de arquivo em um CSV (comma-separated values).
