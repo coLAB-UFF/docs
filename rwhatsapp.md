@@ -37,7 +37,7 @@ O primeiro exercício do curso é, portanto, o de exportar os dados e convertê-
 ## Exportando Chats do WhatsApp
 
 <div class="callout callout--warning">
-    <p><strong>ATENÇÃO!</p>
+    <p><strong>ATENÇÃO!</strong></p>
     <p>Todos os dados pessoais foram omitidos neste tutorial.</p>
 </div>
 
