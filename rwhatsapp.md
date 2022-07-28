@@ -36,6 +36,11 @@ O primeiro exercício do curso é, portanto, o de exportar os dados e convertê-
 
 ## Exportando Chats do WhatsApp
 
+<div class="callout callout--warning">
+    <p><strong>ATENÇÃO!</p>
+    <p>Todos os dados pessoais foram omitidos neste tutorial.</p>
+</div>
+
 Para exportar os chats, acesse o seu WhatsApp é siga o passo-a-passo:
 
 1. Clique no botão com ... no canto superior esquerdo do aplicativo para abrir o menu de opções.
