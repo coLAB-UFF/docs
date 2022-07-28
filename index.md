@@ -16,11 +16,11 @@ author:
 
 # Grid navigation
 grid_navigation:
-    - title: Oficina de rwhatsapp
+    - title: rwhatsapp
       excerpt: Coleta e tratamento de dados do WhatsApp
       cta: Mais
       url: '/rwhatsapp'
-    - title: Oficina de Linguagem de Memes
+    - title: Linguagem de Memes
       excerpt: Introdução e princípios básicos
       cta: Mais
       url: '#'
