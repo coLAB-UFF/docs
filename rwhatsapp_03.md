@@ -24,7 +24,7 @@ page_nav:
         content: Importação de Dados
         url: '/rwhatsapp_02'
     next:
-        content: Transformação de Dados
+        content: Manipulação de Dados 2
         url: '/rwhatsapp_04'
 ---
 
