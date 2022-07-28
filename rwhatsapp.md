@@ -48,7 +48,7 @@ Para exportar os chats, acesse o seu WhatsApp é siga o passo-a-passo:
 <img src="https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/rwhatsapp01.jpg" width="400">
 
 * Selecione a opção **Mais** e clique mais uma vez.
-* 
+
 <img src="https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/rwhatsapp02.jpg" width="400">
 
 * Em seguida, clique na opção **Exportar conversa**.
@@ -67,14 +67,14 @@ Com o arquivo TXT em mãos, a próxima etapa é a leitura dos dados.
 
 Observe que o arquivo possui o seguinte formato:
 
-``` SINTAXE
+```SINTAXE
 dd/mm/aaaa hh:mm - +ddi ddd telefone: Mensagem.
 ```
 
 A seguir, um extrato (com dados pessoais omitidos) de um grupo real:
 
 
-``` EXEMPLO DE CHAT EXPORTADO
+```EXEMPLO DE CHAT EXPORTADO
 01/11/2020 12:34 - +55 21 99**-****: <Arquivo de mídia oculto>
 01/11/2020 12:35 - +55 77 98**-****: Excelente vídeo.
 01/11/2020 12:36 - +55 77 99**-****: Também recebi de um outro grupo.
