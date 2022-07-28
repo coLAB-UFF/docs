@@ -16,7 +16,7 @@ author:
     description: Laboratório de Combate à Desinformação e ao Discurso de Ódio em Sistemas de Comunicação em Rede
 
 # Micro navigation
-micro_nav: true
+micro_nav: false
 
 # Page navigation
 page_nav:
