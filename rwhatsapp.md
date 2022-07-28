@@ -28,6 +28,19 @@ page_nav:
         url: '#'
 ---
 
+# Proposta do Curso
+
+Este é um curso de curta duração cujo principal objetivo é apresentar, em uma linguagem objetiva e instrumental, técnicas de extração e tratamento de dados obtidos a partir de chats do WhatsApp. A oficina não se propõe a introduzir princípios e fundamentos da linguagem R ou da ciência de dados, mas alguns desses tópicos podem ser discutidos ao longo das aulas. No geral, pretende-se trabalhar com a exportação nativa de chats do WhatsApp, a inserção desses dados no software R Studio como um dataframe, e subsequente modelagem, transformação e visualização desses dados. Os alunos serão levados a exercitar essas habilidades e produzir análises exploratórias dos dados com estatísticas descritivas.
+
+# Requisitos e Funcionamento
+
+O curso tem caráter de oficina. Serão ministradas duas aulas síncronas com 4h de duração cada. Os alunos receberão material de apoio, documentação e scripts com os principais comandos executados a cada aula, por meio de um grupo da oficina no próprio WhatsApp. É necessário ter um computador (desktop ou laptop) com acesso à internet para o curso. Solicita-se a instalação prévia dos seguintes softwares, todos opensource:
+
+* [R <https://cran-r.c3sl.ufpr.br/>](https://cran-r.c3sl.ufpr.br/) *(versões para Linux, Mac OS e Windows disponíveis)* 
+* [R Studio <https://www.rstudio.com/products/rstudio/download/#download>](https://www.rstudio.com/products/rstudio/download/#download) *(versões para Linux, Mac OS e Windows disponíveis)*
+
+Instale sempre primeiro o software R e depois o R Studio. Usuários de Mac Os devem instalar também o [X Quartz <https://www.xquartz.org/>](https://www.xquartz.org/).
+
 # Formato de Exportação de Dados do WhatsApp
 
 O WhatsApp possui uma ferramenta nativa de exportação individual de chats. Os arquivos resultantes possuem o formato TXT e não são parseados, isto é, não possuem uma estrutura lógica de banco de dados. É possível ler esses arquivos em qualquer software de bloco de notas, mas, para trabalhar com os seus dados de forma quantitativa, é preciso, antes de mais nada, converter o formato de arquivo em um CSV (comma-separated values).
