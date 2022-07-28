@@ -21,14 +21,14 @@ micro_nav: false
 # Page navigation
 page_nav:
     prev:
-        content: Programa de Curso
-        url: '/rwhatsapp'
+        content: Exportação de Chats
+        url: '/rwhatsapp_01'
     next:
-        content: Importação de Dados
-        url: '/rwhatsapp_02'
+        content: Manipulação de Dados
+        url: '/rwhatsapp_03'
 ---
 
-# rwhatsapp
+# dplyr
 
 O rwhatsapp é um script desenvolvido por Johannes Gruber para manipulação e parse de dados exportados a partir de chats do WhatsApp. Para mais informações, consulte: https://github.com/JBGruber/rwhatsapp
 
