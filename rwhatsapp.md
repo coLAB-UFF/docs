@@ -45,23 +45,23 @@ Para exportar os chats, acesse o seu WhatsApp é siga o passo-a-passo:
 
 * Clique no botão com ... no canto superior esquerdo do aplicativo para abrir o menu de opções.
 
-<img src="https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/rwhatsapp01.jpg" width="250">
+<img src="https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/rwhatsapp01.jpg" width="400">
 
 * Selecione a opção **Mais** e clique mais uma vez.
-
-!["Mais"](https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/rwhatsapp02.jpg | width=250)
+* 
+<img src="https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/rwhatsapp02.jpg" width="400">
 
 * Em seguida, clique na opção **Exportar conversa**.
 
-!["Exportar conversa"](https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/rwhatsapp03.jpg | width=250)
+<img src="https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/rwhatsapp03.jpg" width="400">
 
 * O WhatsApp perguntará sobre a opção de exportação. Para as finalidades deste curso, a opção **Sem Mídia** é suficiente.
 
-!["Sem mídia"](https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/rwhatsapp04.jpg | width=250)
+<img src="https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/rwhatsapp04.jpg" width="400">
 
 * Por fim, selecione o método de compartilhamento do arquivo, que pode ser por email, pelo Google Drive, ou pelo próprio WhatsApp.
 
-!["Enviar conversa por..."](https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/rwhatsapp05.jpg | width=250)
+<img src="https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/rwhatsapp05.jpg" width="400">
 
 Com o arquivo TXT em mãos, a próxima etapa é a leitura dos dados.
 
