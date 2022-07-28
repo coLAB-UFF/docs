@@ -43,23 +43,23 @@ O primeiro exercício do curso é, portanto, o de exportar os dados e convertê-
 
 Para exportar os chats, acesse o seu WhatsApp é siga o passo-a-passo:
 
-1. Clique no botão com ... no canto superior esquerdo do aplicativo para abrir o menu de opções.
+* Clique no botão com ... no canto superior esquerdo do aplicativo para abrir o menu de opções.
 
 !["Menu ..."](https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/rwhatsapp01.jpg | width=250)
 
-2. Selecione a opção **Mais** e clique mais uma vez.
+* Selecione a opção **Mais** e clique mais uma vez.
 
 !["Mais"](https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/rwhatsapp02.jpg | width=250)
 
-3. Em seguida, clique na opção **Exportar conversa**.
+* Em seguida, clique na opção **Exportar conversa**.
 
 !["Exportar conversa"](https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/rwhatsapp03.jpg | width=250)
 
-4. O WhatsApp perguntará sobre a opção de exportação. Para as finalidades deste curso, a opção **Sem Mídia** é suficiente.
+* O WhatsApp perguntará sobre a opção de exportação. Para as finalidades deste curso, a opção **Sem Mídia** é suficiente.
 
 !["Sem mídia"](https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/rwhatsapp04.jpg | width=250)
 
-5. Por fim, selecione o método de compartilhamento do arquivo, que pode ser por email, pelo Google Drive, ou pelo próprio WhatsApp.
+* Por fim, selecione o método de compartilhamento do arquivo, que pode ser por email, pelo Google Drive, ou pelo próprio WhatsApp.
 
 !["Enviar conversa por..."](https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/rwhatsapp05.jpg | width=250)
 
