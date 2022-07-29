@@ -103,12 +103,15 @@ grupo_telefones <- grupo_rstats %>%
 
 ```
 grupo_internacional <- grupo_rstats %>%
+  tidyr::drop_na(author) %>% 
   mutate(
-  internacional = case_when(
-    grepl("\\b+55", author) ~ "Brasil",
-    grepl("viktor", author) ~ "Brasil",
-    grepl("Manoela Mayrink", author) ~ "Brasil",
-    T ~ "Internacional"))
+    internacional = case_when(
+      grepl("\\b+55", author) ~ "Brasil",
+      grepl("viktor", author) ~ "Brasil",
+      grepl("Manoela Mayrink", author) ~ "Brasil",
+      grepl("Isis Lorena", author) ~ "Brasil",
+      grepl("Jeferson UFF", author) ~ "Brasil",
+      T ~ "Internacional")) %>% count(internacional)
  ```
  
  
