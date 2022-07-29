@@ -124,4 +124,4 @@ O `ggplot2` possui ainda várias outras opções de gráficos e os dados do What
   
 2. Construa um gráfico de barras para representar que emojis são os mais frequentemente enviados ao grupo de WhatsApp você está monitorando.
 
-  
+Outros exemplos e aplicações podem ser encontrados em: https://github.com/JBGruber/rwhatsapp
