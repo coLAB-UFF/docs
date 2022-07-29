@@ -56,7 +56,7 @@ ggplot(aes(x = <x>, y = <y>)) +
 Há diferentes tipos de geom. Vamos começar com os gráficos de dispersão?
 
 
-### `geom_bar()`
+### geom_bar()
 
 `geom_bar`: Este objeto geométrico corresponde a um gráfico de barras na sintaxe do `ggplot2`.
 
@@ -90,7 +90,7 @@ grupo_rstats %>%
        title = "Mensagens enviadas no grupo de zap")
   ```
   
-### `geom_line()`
+### geom_line()
   
 `geom_line()`: Em algumas circunstâncias, um gráfico de linha simples pode ser preferível em relação a um gráfico de barras. É o caso, por exemplo, de séries históricas:
   
@@ -103,7 +103,7 @@ grupo_rstats %>%
   geom_line(aes(x = dia, y = n), color = "#FF0000")
 ```
   
-### `geom_bloxplot()`
+### geom_bloxplot()
 
 E que tal produzir um gráfico de caixa e bigode para exprimir a participação de cada usuário ao longo do curso, de acordo com o chat do WhatsApp da turma?
   
