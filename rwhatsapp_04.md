@@ -161,4 +161,3 @@ E, em seguida, indique o vetor a ser anonimizado. Uma boa opção é utilizar o 
 ```
 grupo_rstats$author2 <- grupo_rstats$author %>% anonymizer::hash(.algo = "md5")
 ```
-
