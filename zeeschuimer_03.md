@@ -5,8 +5,8 @@ keywords:
 comments: false
 
 # Hero section
-title: rwhatsapp
-description: Curso de coleta e tratamento de dados do WhatsApp
+title: zeeschuimer
+description: Curso de raspagem de dados das mídias sociais
 
 # Author box
 author:
@@ -22,10 +22,10 @@ micro_nav: false
 page_nav:
     prev:
         content: Importação de Dados
-        url: '/rwhatsapp_02'
+        url: '/zeeschuimer_02'
     next:
         content: Manipulação de Dados 2
-        url: '/rwhatsapp_04'
+        url: '/zeeschuimer_04'
 ---
 
 # Instalação de pacotes no R
