@@ -20,9 +20,9 @@ doks:
             copyright: Copyright &copy; 2022. - DDoS Lab <br>Todos os direitos reservados.
         social_list:
             - network_name: twitter
-              profile_url: 'https://twitter.com/ddoslab1'
+              profile_url: 'https://twitter.com/colab_uff'
             - network_name: instagram
-              profile_url: 'https://instagram.com/ddoslab'
+              profile_url: 'https://www.instagram.com/colab.uff/'
 
     google_analytics:
         tracking_code: # Add your Google Analytics tracking code to activate Google Analytics
