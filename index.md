@@ -20,6 +20,10 @@ grid_navigation:
       excerpt: Coleta e tratamento de dados do WhatsApp
       cta: Mais
       url: '/rwhatsapp'
+    - title: zeeschuimer
+        excerpt: Raspagem de dados das mídias sociais
+        cta: Mais
+        url: '/zeeschuimer'
     - title: Linguagem de Memes
       excerpt: Introdução e princípios básicos
       cta: Mais
