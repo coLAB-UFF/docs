@@ -5,8 +5,8 @@ keywords:
 comments: false
 
 # Hero section
-title: rwhatsapp
-description: Curso de coleta e tratamento de dados do WhatsApp
+title: zeeschuimer
+description: Curso de raspagem de dados das mídias sociais
 
 # Author box
 author:
@@ -22,10 +22,10 @@ micro_nav: false
 page_nav:
     prev:
         content: Manipulação de Dados 1
-        url: '/rwhatsapp_03'
+        url: '/zeeschuimer_03'
     next:
         content: Visualização de Dados
-        url: '/rwhatsapp_05'
+        url: '/zeeschuimer_05'
 ---
 
 # Limpando a Base de Dados
