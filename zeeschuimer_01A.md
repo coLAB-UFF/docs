@@ -24,73 +24,65 @@ page_nav:
         content: Programa de Curso
         url: '/zeeschuimer'
     next:
-        content: Importação de Dados
-        url: '/zeeschuimer_02'
+        content: Exportação de Chats do WhatsApp
+        url: '/zeeschuimer_01B'
 ---
 
-# Formato de Exportação Nativa de Chats do WhatsApp
+# Zeeschuimer
 
-O WhatsApp possui uma ferramenta nativa de exportação individual de chats. Os arquivos resultantes possuem o formato TXT e não são parseados, isto é, não possuem uma estrutura lógica de banco de dados. É possível ler esses arquivos em qualquer software de bloco de notas, mas, para trabalhar com os seus dados de forma quantitativa, é preciso, antes de mais nada, converter o formato de arquivo em um CSV (comma-separated values).
+Zeeschuimer é uma extensão de navegador que monitora o tráfego da Internet enquanto você navega em um site de mídia social e coleta dados sobre os itens que você vê na interface da web de uma plataforma para análise sistemática posterior. Seu público-alvo são pesquisadores que desejam estudar sistematicamente o conteúdo em plataformas de mídia social que resistem ao scraping convencional ou à coleta de dados baseada em API. A extensão zeeschuimer é desenvolvida pelo laboratório Digital Methods Initiative (DMI) da Universidade de Amsterdam.
 
-O primeiro exercício do curso é, portanto, o de exportar os dados e convertê-los em formato CSV.
+Atualmente, a extensão permite as raspagem de dados das seguintes plataformas:
 
+* TikTok
+* Instagram
+* Twitter
+* LinkedIn
+* 9gag
+* Imgur
+* Douyin
 
-# Exportando Chats
+# Raspando dados
 
-<div class="callout callout--warning">
-    <p><strong>ATENÇÃO!</strong></p>
-    <p>Todos os dados pessoais foram omitidos neste tutorial.</p>
-</div>
+Para raspar os dados, acesse seu navegador Mozilla Firefox, e, com a extensão Zeeschuimer instalada, clique no botão correspondente a ela na sua barra de navegação.
 
-Para exportar os chats, acesse o seu WhatsApp é siga o passo-a-passo:
+<img src="https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/zeeschuimer.png" width="400">
 
-* Clique no botão com ... no canto superior esquerdo do aplicativo para abrir o menu de opções.
+O navegador automaticamente abrirá uma nova tela de configuração da extensão.
 
-<img src="https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/rwhatsapp01.jpg" width="400">
+<img src="https://github.com/digitalmethodsinitiative/zeeschuimer/blob/master/images/example_screenshot.png" width="400">
 
-* Selecione a opção **Mais** e clique mais uma vez.
-
-<img src="https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/rwhatsapp02.jpg" width="400">
-
-* Em seguida, clique na opção **Exportar conversa**.
-
-<img src="https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/rwhatsapp03.jpg" width="400">
-
-* O WhatsApp perguntará sobre a opção de exportação. Para as finalidades deste curso, a opção **Sem Mídia** é suficiente.
-
-<img src="https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/rwhatsapp04.jpg" width="400">
-
-* Por fim, selecione o método de compartilhamento do arquivo, que pode ser por email, pelo Google Drive, ou pelo próprio WhatsApp.
-
-<img src="https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/rwhatsapp05.jpg" width="400">
-
-Com o arquivo TXT em mãos, a próxima etapa é a leitura dos dados.
+Ative a plataforma cujos dados pretende raspar. E abra uma nova aba para navegar por essa plataforma. Conforme você navega, note que a extensão vai acumulando itens raspados. Ao final da operação, faça o download do arquivo .ndjson gerado. Em seguida, vamos importar esse arquivo no R Studio e convertê-lo em um dataframe.
 
 Observe que o arquivo possui o seguinte formato:
 
 ```
-dd/mm/aaaa hh:mm - +ddi ddd telefone: Mensagem.
+{"nav_index":"23:1:0","item_id":"3172823077191193511_54045506848","timestamp_collected":1692473383763,"source_platform":"instagram.com","source_platform_url":"https://www.instagram.com/colab.uff/","source_url":"https://www.instagram.com/api/v1/feed/user/colab.uff/username/?count=12","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/114.0","data":{"taken_at":1692450007,"pk":"3172823077191193511","id":"3172823077191193511_54045506848","device_timestamp":1692450004,"client_cache_key":"MzE3MjgyMzA3NzE5MTE5MzUxMQ==.2","filter_type":0,"caption_is_edited":true,"like_and_view_counts_disabled":false,"is_reshare_of_text_post_app_media_in_ig":false,"is_post_live_clips_media":false,"shop_routing_user_id":null,"can_see_insights_as_brand":false,"is_organic_product_tagging_eligible":false,"has_liked":false,"like_count":19,"facepile_top_likers":[
+...
 ```
 
-A seguir, um extrato (com dados pessoais omitidos) de um grupo real:
+Trata-se de um arquivo json, cujo formato de dados é aninhado. O json é um formato muito útil para compressão de dados em larga escala, mas pouco amigável para visualização direta. Por isso, vamos convertê-lo em um formato tabular.
+
+O primeiro passo é importá-lo para o R.
+
+```
+db_tiktok <- ndjson::stream_in("/Volumes/repositorio/json/zeeschuimer-export-tiktok.com-2022-03-30T034532.ndjson")
+```
+
+Pronto, seu dataframe já está constituído. O passo seguinte é tratar as variáveis. Mas, antes, vamos aprender a manipular um banco de dados...
 
 
 ```
-01/11/2020 12:34 - +55 21 99**-****: <Arquivo de mídia oculto>
-01/11/2020 18:11 - +55 77 98**-****: Excelente vídeo.
-02/11/2020 00:03 - +55 77 99**-****: Também recebi de um outro grupo.
-```
-
-Embora seja possível interpretar os chats exportados em TXT, o formato não-parseado dificulta a importação desses dados em softwares de planilhas e banco de dados. Isso ocorre porque a separação entre as colunas não utiliza o mesmo operador. Data e hora são separadas apenas por um espaço, data e telefone por um hífen, e telefone e mensagem de texto por um sinal gráfico de dois-pontos. Para tratar esses dados, é preciso separar as tabelas. O pacote **rwhatsapp** fará este trabalho. Espera-se que o resultado de saída dos dados seja semelhante a este abaixo:
-
-```
-#> # A tibble: 5 x 6
-#>   time                author   text             source          emoji emoji_name
-#>   <dttm>              <fct>    <chr>            <chr>           <lis> <list>    
-#> 1 2020-08-01 12:00:00 <NA>     "Messages to th… /home/conversa… <NUL… <NULL>    
-#> 2 2020-08-01 12:00:00 <NA>     "You created gr… /home/conversa… <NUL… <NULL>    
-#> 3 2020-11-01 12:34:16 Youtuber "<Media omitted… /home/conversa… <NUL… <NULL>    
-#> 4 2020-11-01 18:11:37 Tiozão…  "Excelente víde… /home/conversa… <chr… <chr [2]> 
-#> 5 2020-11-02 00:03:59 Tiazona… "Também recebi … /home/conversa… <NUL… <NULL>    
+# A tibble: 17 × 1,146
+   data.accessibility_caption          data.can_see_insight…¹ data.can_view_more_p…² data.can_viewer_resh…³ data.can_viewer_save data.caption.bit_flags data.caption.content…⁴
+   <chr>                               <lgl>                  <lgl>                  <lgl>                  <lgl>                                 <dbl> <chr>                 
+ 1 Photo by coLAB on August 19, 2023.… FALSE                  FALSE                  TRUE                   TRUE                                      0 comment               
+ 2 Photo by coLAB on August 18, 2023.… FALSE                  FALSE                  TRUE                   TRUE                                      0 comment               
+ 3 Photo by coLAB on August 16, 2023.… FALSE                  TRUE                   TRUE                   TRUE                                     NA NA                    
+ 4 NA                                  FALSE                  FALSE                  TRUE                   TRUE                                      0 comment               
+ 5 NA                                  FALSE                  TRUE                   TRUE                   TRUE                                      0 comment               
+ 6 Photo by coLAB in UFF - Universida… FALSE                  TRUE                   TRUE                   TRUE                                      0 comment               
+ 7 NA                                  FALSE                  TRUE                   TRUE                   TRUE                                      0 comment               
+ 8 Photo by coLAB on July 05, 2022.    FALSE                  TRUE                   TRUE                   TRUE                                      0 comment               
 ```
 
