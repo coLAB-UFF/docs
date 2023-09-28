@@ -50,7 +50,7 @@ Para raspar os dados, acesse seu navegador Mozilla Firefox, e, com a extensão Z
 
 O navegador automaticamente abrirá uma nova tela de configuração da extensão.
 
-<img src="https://github.com/digitalmethodsinitiative/zeeschuimer/blob/master/images/example_screenshot.png" width="400">
+<img src="https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/zeeschuimer01.png" width="400">
 
 Ative a plataforma cujos dados pretende raspar. E abra uma nova aba para navegar por essa plataforma. Conforme você navega, note que a extensão vai acumulando itens raspados. Ao final da operação, faça o download do arquivo .ndjson gerado. Em seguida, vamos importar esse arquivo no R Studio e convertê-lo em um dataframe.
 
