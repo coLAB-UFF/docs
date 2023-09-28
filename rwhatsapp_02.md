@@ -22,7 +22,7 @@ micro_nav: false
 page_nav:
     prev:
         content: Exportação de Chats
-        url: '/rwhatsapp_01'
+        url: '/rwhatsapp_01B'
     next:
         content: Manipulação de Dados 1
         url: '/rwhatsapp_03'
