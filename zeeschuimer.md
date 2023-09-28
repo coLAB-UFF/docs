@@ -22,7 +22,7 @@ micro_nav: false
 page_nav:
     next:
         content: Raspagem de Dados
-        url: '/zeeschuimer_01'
+        url: '/zeeschuimer_01A'
 ---
 
 # Proposta do Curso
