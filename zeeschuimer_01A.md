@@ -24,7 +24,7 @@ page_nav:
         content: Programa de Curso
         url: '/zeeschuimer'
     next:
-        content: Exportação de Chats do WhatsApp
+        content: Exportação de Chats
         url: '/zeeschuimer_01B'
 ---
 
