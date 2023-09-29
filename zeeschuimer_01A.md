@@ -89,15 +89,10 @@ Pronto, seu dataframe já está constituído. O passo seguinte é tratar as vari
 Para selecionar algumas variáveis interessantes para análise no TikTok, use:
 
 ```
-db_tiktok <- db_tiktok_original %>% 
-  mutate(author = author) %>% 
+db_tiktok_resumido <- db_tiktok %>% 
+  #mutate(author = author) %>% 
   mutate(author.signature = data.author.signature) %>% 
   mutate(author.verified = data.author.verified) %>% 
-  mutate(author.id = data.author.id) %>% 
-  mutate(author.followingCount = data.authorStats.followingCount) %>% 
-  mutate(author.followerCount = data.authorStats.followerCount) %>% 
-  mutate(author.heartCount = data.authorStats.heartCount) %>% 
-  mutate(author.videoCount = data.authorStats.videoCount) %>% 
   mutate(avatar = data.author.avatarLarger) %>%
   mutate(data.id = data.video.id) %>% 
   mutate(data.url = data.video.downloadAddr) %>% 
@@ -114,9 +109,7 @@ db_tiktok <- db_tiktok_original %>%
   mutate(createDateTime = as.POSIXct(createDateTime, origin = "1970-01-01")) %>% 
   mutate(createTime = format(createDateTime, format = "%H:%M:%S")) %>% 
   mutate(createDate = as.Date(createDateTime)) %>% 
-  #mutate(createTime = lubridate::as_datetime(data.createTime)) %>% 
-  #mutate(createDate = as.Date(data.createTime)) %>% 
-  mutate(data.heartCount = data.stats.diggCount) %>% 
+  mutate(data.heartCount = data.stats.diggCount) %>%
   mutate(data.commentCount = data.stats.commentCount) %>% 
   mutate(data.playCount = data.stats.playCount) %>% 
   mutate(data.shareCount = data.stats.shareCount) %>% 
@@ -130,10 +123,7 @@ db_tiktok <- db_tiktok_original %>%
   mutate(music.url = data.music.playUrl) %>% 
   mutate(music.cover = data.music.coverLarge) %>% 
   mutate(music.isOriginal = data.music.original) %>% 
-  #mutate(author.nickname = author) %>% 
-  select(author, author.followingCount,
-         author.followerCount, author.heartCount, author.videoCount,
-         data.id, data.url, description,
+  select(data.url, description,
          tag0, tag1, tag2, tag3, tag4, tag5, tag6, tag7,
          createDate, createTime, createDateTime, data.heartCount, data.commentCount, 
          data.playCount, data.shareCount, video.duration,
