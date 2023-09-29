@@ -90,7 +90,6 @@ Para selecionar algumas variáveis interessantes para análise no TikTok, use:
 
 ```
 db_tiktok_resumido <- db_tiktok %>% 
-  #mutate(author = author) %>% 
   mutate(author.signature = data.author.signature) %>% 
   mutate(author.verified = data.author.verified) %>% 
   mutate(avatar = data.author.avatarLarger) %>%
@@ -131,3 +130,28 @@ db_tiktok_resumido <- db_tiktok %>%
          music.album, music.author, music.duration, music.url,
          music.cover, music.isOriginal)
 ```
+
+Para selecionar algumas variáveis interessantes para análise no Instagram, use:
+
+```
+db_instagram_resumido <- db_instagram %>%
+  tidyr::drop_na(data.user.id) %>% 
+  mutate(data.caption.created_at = as.numeric(data.caption.created_at)) %>% 
+  mutate(data.caption.created_at = as.POSIXct(data.caption.created_at, origin="1970-01-01")) %>% 
+  mutate(data.time = format(data.caption.created_at, format = "%H:%M:%S")) %>% 
+  mutate(data.date = as.Date(data.caption.created_at)) %>% 
+  select(data.user.id, data.user.full_name, data.user.username,
+         data.user.is_verified, data.user.is_private, data.user.profile_pic_url,
+         data.code, data.caption.created_at, data.date, data.time, data.caption.text,
+         data.play_count, data.like_count, data.comment_count, 
+         data.fb_like_count, data.fb_play_count, data.video_duration, data.media_type,
+         data.fact_check_information, data.clips_metadata.audio_type)
+```
+
+Para distinguir a data no banco de dados exportado do YouTube Data Tools, use:
+
+```
+db_youtube <- db_youtube %>% 
+  mutate(publishedAt_date = as.Date(publishedAt, origin="1970-01-01"))
+```
+
