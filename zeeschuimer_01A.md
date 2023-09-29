@@ -86,3 +86,58 @@ Pronto, seu dataframe já está constituído. O passo seguinte é tratar as vari
  8 Photo by coLAB on July 05, 2022.    FALSE                  TRUE                   TRUE                   TRUE                                      0 comment               
 ```
 
+Para selecionar algumas variáveis interessantes para análise no TikTok, use:
+
+```
+db_tiktok <- db_tiktok_original %>% 
+  mutate(author = author) %>% 
+  mutate(author.signature = data.author.signature) %>% 
+  mutate(author.verified = data.author.verified) %>% 
+  mutate(author.id = data.author.id) %>% 
+  mutate(author.followingCount = data.authorStats.followingCount) %>% 
+  mutate(author.followerCount = data.authorStats.followerCount) %>% 
+  mutate(author.heartCount = data.authorStats.heartCount) %>% 
+  mutate(author.videoCount = data.authorStats.videoCount) %>% 
+  mutate(avatar = data.author.avatarLarger) %>%
+  mutate(data.id = data.video.id) %>% 
+  mutate(data.url = data.video.downloadAddr) %>% 
+  mutate(description = data.desc) %>% 
+  mutate(tag0 = data.challenges.0.title) %>% 
+  mutate(tag1 = data.challenges.1.title) %>% 
+  mutate(tag2 = data.challenges.2.title) %>% 
+  mutate(tag3 = data.challenges.3.title) %>% 
+  mutate(tag4 = data.challenges.4.title) %>% 
+  mutate(tag5 = data.challenges.5.title) %>% 
+  mutate(tag6 = data.challenges.6.title) %>% 
+  mutate(tag7 = data.challenges.7.title) %>% 
+  mutate(createDateTime = as.numeric(data.createTime)) %>% 
+  mutate(createDateTime = as.POSIXct(createDateTime, origin = "1970-01-01")) %>% 
+  mutate(createTime = format(createDateTime, format = "%H:%M:%S")) %>% 
+  mutate(createDate = as.Date(createDateTime)) %>% 
+  #mutate(createTime = lubridate::as_datetime(data.createTime)) %>% 
+  #mutate(createDate = as.Date(data.createTime)) %>% 
+  mutate(data.heartCount = data.stats.diggCount) %>% 
+  mutate(data.commentCount = data.stats.commentCount) %>% 
+  mutate(data.playCount = data.stats.playCount) %>% 
+  mutate(data.shareCount = data.stats.shareCount) %>% 
+  mutate(video.duration = data.video.duration) %>% 
+  mutate(is.Ad = data.isAd) %>% 
+  mutate(music.id = data.music.id) %>% 
+  mutate(music.title = data.music.title) %>% 
+  mutate(music.album = data.music.album) %>% 
+  mutate(music.author = data.music.authorName) %>% 
+  mutate(music.duration = data.music.duration) %>% 
+  mutate(music.url = data.music.playUrl) %>% 
+  mutate(music.cover = data.music.coverLarge) %>% 
+  mutate(music.isOriginal = data.music.original) %>% 
+  #mutate(author.nickname = author) %>% 
+  select(author, author.followingCount,
+         author.followerCount, author.heartCount, author.videoCount,
+         data.id, data.url, description,
+         tag0, tag1, tag2, tag3, tag4, tag5, tag6, tag7,
+         createDate, createTime, createDateTime, data.heartCount, data.commentCount, 
+         data.playCount, data.shareCount, video.duration,
+         is.Ad, music.id, music.title, music.title,
+         music.album, music.author, music.duration, music.url,
+         music.cover, music.isOriginal)
+```
