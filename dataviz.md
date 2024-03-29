@@ -6,7 +6,7 @@ comments: false
 
 # Hero section
 title: dataviz
-description: Curso de raspagem de dados das mídias sociais
+description: Curso de análise e visualização de dados
 
 # Author box
 author:
