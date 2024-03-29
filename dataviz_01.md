@@ -5,8 +5,8 @@ keywords:
 comments: false
 
 # Hero section
-title: zeeschuimer
-description: Curso de raspagem de dados das mídias sociais
+title: dataviz
+description: Curso de análise e visualização de dados
 
 # Author box
 author:
@@ -22,10 +22,10 @@ micro_nav: false
 page_nav:
     prev:
         content: Programa de Curso
-        url: '/zeeschuimer'
+        url: '/dataviz'
     next:
         content: Exportação de Chats
-        url: '/zeeschuimer_01B'
+        url: '/dataviz_02'
 ---
 
 # Zeeschuimer
