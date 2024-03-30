@@ -21,7 +21,7 @@ micro_nav: false
 # Page navigation
 page_nav:
     prev:
-        content: Programa de Curso
+        content: Proposta do Curso
         url: '/dataviz'
     next:
         content: Estatísticas Descritivas
