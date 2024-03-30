@@ -231,9 +231,3 @@ candidato_brasil <- electionsBR::elections_tse(2022, type = "candidate", positio
 4. Quantos e quais candidatos se candidataram por um estado diferente daquele que nasceram? E qual a porcentagem de candidatos que se candidatam por um estado diferente do que nasceram?
 
 
-
-E, em seguida, indique o vetor a ser anonimizado. Uma boa opção é utilizar o algoritmo de criptografia md5.
-
-```
-grupo_rstats$author2 <- grupo_rstats$author %>% anonymizer::hash(.algo = "md5")
-```
