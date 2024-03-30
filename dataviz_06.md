@@ -22,7 +22,10 @@ micro_nav: false
 page_nav:
     prev:
         content: Manipulação de Dados 2
-        url: '/zeeschuimer_04'
+        url: '/dataviz_05'
+    next:
+        content: Visualização de Dados 2
+        url: '/dataviz_07'
 
 ---
 
