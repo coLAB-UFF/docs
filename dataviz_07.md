@@ -38,13 +38,13 @@ library(magick)
 library(palmerpenguins)
 ```
 
-# Dados relacionais
+# Dados Relacionais
 
-A análise de dados raramente envolve uma única tabela ou dataframe. Normalmente, o cientista de dados precisa lidar com múltiplas tabelas. E frequentemente os dados contidos em uma tabela criam relações com aqueles dispostos em outras. As relações são sempre constituídas a partir de um par de tabelas. Mesmo quando se trata de três ou mais tabelas de dados, essas relações são sempre definidas entre cada par. E, às vezes, os elementos de cada par podem integrar a mesma tabela.
+A análise de dados raramente envolve uma única tabela ou `dataframe`. Normalmente, o cientista de dados precisa lidar com múltiplas tabelas. E frequentemente os dados contidos em uma tabela criam relações com aqueles dispostos em outras. As relações são sempre constituídas a partir de um par de tabelas. Mesmo quando se trata de três ou mais tabelas de dados, essas relações são sempre definidas entre cada par. E, às vezes, os elementos de cada par podem integrar a mesma tabela.
 
-Softwares de análise de redes sociais trabalham com uma única tabela de dados relacionais, que contém pelo menos duas colunas: uma coluna chamada SOURCE (origem) e uma coluna chamada TARGET (destino). Ambas designam seguidores e seguidos, respectivamente.
+*Softwares* de análise de redes sociais trabalham com uma única tabela de dados relacionais, que contém pelo menos duas colunas: uma coluna chamada `SOURCE` (origem) e uma coluna chamada `TARGET` (destino). Ambas designam seguidores e seguidos, respectivamente.
 
-Para trabalhar com dados relacionais em tabelas pareadas é importante reconhecer e estabelecer essas relações. Por isso, alguns verbos são importantes no trabalho com esse tipo de dado. Vamos aprender hoje, principalmente, a família de verbos join, que nos permite operar entre duas diferentes tabelas.
+Para trabalhar com dados relacionais em tabelas pareadas é importante reconhecer e estabelecer essas relações. Por isso, alguns verbos são importantes no trabalho com esse tipo de dado. Vamos aprender hoje, principalmente, a família de verbos `join`, que nos permite operar entre duas diferentes tabelas.
 
 Mas, primeiro, vamos entender visualmente como as relações entre tabelas se dão:
 
@@ -58,15 +58,15 @@ Note que cada tabela possui atributos ou variáveis que são responsáveis por i
 
 # Chaves
 
-Para compreender o princípio das tabelas de dados relacionais, precisamos, antes, entender que cada par de tabelas é conectado entre si pelo que chamamos de chaves (keys). Uma chave é uma variável que identifica uma única observação, ou seja, um valor que não se repete. Só a partir das chaves podemos conectar diferentes tabelas.
+Para compreender o princípio das tabelas de dados relacionais, precisamos, antes, entender que cada par de tabelas é conectado entre si pelo que chamamos de chaves (`keys`). Uma chave é uma variável que identifica uma única observação, ou seja, um valor que não se repete. Só a partir das chaves podemos conectar diferentes tabelas.
 
 Existem diferentes tipos de chaves:
 
-* Primary key (chave primária): identifica de modo único uma observação na sua própria tabela. P.ex., na imagem ao lado, LIVRO$ID_Livro é um identificar único para cada livro na tabela LIVRO.
+* *Primary key* (chave primária): identifica de modo único uma observação na sua própria tabela. P.ex., na imagem ao lado, `LIVRO$ID_Livro` é um identificar único para cada livro na tabela `LIVRO`.
 
-* Foreign key (chave estrangeira): identifica de modo único uma observação em uma outra tabela. P.ex., na imagem ao lado, EMPRESTIMO$ID_Livro é um identificador único originário da tabela LIVRO e que aparece na tabela EMPRESTIMO como uma chave estrangeira.
+* *Foreign key* (chave estrangeira): identifica de modo único uma observação em uma outra tabela. P.ex., na imagem ao lado, `EMPRESTIMO$ID_Livro` é um identificador único originário da tabela LIVRO e que aparece na tabela `EMPRESTIMO` como uma chave estrangeira.
 
-Em algumas tabelas, não há um identificador único presente. Nesses casos, pode ser necessário adicionar uma chave substituta (surrogate key) para criar relações com outras tabelas de dados.
+Em algumas tabelas, não há um identificador único presente. Nesses casos, pode ser necessário adicionar uma chave substituta (*surrogate key*) para criar relações com outras tabelas de dados.
 
 Vamos adicionar um identificador único numérico para os dados da tabela abaixo?
 
@@ -85,11 +85,11 @@ Agora, vamos aprender um pouquinho sobre como manipular esses dados relacionais 
 
 # Joins
 
-Existem dois tipos principais de operações com a família de verbos join do dplyr:
+Existem dois tipos principais de operações com a família de verbos `join` do `dplyr`:
 
-* Mutating joins: adicionam novas variáveis a um dataframe a partir das observações correspondentes em outro.
+* `Mutating joins`: adicionam novas variáveis a um dataframe a partir das observações correspondentes em outro.
 
-* Filtering joins: filtram observações em um dataframe com base caso elas combinem com observações contidas em outra tabela.
+* `Filtering joins`: filtram observações em um dataframe com base caso elas combinem com observações contidas em outra tabela.
 
 ```
 magick::image_read(
@@ -99,7 +99,7 @@ magick::image_read(
 
 ## Mutating joins
 
-Os mutating joins podem ser inner join ou outer joins. O inner join mantém as as observações que aparecem em ambas as tabelas, enquanto os outer joins mantêm as observações que aparecem em pelo menos uma das tabelas. Outer joins podem ser left join (mantém todas as observações em X), right join (mantém todas as observações em y) e full join (mantém todas as observações em x e y), conforme a ilustração a seguir:
+Os `mutating joins` podem ser `inner join` ou `outer joins`. O `inner join` mantém as as observações que aparecem em ambas as tabelas, enquanto os `outer joins` mantêm as observações que aparecem em pelo menos uma das tabelas. `Outer joins` podem ser `left join` (mantém todas as observações em X), `right join` (mantém todas as observações em y) e `full join` (mantém todas as observações em x e y), conforme a ilustração a seguir:
 
 ```
 magick::image_read(
