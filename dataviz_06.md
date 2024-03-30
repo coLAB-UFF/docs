@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: dataviz
+title: Manipulação de Dados 2
 description: Curso de análise e visualização de dados
 
 # Author box
