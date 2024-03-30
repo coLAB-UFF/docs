@@ -5,8 +5,8 @@ keywords:
 comments: false
 
 # Hero section
-title: zeeschuimer
-description: Curso de raspagem de dados das mídias sociais
+title: dataviz
+description: Curso de análise e visualização de dados
 
 # Author box
 author:
