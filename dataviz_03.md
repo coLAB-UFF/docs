@@ -5,15 +5,15 @@ keywords:
 comments: false
 
 # Hero section
-title: zeeschuimer
-description: Curso de raspagem de dados das mídias sociais
+title: dataviz
+description: Curso de análise e visualização de dados
 
 # Author box
 author:
-    title: DDoS Lab
-    title_url: 'https://colab-uff.github.io/ddoslab/'
+    title: coLAB
+    title_url: 'https://colab-uff.github.io/'
     external_url: true
-    description: Laboratório de Combate à Desinformação e ao Discurso de Ódio em Sistemas de Comunicação em Rede
+    description: Laboratório de Pesquisa em Comunicação, Culturas Políticas e Economia da Colaboração
 
 # Micro navigation
 micro_nav: false
@@ -21,69 +21,39 @@ micro_nav: false
 # Page navigation
 page_nav:
     prev:
-        content: Exportação de Chats
-        url: '/zeeschuimer_01'
+        content: Tipos de Variáveis
+        url: '/dataviz_02'
     next:
-        content: Manipulação de Dados 1
-        url: '/zeeschuimer_03'
+        content: Importação e Exportação de Dados
+        url: '/dataviz_04'
 ---
 
-# rwhatsapp
+# Estatísticas Descritivas (Estatísticas de Posição)
 
-O rwhatsapp é um script desenvolvido por Johannes Gruber para manipulação e parse de dados exportados a partir de chats do WhatsApp. Para mais informações, consulte: https://github.com/JBGruber/rwhatsapp
+A média de um conjunto de dados é encontrada somando-se todos os números do conjunto de dados e então dividindo o resultado pelo número de valores do conjunto. A média é influenciada por todos os valores, inclusive os extremos.
 
+A mediana é o valor do meio quando o conjunto de dados está ordenado do menor para o maior. É necessário ordenar os valores para reconhecer a mediana. A mediana ignora os *outliers*.
 
-# Instalando e Requisitando o Pacote rwhatsapp
-
-Antes de começar a utilizar o rwhatsapp, abra o seu R Studio e instale o pacote. 
-
-```
-install.packages("rwhatsapp")
-
-library(rwhatsapp)
-```
-
-Em caso de dificuldade, é possível também instalá-lo diretamente do GitHub:
+A moda é o número que aparece mais vezes em um conjunto de dados. Não há no R Base uma função específica para o cálculo da moda.
 
 ```
-install.packages("remotes")
-remotes::install_github("JBGruber/rwhatsapp")
-
-library(rwhatsapp)
+mean(c(1,7,3,2,4))
+median(c(1,7,3,2,4))
+mean(c(6.0, 7.1, 5.5, 3.0, 10.0, 100.0, 6.5, 8.2, 2.9, 3.5, 9.9, 
+       9.1, 8.2, 7.6, 9.9, 10.0, 6.7, 4.9, 10.0, 6.8, 6.0))
+median(c(6.0, 7.1, 5.5, 3.0, 10.0, 100.0, 6.5, 8.2, 2.9, 3.5, 9.9, 
+         9.1, 8.2, 7.6, 9.9, 10.0, 6.7, 4.9, 10.0, 6.8, 6.0))
+## 2.9, 3.0, 3.5, 4.9, 5.5, 6.0, 6.0, 6.5, 6.7, 6.8,
+## 7.1, 7.6, 8.2, 8.2, 9.1, 9.9, 9.9, 10.0, 10.0, 10.0, 100.0
 ```
 
-# Demo
-
-O pacote rwhatsapp possui uma base de dados de exemplo. Para importá-la, utilize os seguintes comandos:
+Para resumir algumas variáveis, há funções que descrevem o conjunto de valores.
 
 ```
-sample <- system.file("extdata", "sample.txt", package = "rwhatsapp")
-
-chat <- rwhatsapp::rwa_read(sample)
-
-View(chat)
+notas <- c(6.0, 7.1, 5.5, 3.0, 10.0, 100.0, 6.5, 8.2, 2.9, 3.5, 9.9, 
+           9.1, 8.2, 7.6, 9.9, 10.0, 6.7, 4.9, 10.0, 6.8, 6.0)
+summary(notas)
+head(notas)
+dplyr::glimpse(notas)
 ```
 
-A principal função do pacote rwhatsapp é a `rwa_read()`. Esta função tem o objetivo de importar e parsear os chats do WhatsApp em formato de *dataframe* no R Studio.
-
-
-# Importando Dados do WhatsApp no R Studio
-
-Vamos agora trabalhar com dados reais não-anonimizados.
-
-Salve, no seu computador, o arquivo de texto disponível [neste link](https://raw.githubusercontent.com/ombudsmanviktor/workshop_rstats/main/aula8/Conversa%20do%20WhatsApp%20com%20Rstats.txt).
-
-Selecione o arquivo salvo no computador local:
-
-```
-grupo_rstats <- rwa_read(file.choose())
-```
-
-Ou indique o *path* diretamente no próprio comando:
-
-```
-grupo_rstats <- rwa_read(
-  "~/Downloads/Conversa do WhatsApp com Rstats.txt")
-```
-
-Vamos agora aprender a manipular e tratar esses dados...
