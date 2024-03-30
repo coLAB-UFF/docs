@@ -141,5 +141,14 @@ pinguins7$sex <- pinguins7$sex %>%
   str_replace("male", "macho")
 ```
 
+# EXERCÍCIO 1
 
+# Considere o conjunto de dados abaixo:
+
+```
+bbb21_mensagens <- read.csv(
+  "https://raw.githubusercontent.com/ombudsmanviktor/workshop_rstats/main/aula6/bbb21_mensagens.csv")
+```
+
+1. Procure quantas vezes Juliette é mencionada nesse conjunto de mensagens.
   
