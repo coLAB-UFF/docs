@@ -10,10 +10,10 @@ description: Curso de análise e visualização de dados
 
 # Author box
 author:
-    title: DDoS Lab
-    title_url: 'https://colab-uff.github.io/ddoslab/'
+    title: coLAB
+    title_url: 'https://colab-uff.github.io/'
     external_url: true
-    description: Laboratório de Combate à Desinformação e ao Discurso de Ódio em Sistemas de Comunicação em Rede
+    description: Laboratório de Pesquisa em Comunicação, Culturas Políticas e Economia da Colaboração
 
 # Micro navigation
 micro_nav: false
