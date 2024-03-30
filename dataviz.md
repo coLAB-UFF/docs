@@ -21,7 +21,7 @@ micro_nav: false
 # Page navigation
 page_nav:
     next:
-        content: Funções básicas
+        content: Funções Básicas
         url: '/dataviz_01'
 ---
 
