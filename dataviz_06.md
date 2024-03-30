@@ -30,6 +30,15 @@ page_nav:
 ---
 
 
+# Criando uma Amostra
+
+Para criar uma amostra aleatória dos dados disponíveis na sua base, estabeleça um valor amostral e requisite que o R crie essa amostra com o seguinte comando:
+
+```
+amostra <- candidato_brasil %>% 
+  sample_n(500)
+```
+
 # Filtrando a Base de Dados por Períodos Específicos
 
 Em algumas ocasiões pode ser necessário filtrar a base de dados por um período específico no tempo. Para isso, utilize a função `between`, do pacote `dplyr`. Vamos descobrir, por exemplo, quem são os candidatos jovens que disputaram as últimas eleições?
