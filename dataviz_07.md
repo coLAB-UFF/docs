@@ -22,10 +22,10 @@ micro_nav: false
 page_nav:
     prev:
         content: Manipulação de Dados 2
-        url: '/dataviz_05'
+        url: '/dataviz_06'
     next:
         content: Manipulação de Dados 4
-        url: '/dataviz_07'
+        url: '/dataviz_08'
 
 ---
 
