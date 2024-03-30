@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: dataviz
+title: Estatísticas Descritivas
 description: Curso de análise e visualização de dados
 
 # Author box
@@ -28,7 +28,7 @@ page_nav:
         url: '/dataviz_04'
 ---
 
-# Estatísticas Descritivas (Estatísticas de Posição)
+# Estatísticas de Posição
 
 A média de um conjunto de dados é encontrada somando-se todos os números do conjunto de dados e então dividindo o resultado pelo número de valores do conjunto. A média é influenciada por todos os valores, inclusive os extremos.
 
