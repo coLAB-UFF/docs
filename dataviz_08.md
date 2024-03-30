@@ -124,140 +124,163 @@ Para solucionar esses dois problemas comuns, utilizaremos o pacote tidyr e seus 
 
 `gather()` reúne duas ou mais colunas que representam a mesma variável. O resultado é um banco de dados mais vertical, com um número menor de colunas, e com colunas que representam, cada uma, uma variável diferente.
 
+```
 magick::image_read(
   "https://raw.githubusercontent.com/ombudsmanviktor/workshop_rstats/main/aula6/tidy_gather.png"
 ) %>% magick::image_scale("640") %>% print()
+```
 
-# A função gather() requer três parâmetros:
+A função `gather()` requer três parâmetros:
 
-# 1. O conjunto de colunas que deve ser reunido (variáveis)
-# 2. O nome da variável a ser criada (chave)
-# 3. O nome da variável cujos valores estão espalhados (valores)
+1. O conjunto de colunas que deve ser reunido (variáveis)
 
-# Os parâmetros são informados segundo a seguinte sintaxe:
+2. O nome da variável a ser criada (chave)
 
-# tabela %>% gather(variavel1, variavel2, key = "chave", value = "valores")
+3. O nome da variável cujos valores estão espalhados (valores)
 
+Os parâmetros são informados segundo a seguinte sintaxe:
+
+```
+tabela %>% gather(variavel1, variavel2, key = "chave", value = "valores")
+```
+
+Assim:
+
+```
 pinguins1 <- penguins %>% 
   mutate(id = row_number()) %>% # Adicionar uma chave primária
   gather(bill_length_mm, bill_depth_mm, # Reunir colunas
          key = "bico", value = "medidas"
   ) %>% 
   select(id, species, island, sex, body_mass_g, bico, medidas) # Selecionar colunas
+```
 
-### Espalhar
+# Espalhar
 
-# spread() espalha duas ou mais colunas que representam variáveis diferentes e encontram-se
-# reunidas. O resultado é um banco de dados mais horizontal, com um número maior de colunas,
-# e com colunas que representam, cada uma, uma variável diferente.
+`spread()` espalha duas ou mais colunas que representam variáveis diferentes e encontram-se reunidas. O resultado é um banco de dados mais horizontal, com um número maior de colunas, e com colunas que representam, cada uma, uma variável diferente.
 
+```
 magick::image_read(
   "https://raw.githubusercontent.com/ombudsmanviktor/workshop_rstats/main/aula6/tidy_spread.png"
 ) %>% magick::image_scale("640") %>% print()
+```
 
-# A função spread() requer dois parâmetros:
+A função `spread()` requer dois parâmetros:
 
-# 1. A coluna que contém os nomes das variáveis a serem criadas (chave)
-# 2. A coluna que contém os valores das variáveis (valores)
+1. A coluna que contém os nomes das variáveis a serem criadas (chave)
 
-# Os parâmetros são informados segundo a seguinte sintaxe:
+2. A coluna que contém os valores das variáveis (valores)
 
-# tabela %>% spread(chave, valores)
+Os parâmetros são informados segundo a seguinte sintaxe:
 
+```
+tabela %>% spread(chave, valores)
+```
+
+Assim:
+
+```
 pinguins2 <- pinguins1 %>% 
   spread(
     bico, medidas # Espalhar colunas
     ) 
+```
 
-### Unir
+# Unir
 
-# unite() combina várias colunas em uma única.
+`unite()` combina várias colunas em uma única.
 
+```
 magick::image_read(
   "https://raw.githubusercontent.com/ombudsmanviktor/workshop_rstats/main/aula6/tidy_unite.png"
 ) %>% magick::image_scale("640") %>% print()
+```
 
-# A função unite() requer até três parâmetros:
+A função `unite()` requer até três parâmetros:
 
-# 1. A nova coluna resultante da união das variáveis selecionadas
-# 2. As variáveis a serem unidas
-# 3. O separador, se houver (parâmetro opcional)
+1. A nova coluna resultante da união das variáveis selecionadas
 
-# Os parâmetros são informados segundo a seguinte sintaxe:
+2. As variáveis a serem unidas
 
-# tabela %>% unite(coluna, variavel1, variavel2, sep = "")
+3. O separador, se houver (parâmetro opcional)
 
+Os parâmetros são informados segundo a seguinte sintaxe:
+
+```
+tabela %>% unite(coluna, variavel1, variavel2, sep = "")
+```
+
+Assim:
+
+```
 pinguins3 <- penguins %>% 
   mutate(id = row_number()) %>% # Adicionar uma chave primária
   unite(bico, bill_length_mm, bill_depth_mm, # Unir colunas
          sep = "/"
   ) %>% 
   select(id, species, island, sex, body_mass_g, bico) # Selecionar colunas
+```
 
-### Separar
+# Separar
 
-# separate() separa uma coluna em duas ou mais.
+`separate()` separa uma coluna em duas ou mais.
 
+```
 magick::image_read(
   "https://raw.githubusercontent.com/ombudsmanviktor/workshop_rstats/main/aula6/tidy_separate.png"
 ) %>% magick::image_scale("640") %>% print()
+```
 
-# A função separate() requer até três parâmetros:
+A função `separate()` requer até três parâmetros:
 
-# 1. A variável a ser separada
-# 2. As novas colunas resultantes da separação da variável selecionada
-# 3. O separador, se houver (parâmetro opcional)
+1. A variável a ser separada
 
-# Os parâmetros são informados segundo a seguinte sintaxe:
+2. As novas colunas resultantes da separação da variável selecionada
 
-# tabela %>% separate(coluna, into = c("variavel1", "variavel2"), sep = "")
+3. O separador, se houver (parâmetro opcional)
 
+Os parâmetros são informados segundo a seguinte sintaxe:
+
+```
+tabela %>% separate(coluna, into = c("variavel1", "variavel2"), sep = "")
+```
+
+Assim:
+
+```
 pinguins4 <- pinguins3 %>% 
   separate(bico, c("comprimento (mm)", "largura (mm)"), # Separar colunas
         sep = "/"
   ) %>% 
   select(id, species, island, sex, body_mass_g, 
          `comprimento (mm)`, `largura (mm)`) # Selecionar colunas
+```
 
 
+Vamos agora fazer alguns exercícios?
 
-# Vamos agora fazer alguns exercícios?
+# EXERCÍCIO 1
 
-### EXERCÍCIO 1
+Considere o conjunto de dados abaixo:
 
-# Considere o conjunto de dados abaixo:
-
+```
 representatividade_2018 <- read.csv(
   "https://raw.githubusercontent.com/ombudsmanviktor/workshop_rstats/main/aula6/representatividade_2018.csv")
+```
 
-# Arrume os dados de modo a tornar a estrutura do banco tidy.
-# DICA: Mantenha três colunas na tabela e transforme negros_pardos e mulheres em uma só variável.
+Arrume os dados de modo a tornar a estrutura do banco tidy.
+
+DICA: Mantenha três colunas na tabela e transforme negros_pardos e mulheres em uma só variável.
 
 
-### EXERCÍCIO 2
+# EXERCÍCIO 2
 
-# Considere o conjunto de dados abaixo:
+Considere o conjunto de dados abaixo:
 
+```
 bbb21_mensagens <- read.csv(
   "https://raw.githubusercontent.com/ombudsmanviktor/workshop_rstats/main/aula6/bbb21_mensagens.csv")
+```
 
-# A coluna métricas possui dois valores associados na mesma célula. Transforme esses dois
-# valores em duas variáveis diferentes, considerando o primeiro valor como de RTs recebidos
-# por um determinado tweet, e o segundo valor como o de vezes em que esse mesmo tweet foi
-# favoritado.
-
-
-### EXERCÍCIO 3
-
-# Considere o mesmo dataframe anterior:
-
-bbb21_mensagens
-
-# Procure quantas vezes Juliette é mencionada nesse conjunto de mensagens.
-
-# Substitua todas as menções a Bolsonaro (ou bolsonaro ou BOLSONARO) por Bozo
-
-# Transforme todos os caracteres das mensagens nos tweets em minúsculas.
-
-
+A coluna métricas possui dois valores associados na mesma célula. Transforme esses dois valores em duas variáveis diferentes, considerando o primeiro valor como de RTs recebidos por um determinado tweet, e o segundo valor como o de vezes em que esse mesmo tweet foi favoritado.
 
