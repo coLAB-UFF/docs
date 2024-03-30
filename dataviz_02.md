@@ -10,10 +10,10 @@ description: Curso de raspagem de dados das mídias sociais
 
 # Author box
 author:
-    title: DDoS Lab
-    title_url: 'https://colab-uff.github.io/ddoslab/'
+    title: coLAB
+    title_url: 'https://colab-uff.github.io/'
     external_url: true
-    description: Laboratório de Combate à Desinformação e ao Discurso de Ódio em Sistemas de Comunicação em Rede
+    description: Laboratório de Pesquisa em Comunicação, Culturas Políticas e Economia da Colaboração
 
 # Micro navigation
 micro_nav: false
@@ -21,14 +21,14 @@ micro_nav: false
 # Page navigation
 page_nav:
     prev:
-        content: Programa de Curso
-        url: '/zeeschuimer'
+        content: Funções Básicas
+        url: '/dataviz_01'
     next:
-        content: Importação de Dados
-        url: '/zeeschuimer_02'
+        content: Estatísticas Descritivas
+        url: '/dataviz_03'
 ---
 
-# Formato de Exportação Nativa de Chats do WhatsApp
+# Tipos de Variáveis
 
 O WhatsApp possui uma ferramenta nativa de exportação individual de chats. Os arquivos resultantes possuem o formato TXT e não são parseados, isto é, não possuem uma estrutura lógica de banco de dados. É possível ler esses arquivos em qualquer software de bloco de notas, mas, para trabalhar com os seus dados de forma quantitativa, é preciso, antes de mais nada, converter o formato de arquivo em um CSV (comma-separated values).
 
