@@ -24,7 +24,7 @@ page_nav:
         content: Proposta do Curso
         url: '/dataviz'
     next:
-        content: Estatísticas Descritivas
+        content: Tipos de Variáveis
         url: '/dataviz_02'
 ---
 
