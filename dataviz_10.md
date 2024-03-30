@@ -22,10 +22,10 @@ micro_nav: false
 page_nav:
     prev:
         content: Visualização de Dados 1
-        url: '/dataviz_08'
+        url: '/dataviz_09'
     next:
         content: Visualização de Dados 3
-        url: '/dataviz_10'
+        url: '/dataviz_11'
 
 ---
 
