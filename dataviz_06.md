@@ -32,7 +32,7 @@ page_nav:
 
 # Criando uma Amostra
 
-Para criar uma amostra aleatória dos dados disponíveis na sua base, estabeleça um valor amostral e requisite que o R crie essa amostra com o seguinte comando:
+Para criar uma amostra aleatória dos dados disponíveis na sua base, estabeleça um valor amostral e requisite que o R crie essa amostra com a função `sample_n` do pacote `dplyr`:
 
 ```
 amostra <- candidato_brasil %>% 
@@ -105,34 +105,34 @@ candidato_brasil$NM_ANONIMO <- candidato_brasil$NM_CANDIDATO %>% anonymizer::has
 
 # Manipulando *strings*
 
-Muitas vezes, os valores dispostos em nosso banco de dados se apresentam como variáveis de texto (strings). Algumas dessas variáveis textuais precisam ser remodeladas ou transformadas, a fim de facilitar nossa interpretação.
+Muitas vezes, os valores dispostos em nosso banco de dados se apresentam como variáveis de texto (*strings*). Algumas dessas variáveis textuais precisam ser remodeladas ou transformadas, a fim de facilitar nossa interpretação.
 
-Vamos aprender algumas funções de manipulação de strings a seguir.
+Vamos aprender algumas funções de manipulação de *strings* a seguir.
 
-1. Convertendo strings em minúsculas e em maiúsculas:
+1. Convertendo *strings* em minúsculas e em maiúsculas:
 
-* str_to_upper
+* `str_to_upper`
 
 ```
 pinguins5 <- pinguins1 %>% 
   mutate(maiuscula = str_to_upper(island))
 ```
 
-* str_to_lower
+* `str_to_lower`
 
 ```
 pinguins6 <- pinguins5 %>% 
   mutate(minuscula = str_to_lower(species))
 ```
 
-* str_to_title
+* `str_to_title`
 
 ```
 pinguins7 <- pinguins6 %>% 
   mutate(titulo = str_to_title(sex))
 ```
 
-2. Detectando padrões textuais em um vetor de strings
+2. Detectando padrões textuais em um vetor de *strings*
 
 ```
 pinguins7 <- pinguins7 %>% 
@@ -142,7 +142,7 @@ pinguins7$string_teste <- pinguins7$string_teste %>%
   str_detect("ale")
 ```
 
-3. Substituindo padrões textuais em um vetor de strings
+3. Substituindo padrões textuais em um vetor de *strings*
 
 ```
 pinguins7$sex <- pinguins7$sex %>% 
@@ -163,4 +163,4 @@ bbb21_mensagens <- read.csv(
 
 2. Substitua todas as menções a Bolsonaro (ou bolsonaro ou BOLSONARO) por Bozo
 
-3. Transforme todos os caracteres das mensagens nos tweets em minúsculas.
+3. Transforme todos os caracteres das mensagens nos *tweets* em minúsculas.
