@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: dataviz
+title: Manipulação de Dados 1
 description: Curso de análise e visualização de dados
 
 # Author box
@@ -21,10 +21,10 @@ micro_nav: false
 # Page navigation
 page_nav:
     prev:
-        content: Manipulação de Dados 1
+        content: Estatísticas Descritvas
         url: '/dataviz_04'
     next:
-        content: Visualização de Dados 1
+        content: Manipulação de Dados 2
         url: '/dataviz_06'
 ---
 
