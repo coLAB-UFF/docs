@@ -152,7 +152,7 @@ dados_aves_massa <- dados_aves_massa %>%
 
 Esta função agrupa um *dataframe* segundo um vetor de categorias. “Agrupar” aqui quer dizer que todas as operações subsequentes serão feitas separadas por grupos. 
 
-## summarise()
+## summarise() ou reframe()
 
 Esta função transforma um vetor com vários números em um único número de acordo com uma função.
 
@@ -191,59 +191,49 @@ E qual a média da massa corporal dos pinguins na nossa amostra?
 ```
 dados_aves %>% 
   tidyr::drop_na() %>% 
-  summarise(media = mean(body_mass_g))
+  reframe(media = mean(body_mass_g))
 ```
 
 Vamos fazer exercícios com outro conjunto de dados agora??
 
 
-# EXERCÍCIO
+## EXERCÍCIO 1
 
-Com base nos dados disponíveis no gitHUB e exportados do WhatsApp, disponíveis no seguinte [link](https://raw.githubusercontent.com/ombudsmanviktor/workshop_rstats/main/aula8/Conversa%20do%20WhatsApp%20com%20Rstats.txt), 
-
-1. Monte uma tabela indicando que são os usuários que mais enviam mensagens para o grupo.
-
-2. Monte uma tabela indicando quais são os emojis mais utilizados em mensagens.
-
-
-
-
-# Limpando a Base de Dados
-
-Os chats do WhatsApp trazem informações referentes à criação dos grupos, ingresso e remoção dos usuários. Essas mensagens são alertas do sistema e não devem ser confundidas com posts de usuários. Por isso, um passo inicial importante no tratamento das bases de dados do WhatsApp é limpar essas mensagens. O modo mais fácil de tratar a base é remover as mensagens sem emissor definido. Quando a variável `author` está vazia, isso significa que não se trata de um post no grupo.
-
-Para remover essas mensagens, vamos utilizar a função `drop_na()`, que é proveniente do pacote `tidyr`, também integrante do Tidyverse.
+* Considere os dados do IBGE sobre a população brasileira em 2022.
 
 ```
-grupo_limpo <- grupo_rstats %>%
-  tidyr::drop_na(author)
+install.packages("devtools")
+devtools::install_github("tbrugz/ribge")
+populacao2022 <- ribge::populacao_municipios(2022)
 ```
 
+1. Quais os cinco municípios com maior população no estado do Rio de Janeiro?
+   
+2. Qual a média populacional dos municípios do Rio de Janeiro?
+   
+3. Quantos municípios do Rio de Janeiro estão acima dessa média?
 
-# Separando Data e Hora
+## EXERCÍCIO 2
 
-Os chats trazem informação sobre data e horário da publicação das mensagens. O formato da base é `aaaa-mm-dd hh:mm:ss`, mas, para muitas operações, o ideal é descartarmos horas, minutos e segundos. Por isso, eventualmente, pode ser importante criarmos uma segunda variável derivada que informe apenas o dia de publicação. Para isso, o pacote `lubridate` pode ser muito útil.
-
-```
-grupo_horario <- grupo_rstats %>%
-  mutate(dia = lubridate::date(time))
-```
-
-Uma utilidade desta operação, por exemplo, é contar a frequência diária de publicação de mensagens. Nós podemos descobrir quantas mensagens são enviadas por dia utilizando a função `count()`.
+* Considere os dados oficiais do TSE a respeito dos candidatos a deputado federal nas eleições de 2022.
 
 ```
-grupo_horario <- grupo_rstats %>%
-  mutate(dia = lubridate::date(time)) %>% 
-  count(dia)
+install.packages("electionsBR")
+candidato_brasil <- electionsBR::elections_tse(2022, type = "candidate", position = "Federal Deputy")
 ```
 
+1. Crie uma tabela somente com os dados dos nomes dos candidatos na urna, siglas dos partidos, estado por que se candidataram, estado em que nasceram, idade, sexo, raça e grau de instrução, nessa ordem.
+   
+2. Quais partidos têm mais pretos ou pardos como candidatos?
 
-## EXERCÍCIO
+3. Quais partidos têm mais mulheres como candidatas?
 
-Como seria se eu quisesse descobrir o dia em que houve o maior número de publicação de mensagens?
+4. Quantos e quais candidatos se candidataram por um estado diferente daquele que nasceram? E qual a porcentagem de candidatos que se candidatam por um estado diferente do que nasceram?
 
-E você conseguiria acrescentar uma coluna indicando a média na publicação diária de mensagens ao lado do valor daquele dia em específico?
 
+
+
+---
 
 # Filtrando a Base de Dados por Períodos Específicos
 
@@ -253,6 +243,8 @@ Em algumas ocasiões pode ser necessário filtrar a base de dados por um períod
 grupo_horario2 <- grupo_horario %>% 
   filter(between(dia, as.Date("2021-02-01"), as.Date("2021-02-28")))
 ```
+
+candidato_brasil %>% filter(between(DT_NASCIMENTO, as.Date("1960-02-01"), as.Date("1980-02-28")))
 
 
 # Buscando por Palavras-Chaves
@@ -294,20 +286,6 @@ grupo_internacional <- grupo_rstats %>%
       T ~ "Internacional")) %>% count(internacional)
  ```
  
- 
- # Contando os Emojis
-
-A coluna de *emojis* isola da variável *text* todos os emojis utilizados na mensagem. Entretanto, esta coluna pode apresentar mais de um emoji simultaneamente. Por isso, ao tentar contabilizar a frequência de uso de emojis na base de dados, uma mensagem com 😊 seria contabilizada de forma distinta de 😊😂, apesar de ambas conterem o mesmo emoji.
-
-Para separar cada emoji individualmente, é necessário utilizar a função `unnest()`, do pacote `tidyr`.
-
-
-```
-grupo_rstats %>%
-  tidyr::unnest(emoji) %>%
-  count(emoji) %>% 
-  arrange(desc(n))
-```
  
  
  # Mergindo Mais de um Chat
