@@ -152,7 +152,7 @@ pinguins7$sex <- pinguins7$sex %>%
 
 # EXERCÍCIO 1
 
-# Considere o conjunto de dados abaixo:
+* Considere o conjunto de dados abaixo:
 
 ```
 bbb21_mensagens <- read.csv(
