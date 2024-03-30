@@ -29,38 +29,43 @@ page_nav:
 
 ---
 
-# Antes de mais nada, vamos requisitar alguns pacotes com os quais vamos trabalhar hoje:
+# Requisitar os Pacotes de Trabalho
+
+```
 #install.packages(magick)
 #install.packages(tidyr)
 #install.packages(stringr)
+
 library(dplyr)
 library(tidyr)
 library(stringr)
 library(magick)
 library(palmerpenguins)
+```
 
-### Tidyr
+# Tidyr
 
-# Frequentemente, os dados dispostos em bancos de dados precisam ser arrumados, antes de serem
-# analisados. O Tidyverse considera que o modelo ideal de arrumação de dados é o modelo designado
-# por tidy data. Os bancos de dados tidy obedecem a três regras:
+Frequentemente, os dados dispostos em bancos de dados precisam ser arrumados, antes de serem analisados. O Tidyverse considera que o modelo ideal de arrumação de dados é o modelo designado por `tidy data`. Os bancos de dados tidy obedecem a três regras:
 
-# 1. Cada variável deve ter sua própria coluna
-# 2. Cada observação deve ter sua própria linha
-# 3. Cada valor deve ter sua própria célula
+1. Cada variável deve ter sua própria coluna
 
-# Visualmente, as regras se apresentam dessa forma:
+2. Cada observação deve ter sua própria linha
 
+3. Cada valor deve ter sua própria célula
+
+Visualmente, as regras se apresentam dessa forma:
+
+```
 magick::image_read(
   "https://raw.githubusercontent.com/ombudsmanviktor/workshop_rstats/main/aula6/tidy_data.png"
 ) %>% magick::image_scale("640") %>% print()
+```
 
-# Ocorre que nem todos os bancos de dados, inicialmente, se encontram arrumados dessa forma.
-# Por isso, muitas vezes, é necessário arrumar esses dados.
+Ocorre que nem todos os bancos de dados, inicialmente, se encontram arrumados dessa forma. Por isso, muitas vezes, é necessário arrumar esses dados.
 
-# Considere, por exemplo, os conjuntos de dados a seguir. Qual(quais) desse(s) conjunto(s)
-# é(são) tidy? E por quê?
+Considere, por exemplo, os conjuntos de dados a seguir. Qual(quais) desse(s) conjunto(s) é(são) tidy? E por quê?
 
+```
 #> tabela 1 # A tibble: 6 x 4
 #>   country      year  cases population
 #>   <chr>       <int>  <int>      <int>
@@ -105,20 +110,19 @@ magick::image_read(
 #> 1 Afghanistan   19987071   20595360
 #> 2 Brazil       172006362  174504898
 #> 3 China       1272915272 1280428583
+```
 
-# Os dois problemas mais comuns com bancos de dados não arrumados são:
+Os dois problemas mais comuns com bancos de dados não arrumados são:
 
-# 1. Uma variável pode estar espalhada por várias colunas
-# 2. Uma observação pode estar espalhada por várias linhas
+1. Uma variável pode estar espalhada por várias colunas
 
-# Para solucionar esses dois problemas comuns, utilizaremos o pacote tidyr e seus
-# dois principais verbos: gather() e spread()
+2. Uma observação pode estar espalhada por várias linhas
 
-### Reunir
+Para solucionar esses dois problemas comuns, utilizaremos o pacote tidyr e seus dois principais verbos: gather() e spread()
 
-# gather() reúne duas ou mais colunas que representam a mesma variável. O resultado é um
-# banco de dados mais vertical, com um número menor de colunas, e com colunas que representam,
-# cada uma, uma variável diferente.
+# Reunir
+
+`gather()` reúne duas ou mais colunas que representam a mesma variável. O resultado é um banco de dados mais vertical, com um número menor de colunas, e com colunas que representam, cada uma, uma variável diferente.
 
 magick::image_read(
   "https://raw.githubusercontent.com/ombudsmanviktor/workshop_rstats/main/aula6/tidy_gather.png"
