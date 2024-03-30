@@ -151,4 +151,7 @@ bbb21_mensagens <- read.csv(
 ```
 
 1. Procure quantas vezes Juliette é mencionada nesse conjunto de mensagens.
-  
+
+2. Substitua todas as menções a Bolsonaro (ou bolsonaro ou BOLSONARO) por Bozo
+
+3. Transforme todos os caracteres das mensagens nos tweets em minúsculas.
