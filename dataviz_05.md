@@ -230,4 +230,8 @@ candidato_brasil <- electionsBR::elections_tse(2022, type = "candidate", positio
 
 4. Quantos e quais candidatos se candidataram por um estado diferente daquele que nasceram? E qual a porcentagem de candidatos que se candidatam por um estado diferente do que nasceram?
 
+<details open>
+  <summary>Accordion</summary>
+  Hello World!
+</details>
 
