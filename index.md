@@ -24,9 +24,9 @@ grid_navigation:
       excerpt: Raspagem de dados das mídias sociais
       cta: Mais
       url: '/zeeschuimer'
-    - title: Linguagem de Memes
-      excerpt: Introdução e princípios básicos
+    - title: dataviz
+      excerpt: Análise e visualização de dados
       cta: Mais
-      url: '#'
+      url: '/dataviz'
       
 ---
