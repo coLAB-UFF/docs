@@ -112,6 +112,14 @@ Para anonimizar os remetentes, é necessário utilizar um pacote adicional de cr
 remotes::install_github("paulhendricks/anonymizer")
 ```
 
+
+E, em seguida, indique o vetor a ser anonimizado. Uma boa opção é utilizar o algoritmo de criptografia md5.
+
+```
+grupo_rstats$author2 <- grupo_rstats$author %>% anonymizer::hash(.algo = "md5")
+```
+
+
 ---
 
 
