@@ -24,7 +24,7 @@ page_nav:
         content: Manipulação de Dados 1
         url: '/dataviz_04'
     next:
-        content: Manipulação de Dados 2
+        content: Visualização de Dados 1
         url: '/dataviz_06'
 ---
 
