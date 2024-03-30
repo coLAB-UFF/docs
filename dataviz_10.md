@@ -31,19 +31,27 @@ page_nav:
 
 # Percepção Gráfica
 
-# Solicitar pacotes -------------------------------------------------------
+Os gráficos plotados por meio do `ggplot2` podem ser customizados em muitos níveis. Vejamos abaixo algumas possibilidades.
+
+# Solicitar pacotes
+
+```
 #install.packages("ggplot2")
 library(ggplot2)
 library(dplyr)
 library(palmerpenguins)
 library(RColorBrewer)
-
-# Customizações -----------------------------------------------------------
+```
 
 # Importando os dados
-pinguins <- penguins %>% tidyr::drop_na()
 
-# Títulos
+```
+pinguins <- penguins %>% tidyr::drop_na()
+```
+
+# Customizando os Títulos do Gráfico
+
+```
 pinguins %>% 
   ggplot() +
   geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
@@ -52,32 +60,43 @@ pinguins %>%
        x = "O eixo X",
        y = "O eixo Y",
        caption = "A sua legenda")
+```
 
-# Fundo
+# Customizando o Fundo
+
+```
 pinguins %>% 
   ggplot() +
   geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
   theme(panel.background = element_rect(fill="white", colour="red"))
+```
 
-# Limites dos eixos
+# Customizando os Eixos do Gráfico
+
+```
 pinguins %>% 
   ggplot() +
   geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
   ylim(0,300) +
   xlim(0,6500)
+```
 
-# Valores
+# Indicando os Valores
+
+```
 pinguins %>%
   filter(species == "Adelie") %>% 
   ggplot() +
   geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
   geom_text(aes(label = body_mass_g, x = body_mass_g, y = flipper_length_mm), 
             color = "#000000", size = 2, hjust = -1, vjust = 0)
+```
 
-# Outras customizações em: https://www.r-graph-gallery.com/
+* DICA: Outras customizações em: https://www.r-graph-gallery.com/
 
-# Cores -------------------------------------------------------------------
+# Customizando as Cores do Gráfico
 
+```
 pinguins %>% 
   ggplot() +
   geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
@@ -101,10 +120,11 @@ pinguins %>%
   geom_bar(aes(x = sex, y = body_mass_g, fill = sex), stat = "identity") +
   coord_flip() +
   scale_fill_brewer(palette = "Set2", direction = 1)
+```
 
+# Customizando o Tema
 
-# Temas -------------------------------------------------------------------
-
+```
 pinguins %>% 
   ggplot() +
   geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
@@ -134,48 +154,59 @@ pinguins %>%
   ggplot() +
   geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
   theme_void()
+```
 
 # Gráficos Interativos
 
-# Solicitar pacotes -------------------------------------------------------
+Você também pode criar gráficos interativos no R. Para isso, vamos usar os seguintes pacotes:
+
+```
 #install.packages("ggplot2")
 #install.packages("plotly")
 library(ggplot2)
 library(plotly)
 library(dplyr)
 library(palmerpenguins)
+```
 
+* Scatterplot Interativo
 
-# Gráficos interativos ----------------------------------------------------
-
-# Importando os dados
-pinguins <- penguins %>% tidyr::drop_na()
-
-# Scatter plot interativo
+```
 grafico1 <- pinguins %>% 
   ggplot() +
   geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species))
 
 ggplotly(grafico1)
+```
 
-# Line plot interativo
+* Lineplot Interativo
+
+```
 grafico2 <- pinguins %>% 
   count(year, species) %>% 
   ggplot() +
   geom_line(aes(x = year, y = n, group = species, color = species))
 
 ggplotly(grafico2)
+```
 
-# Boxplot interativo
+* Boxplot Interativo
+
+```
 grafico3 <- pinguins %>% 
   ggplot() +
   geom_boxplot(aes(x = sex, y = body_mass_g))
 
 ggplotly(grafico3)
+```
 
-# Barplot interativo
+* Barplot Interativo
+
+```
 grafico4 <- pinguins %>% 
   ggplot() +
   geom_bar(aes(x = island), stat = "count")
 
 ggplotly(grafico4)
+```
+
