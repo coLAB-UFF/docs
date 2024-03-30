@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: dataviz
+title: Tipos de Variáveis
 description: Curso de análise e visualização de dados
 
 # Author box
