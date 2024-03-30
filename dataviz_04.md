@@ -64,6 +64,8 @@ palmerpenguins::penguins
 
 library(palmerpenguins)
 penguins
+
+dados_aves <- penguins
 ```
 
 Vamos agora conhecer um pouco mais sobre manipulação de bancos de dados?
