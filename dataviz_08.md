@@ -215,40 +215,7 @@ pinguins4 <- pinguins3 %>%
   select(id, species, island, sex, body_mass_g, 
          `comprimento (mm)`, `largura (mm)`) # Selecionar colunas
 
-### Stringr: algumas funções básicas
 
-# Muitas vezes, os valores dispostos em nosso banco de dados se apresentam como
-# variáveis de texto (strings). Algumas dessas variáveis textuais precisam
-# ser remodeladas ou transformadas, a fim de facilitar nossa interpretação.
-# Vamos aprender algumas funções de manipulação de strings a seguir.
-
-# Convertendo strings em minúsculas e em maiúsculas:
-
-# str_to_upper
-pinguins5 <- pinguins1 %>% 
-  mutate(maiuscula = str_to_upper(island))
-
-# str_to_lower
-pinguins6 <- pinguins5 %>% 
-  mutate(minuscula = str_to_lower(species))
-
-# str_to_title
-pinguins7 <- pinguins6 %>% 
-  mutate(titulo = str_to_title(sex))
-
-# Detectando padrões textuais em um vetor de strings
-
-pinguins7 <- pinguins7 %>% 
-  mutate(string_teste = sex)
-
-pinguins7$string_teste <- pinguins7$string_teste %>% 
-  str_detect("ale")
-
-# Substituindo padrões textuais em um vetor de strings
-
-pinguins7$sex <- pinguins7$sex %>% 
-  str_replace("female", "fêmea") %>% 
-  str_replace("male", "macho")
 
 # Vamos agora fazer alguns exercícios?
 
