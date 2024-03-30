@@ -21,13 +21,15 @@ micro_nav: false
 # Page navigation
 page_nav:
     next:
-        content: Raspagem de Dados
+        content: Funções básicas
         url: '/dataviz_01'
 ---
 
 # Proposta do Curso
 
-Este é um curso de curta duração cujo principal objetivo é apresentar, em uma linguagem objetiva e instrumental, técnicas de extração e tratamento de dados obtidos a partir de diferentes plataformas digitais. A oficina não se propõe a introduzir princípios e fundamentos da linguagem R ou da ciência de dados, mas alguns desses tópicos podem ser discutidos ao longo das aulas. No geral, pretende-se trabalhar com a raspagem de dados das mídias sociais por meio de uma extensão para o navegador Mozilla Firefox desenvolvida pelo laboratório Digital Methods Initiative (DMI) da Universidade de Amsterdam. Em seguida à raspagem, será realizada a importação desses dados no software R Studio como um dataframe, e subsequente tratamento, transformação e visualização desses dados. Os alunos serão levados a exercitar essas habilidades e produzir análises exploratórias dos dados com estatísticas descritivas.
+A disciplina se propõe a introduzir fundamentos básicos da análise e da visualização de dados. O curso pretende munir os alunos de conhecimento prático e laboratorial acerca da análise exploratória de dados. Os alunos aprenderão a ler e criar diferentes tipos de gráficos, a produzir análises sobre estatísticas descritivas, análises textuais lexicométricas, análises georreferenciadas e análises de redes sociais. Além disso, eles receberão treinamento para a coleta de dados de diferentes repositórios públicos, bem como para limpar e organizar bancos de dados (data wrangling).
+
+Com caráter de oficina, o curso utilizará variados softwares e aplicativos para suas operações, e poderá fornecer ainda capacitação básica e instrumental em linguagem R e na gramática de gráficos de seu principal pacote de visualização de dados, ggplot2. Os conhecimentos adquiridos poderão instrumentalizar futuros profissionais analistas de dados, cientistas de dados e business intelligence (BI).
 
 
 # Requisitos e Funcionamento
@@ -39,20 +41,14 @@ O curso tem caráter de oficina. Serão ministradas três aulas síncronas com 4
 
 Instale sempre primeiro o software R e depois o R Studio. Usuários de Mac Os devem instalar também o [X Quartz <https://www.xquartz.org/>](https://www.xquartz.org/). Durante o curso, outros pacotes e plugins serão instalados, conforme orientação do(a) professor(a) responsável.
 
-* [Mozilla Firefox <https://www.mozilla.org/pt-BR/firefox/new/>](https://www.mozilla.org/pt-BR/firefox/new/) *(versões para Linux, Mac OS e Windows disponíveis)*
-* [Zeeschuimer <https://github.com/digitalmethodsinitiative/zeeschuimer/releases>](https://github.com/digitalmethodsinitiative/zeeschuimer/releases) *(extensão xpi para o Firefox)*
+* [Gephi <https://gephi.org/>](https://gephi.org/) *(versões para Linux, Mac OS e Windows disponíveis)*
+  
+* [IramuteQ <http://www.iramuteq.org/>](http://www.iramuteq.org/) *(versões para Linux, Mac OS e Windows disponíveis)*
 
 
-# Recursos da Oficina
-
-* [Google Meet](https://meet.google.com/bmo-xzwz-ybc)
-
-
-# Principais Pacotes
+# Principais Pacotes R
 
 **dplyr** &middot; # O dplyr é um dos pacotes do Tidyverse e é voltado especificamente para o trabalho de manipulação de dados. O dplyr se estrutura em torno de um conjunto de verbos, que operam como funções para a manipulação de grandes bancos de dados. Para mais detalhes, acesse: https://dplyr.tidyverse.org/
-
-**ndjson** &middot; # O ndjson é um pacote para streaming e importação de arquivos json e ndjson com grande número de registros. Para mais detalhes, acesse: https://github.com/hrbrmstr/ndjson
 
 **tidyr** &middot; # O tidyr é um dos pacotes do Tidyverse e é voltado especificamente para a arrumação de bancos de dados. Para mais detalhes, acesse: https://tidyr.tidyverse.org/
 
@@ -60,16 +56,40 @@ Instale sempre primeiro o software R e depois o R Studio. Usuários de Mac Os de
 
 **ggplot2** &middot; # O ggplot2 é um sistema para criação de gráficos, baseado em uma grámática própria e em camadas estéticas. Para mais detalhes, acesse: https://ggplot2.tidyverse.org/
 
-**rwhatsapp** &middot; # O rwhatsapp é um script desenvolvido por Johannes Gruber para manipulação e parse de dados exportados a partir de chats do WhatsApp. Para mais informações, consulte: https://github.com/JBGruber/rwhatsapp
-
 
 # Referências Adicionais
 
-* Aquino, Jakson Alves de. [R para cientistas sociais](http://www.uesc.br/editora/livrosdigitais_20140513/r_cientistas.pdf). Ilhéus: Editora da UESC, 2014.
+* Aquino, J. A. (2014). R para Cientistas Sociais.
 
-* Oliveira, Paulo Felipe de; Guerra, Saulo; McDonell, Robert. [Ciência de Dados com R: Introdução](https://ibpad.com.br/publicacoes/ciencia-de-dados-com-r-introducao/). Brasília: Editora IBPad, 2018.
+* Bruce, P., & Bruce, A. (2019). Estatística Prática para Cientistas de Dados.
 
-* Wickham, Hadley; Grolemund, Garrett. [R para data science](https://r4ds.had.co.nz/). Rio de Janeiro: Alta Books, 2019.
+* Cairo, A. (2016). Truthful Art Data: Charts, and Maps for Communication.
 
-* [R Graph Gallery](https://www.r-graph-gallery.com/).
+* Cervi, E. (2019). Manual de Métodos Quantitativos para Iniciantes em Ciência Política, vol. 1.
+
+* Cervi, E. (2019). Manual de Métodos Quantitativos para Iniciantes em Ciência Política, vol. 2.
+
+* Cherven, K. (2015). Mastering Gephi Network Visualization.
+
+* Cleveland, W. S. (1985). The Elements of Graphing Data.
+
+* D’Ignazio, C. (2020). Data Feminism.
+
+* Figueiredo Filho, D. (2019). Métodos Quantitativos em Ciência Política.
+
+* Knaflic, C. N. (2019). Storytelling com Dados: um Guia sobre Visualização de Dados para Profissionais de Negócios.
+
+* Krause, A., Rennie, N., & Tarran, B. (2023). Best Practices for Data Visualisation Insights.
+
+* Oliveira, P. F., Guerra, S., & McDonnell, R. (2018). Ciência de Dados com R: Introdução.
+
+* Salviati, M. E. (2017). Manual do Aplicativo Iramuteq.
+
+* Spiegelhalter, D. (2022). A arte da estatística: Como Aprender a Partir de Dados.
+
+* Wickham, H. (2019). R para Ciência de Dados: importe, arrume, transforme, visualize e modele dados.
+
+* Wickham, H. (2010). ggplot2: Elegant Graphics for Data Analysis.
+
+* Wurman, R. S. (1999). Ansiedade De Informação: Como Transformar Informação em Compreensão.
 
