@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: Manipulação de Dados 2
+title: Manipulação de Dados 3
 description: Curso de análise e visualização de dados
 
 # Author box
