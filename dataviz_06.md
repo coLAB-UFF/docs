@@ -21,10 +21,10 @@ micro_nav: false
 # Page navigation
 page_nav:
     prev:
-        content: Manipulação de Dados 2
+        content: Manipulação de Dados 1
         url: '/dataviz_05'
     next:
-        content: Visualização de Dados 2
+        content: Visualização de Dados 1
         url: '/dataviz_07'
 
 ---
@@ -91,6 +91,13 @@ Para mergir dois ou mais chats, utilize as funções `join()` do pacote `dplyr`.
 fulldb <- grupo_rstats %>% 
   full_join(chat)
 ```
+
+candidato_brasil %>% filter(between(DT_NASCIMENTO, as.Date("1960-02-01"), as.Date("1980-02-28")))
+
+<details open>
+  <summary>Accordion</summary>
+  Hello World!
+</details>
  
 
 # MAIS EXERCÍCIOS
