@@ -123,25 +123,25 @@ pinguins2 <- pinguins %>%
   filter(sex == "male")
 ```
 
-* Inner join: somente os pinguins machos (df2) E encontrados na ilha Torgersen (df1)
+* `Inner join`: somente os pinguins machos (df2) E encontrados na ilha Torgersen (df1).
 
 ```
 pinguins_innerjoin <- pinguins1 %>% inner_join(pinguins2, by = "id_pinguim")
 ```
 
-* Left join: somente os pinguins encontrados na ilha Torgersen (df1), machos (df2) ou não
+* `Left join`: somente os pinguins encontrados na ilha Torgersen (df1), machos (df2) ou não.
 
 ```
 pinguins_leftjoin <- pinguins1 %>% left_join(pinguins2, by = "id_pinguim")
 ```
 
-* Right join: somente os pinguins machos (df2), encontrados na ilha Torgersen (df1) ou não
+* `Right join`: somente os pinguins machos (df2), encontrados na ilha Torgersen (df1) ou não.
 
 ```
 pinguins_rightjoin <- pinguins1 %>% right_join(pinguins2, by = "id_pinguim")
 ```
 
-* Full join: pinguins machos (df2) ou não, encontrados na ilha Torgersen (df1) ou não
+* `Full join`: pinguins machos (df2) ou não, encontrados na ilha Torgersen (df1) ou não.
 
 ```
 pinguins_fulljoin <- pinguins1 %>% full_join(pinguins2, by = "id_pinguim")
@@ -149,7 +149,7 @@ pinguins_fulljoin <- pinguins1 %>% full_join(pinguins2, by = "id_pinguim")
 
 ## Filtering joins
 
-Filtering joins combinam as observações do mesmo modo que mutating joins, mas não incorporam novas variáveis, apenas filtram as observações. Há dois tipos de filtering joins: semi join (mantém as observações em x que tenham combinação em y) e anti join (descarta as observações em x que tenham combinação em y). Visualmente, as operações podem ser ilustradas da seguinte forma:
+`Filtering joins` combinam as observações do mesmo modo que `mutating joins`, mas não incorporam novas variáveis, apenas filtram as observações. Há dois tipos de `filtering joins`: `semi join` (mantém as observações em x que tenham combinação em y) e `anti join` (descarta as observações em x que tenham combinação em y). Visualmente, as operações podem ser ilustradas da seguinte forma:
 
 ```
 magick::image_read(
@@ -159,13 +159,13 @@ magick::image_read(
 
 Vamos aos testes?
 
-* Semi join: somente os pinguins machos (df2) E encontrados na ilha Torgersen (df1), mas sem adicionar novas variáveis ao df1
+* `Semi join`: somente os pinguins machos (df2) E encontrados na ilha Torgersen (df1), mas sem adicionar novas variáveis ao df1.
 
 ```
 pinguins_semijoin <- pinguins1 %>% semi_join(pinguins2, by = "id_pinguim")
 ```
 
-* Anti join: somente os pinguins NÃO machos (!= df2) E encontrados na ilha Torgersen (df1), mas sem adicionar novas variáveis ao df1
+* `Anti join`: somente os pinguins NÃO machos (!= df2) E encontrados na ilha Torgersen (df1), mas sem adicionar novas variáveis ao df1.
 
 ```
 pinguins_antijoin <- pinguins1 %>% anti_join(pinguins2, by = "id_pinguim")
@@ -173,7 +173,7 @@ pinguins_antijoin <- pinguins1 %>% anti_join(pinguins2, by = "id_pinguim")
 
 ## Binds
 
-Existem ainda duas formas úteis de combinar dados de diferentes dataframes: uni-los pelas suas linhas (bind_rows) ou pelas suas colunas (bind_cols). Graficamente, essas operações podem ser representadas da seguinte maneira:
+Existem ainda duas formas úteis de combinar dados de diferentes dataframes: uni-los pelas suas linhas (`bind_rows`) ou pelas suas colunas (`bind_cols`). Graficamente, essas operações podem ser representadas da seguinte maneira:
 
 ```
 magick::image_read(
@@ -198,14 +198,14 @@ pinguins5 <- pinguins %>%
   select(island, sex)
 ```
 
-* Bind_rows: adiciona aos pinguins encontrados na ilha Torgersen (df1) os pinguins encontrados na ilha Biscoe (df3)
+* `Bind_rows`: adiciona aos pinguins encontrados na ilha Torgersen (df1) os pinguins encontrados na ilha Biscoe (df3).
 
 ```
 pinguins_bindrows <- pinguins1 %>% 
   bind_rows(pinguins3)
 ```
 
-* Bind_cols: justapõe as tabelas de pinguins com categorias diferentes lado a lado (df4 e df5)
+* `Bind_cols`: justapõe as tabelas de pinguins com categorias diferentes lado a lado (df4 e df5).
 
 ```
 pinguins_bindcols <- pinguins4 %>% 
