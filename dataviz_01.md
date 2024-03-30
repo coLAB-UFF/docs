@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: dataviz
+title: Funções Básicas
 description: Curso de análise e visualização de dados
 
 # Author box
