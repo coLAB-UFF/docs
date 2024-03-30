@@ -24,134 +24,109 @@ page_nav:
         content: Programa de Curso
         url: '/dataviz'
     next:
-        content: Exportação de Chats
+        content: Estatísticas Descritivas
         url: '/dataviz_02'
 ---
 
-# Zeeschuimer
+# Funções Básicas
 
-Zeeschuimer é uma extensão de navegador que monitora o tráfego da Internet enquanto você navega em um site de mídia social e coleta dados sobre os itens que você vê na interface da web de uma plataforma para análise sistemática posterior. Seu público-alvo são pesquisadores que desejam estudar sistematicamente o conteúdo em plataformas de mídia social que resistem ao scraping convencional ou à coleta de dados baseada em API. A extensão zeeschuimer é desenvolvida pelo laboratório Digital Methods Initiative (DMI) da Universidade de Amsterdam.
-
-Atualmente, a extensão permite as raspagem de dados das seguintes plataformas:
-
-* TikTok
-* Instagram
-* Twitter
-* LinkedIn
-* 9gag
-* Imgur
-* Douyin
-
-# Raspando dados
-
-Para raspar os dados, acesse seu navegador Mozilla Firefox, e, com a extensão Zeeschuimer instalada, clique no botão correspondente a ela na sua barra de navegação.
-
-<img src="https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/zeeschuimer.png" width="400">
-
-O navegador automaticamente abrirá uma nova tela de configuração da extensão.
-
-<img src="https://raw.githubusercontent.com/coLAB-UFF/docs/main/images/zeeschuimer01.png" width="400">
-
-Ative a plataforma cujos dados pretende raspar. E abra uma nova aba para navegar por essa plataforma. Conforme você navega, note que a extensão vai acumulando itens raspados. Ao final da operação, faça o download do arquivo .ndjson gerado. Em seguida, vamos importar esse arquivo no R Studio e convertê-lo em um dataframe.
-
-Observe que o arquivo possui o seguinte formato:
+Conhecendo as funções de impressão (`print()`) e visualização (`View()`).
+Imprimindo variáveis numéricas e nominais.
 
 ```
-{"nav_index":"23:1:0","item_id":"3172823077191193511_54045506848","timestamp_collected":1692473383763,"source_platform":"instagram.com","source_platform_url":"https://www.instagram.com/colab.uff/","source_url":"https://www.instagram.com/api/v1/feed/user/colab.uff/username/?count=12","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/114.0","data":{"taken_at":1692450007,"pk":"3172823077191193511","id":"3172823077191193511_54045506848","device_timestamp":1692450004,"client_cache_key":"MzE3MjgyMzA3NzE5MTE5MzUxMQ==.2","filter_type":0,"caption_is_edited":true,"like_and_view_counts_disabled":false,"is_reshare_of_text_post_app_media_in_ig":false,"is_post_live_clips_media":false,"shop_routing_user_id":null,"can_see_insights_as_brand":false,"is_organic_product_tagging_eligible":false,"has_liked":false,"like_count":19,"facepile_top_likers":[
-...
+1
+print(1)
+
+texto
+print(texto)
+
+"texto"
+print("texto")
 ```
 
-Trata-se de um arquivo json, cujo formato de dados é aninhado. O json é um formato muito útil para compressão de dados em larga escala, mas pouco amigável para visualização direta. Por isso, vamos convertê-lo em um formato tabular.
+# Atribuição
 
-O primeiro passo é importá-lo para o R.
-
-```
-db_tiktok <- ndjson::stream_in("/Volumes/repositorio/json/zeeschuimer-export-tiktok.com-2022-03-30T034532.ndjson")
-```
-
-Pronto, seu dataframe já está constituído. O passo seguinte é tratar as variáveis. Mas, antes, vamos aprender a manipular um banco de dados...
-
+Atribuindo um valor a uma variável, por meio da sintaxe `=` ou `<-`.
 
 ```
-# A tibble: 17 × 1,146
-   data.accessibility_caption          data.can_see_insight…¹ data.can_view_more_p…² data.can_viewer_resh…³ data.can_viewer_save data.caption.bit_flags data.caption.content…⁴
-   <chr>                               <lgl>                  <lgl>                  <lgl>                  <lgl>                                 <dbl> <chr>                 
- 1 Photo by coLAB on August 19, 2023.… FALSE                  FALSE                  TRUE                   TRUE                                      0 comment               
- 2 Photo by coLAB on August 18, 2023.… FALSE                  FALSE                  TRUE                   TRUE                                      0 comment               
- 3 Photo by coLAB on August 16, 2023.… FALSE                  TRUE                   TRUE                   TRUE                                     NA NA                    
- 4 NA                                  FALSE                  FALSE                  TRUE                   TRUE                                      0 comment               
- 5 NA                                  FALSE                  TRUE                   TRUE                   TRUE                                      0 comment               
- 6 Photo by coLAB in UFF - Universida… FALSE                  TRUE                   TRUE                   TRUE                                      0 comment               
- 7 NA                                  FALSE                  TRUE                   TRUE                   TRUE                                      0 comment               
- 8 Photo by coLAB on July 05, 2022.    FALSE                  TRUE                   TRUE                   TRUE                                      0 comment               
+variavel = "texto"
+variavel
+
+print(variavel)
+View(variavel)
+
+variavel <- "um novo texto"
+variavel
 ```
 
-Para selecionar algumas variáveis interessantes para análise no TikTok, use:
+# Sequências Alfanuméricas
+
+Imprimindo sequências alfanuméricas.
 
 ```
-db_tiktok_resumido <- db_tiktok %>% 
-  mutate(author.signature = data.author.signature) %>% 
-  mutate(author.verified = data.author.verified) %>% 
-  mutate(avatar = data.author.avatarLarger) %>%
-  mutate(data.id = data.video.id) %>% 
-  mutate(data.url = data.video.downloadAddr) %>% 
-  mutate(description = data.desc) %>% 
-  mutate(tag0 = data.challenges.0.title) %>% 
-  mutate(tag1 = data.challenges.1.title) %>% 
-  mutate(tag2 = data.challenges.2.title) %>% 
-  mutate(tag3 = data.challenges.3.title) %>% 
-  mutate(tag4 = data.challenges.4.title) %>% 
-  mutate(tag5 = data.challenges.5.title) %>% 
-  mutate(tag6 = data.challenges.6.title) %>% 
-  mutate(tag7 = data.challenges.7.title) %>% 
-  mutate(createDateTime = as.numeric(data.createTime)) %>% 
-  mutate(createDateTime = as.POSIXct(createDateTime, origin = "1970-01-01")) %>% 
-  mutate(createTime = format(createDateTime, format = "%H:%M:%S")) %>% 
-  mutate(createDate = as.Date(createDateTime)) %>% 
-  mutate(data.heartCount = data.stats.diggCount) %>%
-  mutate(data.commentCount = data.stats.commentCount) %>% 
-  mutate(data.playCount = data.stats.playCount) %>% 
-  mutate(data.shareCount = data.stats.shareCount) %>% 
-  mutate(video.duration = data.video.duration) %>% 
-  mutate(is.Ad = data.isAd) %>% 
-  mutate(music.id = data.music.id) %>% 
-  mutate(music.title = data.music.title) %>% 
-  mutate(music.album = data.music.album) %>% 
-  mutate(music.author = data.music.authorName) %>% 
-  mutate(music.duration = data.music.duration) %>% 
-  mutate(music.url = data.music.playUrl) %>% 
-  mutate(music.cover = data.music.coverLarge) %>% 
-  mutate(music.isOriginal = data.music.original) %>% 
-  select(data.url, description,
-         tag0, tag1, tag2, tag3, tag4, tag5, tag6, tag7,
-         createDate, createTime, createDateTime, data.heartCount, data.commentCount, 
-         data.playCount, data.shareCount, video.duration,
-         is.Ad, music.id, music.title, music.title,
-         music.album, music.author, music.duration, music.url,
-         music.cover, music.isOriginal)
+1:60
+seq(from = 1, to = 60)
+seq(1,60)
+seq(1,60,3)
+seq(1,60,.5)
+letters
+letters[3]
+seq(1,60,3)[5]
+rep("texto",10)
+variavel <- seq(1,60)
+length(variavel)
 ```
 
-Para selecionar algumas variáveis interessantes para análise no Instagram, use:
+# Operadores Matemáticos ou Lógicos
+
+Operadores aritméticos.
 
 ```
-db_instagram_resumido <- db_instagram %>%
-  tidyr::drop_na(data.user.id) %>% 
-  mutate(data.caption.created_at = as.numeric(data.caption.created_at)) %>% 
-  mutate(data.caption.created_at = as.POSIXct(data.caption.created_at, origin="1970-01-01")) %>% 
-  mutate(data.time = format(data.caption.created_at, format = "%H:%M:%S")) %>% 
-  mutate(data.date = as.Date(data.caption.created_at)) %>% 
-  select(data.user.id, data.user.full_name, data.user.username,
-         data.user.is_verified, data.user.is_private, data.user.profile_pic_url,
-         data.code, data.caption.created_at, data.date, data.time, data.caption.text,
-         data.play_count, data.like_count, data.comment_count, 
-         data.fb_like_count, data.fb_play_count, data.video_duration, data.media_type,
-         data.fact_check_information, data.clips_metadata.audio_type)
+1+1
+3-1
+1-2
+9 / 3
+2 * 3
+4 ^ 2
+(3 + 1) * (6 - 1) ^ 2
+3 + 1 * 6 - 1 ^ 2
+(1 + (2 * 3)) * 5
+sqrt(16) # raiz quadrada de 16
+log(10,10) # log de 10 na base 10
 ```
 
-Para distinguir a data no banco de dados exportado do YouTube Data Tools, use:
+Operados booleanos.
 
 ```
-db_youtube <- db_youtube %>% 
-  mutate(publishedAt_date = as.Date(publishedAt, origin="1970-01-01"))
+3 > 2
+5 < 2
+2 == 2
+2 != 2
+(6 > 5) & (7 > 8) # AND
+(6 > 5) | (7 > 8) # OR
+```
+
+# Inserindo Múltiplas Variáveis
+
+Cohecendo a função de combinação `c()`.
+
+```
+c(1, 2, 3, 4, 5, 6,
+  7, 8, 9, 10, 11)
+
+c("banana", "laranja", "abacate")
+
+vetor <- c("banana", "laranja", "abacate")
+print(vetor)
+View(vetor)
+
+vetor1 <- c(1, 2, 3)
+vetor2 <- c(2,4,5)
+vetor1 + vetor2
+vetor1 * vetor2
+sum(vetor1) # Soma
+prod(vetor2) # Produto (Multiplicação)
+max(vetor2)
+min(vetor2)
 ```
 
