@@ -215,11 +215,11 @@ populacao2022 <- ribge::populacao_municipios(2022)
 
 ## EXERCÍCIO 2
 
-* Considere os dados oficiais do TSE a respeito dos candidatos a deputado federal nas eleições de 2022.
+* Considere os dados oficiais do TSE a respeito dos candidatos ao cargo de deputado federal nas eleições de 2022.
 
 ```
 install.packages("electionsBR")
-candidato_brasil <- electionsBR::elections_tse(2022, type = "candidate", position = "Federal Deputy")
+candidato_brasil <- electionsBR::elections_tse(2022, type = "candidate") %>% filter(DS_CARGO == "DEPUTADO FEDERAL")
 ```
 
 1. Crie uma tabela somente com os dados dos nomes dos candidatos na urna, siglas dos partidos, estado por que se candidataram, estado em que nasceram, idade, sexo, raça e grau de instrução, nessa ordem.
@@ -228,10 +228,7 @@ candidato_brasil <- electionsBR::elections_tse(2022, type = "candidate", positio
 
 3. Quais partidos têm mais mulheres como candidatas?
 
-4. Quantos e quais candidatos se candidataram por um estado diferente daquele que nasceram? E qual a porcentagem de candidatos que se candidatam por um estado diferente do que nasceram?
+4. Quais partidos têm mais mulheres pretas como candidatas?
 
-<details open>
-  <summary>Accordion</summary>
-  Hello World!
-</details>
+5. Quantos e quais candidatos se candidataram por um estado diferente daquele que nasceram?
 
