@@ -169,7 +169,7 @@ library(dplyr)
 library(palmerpenguins)
 ```
 
-* Scatterplot Interativo
+* *Scatterplot* Interativo
 
 ```
 grafico1 <- pinguins %>% 
@@ -179,7 +179,7 @@ grafico1 <- pinguins %>%
 ggplotly(grafico1)
 ```
 
-* Lineplot Interativo
+* *Lineplot* Interativo
 
 ```
 grafico2 <- pinguins %>% 
@@ -190,7 +190,7 @@ grafico2 <- pinguins %>%
 ggplotly(grafico2)
 ```
 
-* Boxplot Interativo
+* *Boxplot* Interativo
 
 ```
 grafico3 <- pinguins %>% 
@@ -200,7 +200,7 @@ grafico3 <- pinguins %>%
 ggplotly(grafico3)
 ```
 
-* Barplot Interativo
+* *Barplot* Interativo
 
 ```
 grafico4 <- pinguins %>% 
