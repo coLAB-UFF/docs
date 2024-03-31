@@ -67,9 +67,9 @@ library(palmerpenguins)
 
 # geom_point()
 
-`geom_point`: Este geom corresponde a um gráfico de dispersão (ou scatterplot). O scatterplot é uma visualização que apresenta múltiplas ocorrências de dados organizados a partir de duas variáveis numéricas e sequenciais.
+`geom_point`: Este geom corresponde a um gráfico de dispersão (ou *scatterplot*). O *scatterplot* é uma visualização que apresenta múltiplas ocorrências de dados organizados a partir de duas variáveis numéricas e sequenciais.
 
-Exemplo: vamos construir um scatterplot com nossos pinguins.
+Exemplo: vamos construir um *scatterplot* com nossos pinguins.
 
 ```
 pinguins <- penguins %>% tidyr::drop_na()
@@ -104,7 +104,7 @@ pinguins %>%
 
 E o que é possível observar a partir do gráfico acima?
 
-E quanto à altura (depth) e ao comprimento (lenght) do bico dos pinguins? Que conclusões podemos tirar desse novo gráfico abaixo?
+E quanto à altura (*depth*) e ao comprimento (*lenght*) do bico dos pinguins? Que conclusões podemos tirar desse novo gráfico abaixo?
 
 ```
 pinguins %>% 
@@ -141,7 +141,7 @@ O próximo passo é tentar condensar essas informações, que estão dispersas, 
 
 # geom_bar()
 
-`geom_bar`: Este objeto geométrico corresponde a um gráfico de barras na sintaxe do ggplot2. O gráfico de barras condensa a informação dispersa em pontos no gráfico de dispersão, e apresenta uma informação geral e não detalhada sobre os dados. Sua composição requer uma variável categórica e uma variável numérica (que pode ser simplesmente a quantidade).
+`geom_bar`: Este objeto geométrico corresponde a um gráfico de barras na sintaxe do `ggplot2`. O gráfico de barras condensa a informação dispersa em pontos no gráfico de dispersão, e apresenta uma informação geral e não detalhada sobre os dados. Sua composição requer uma variável categórica e uma variável numérica (que pode ser simplesmente a quantidade).
 
 Exemplo: quantos pinguins temos em nosso banco de dados de acordo com o seu sexo?
 
@@ -153,7 +153,7 @@ pinguins %>%
   # para criar o eixo Y.
 ```
 
-No geom_bar, há duas formas de estatísticas mais usadas. A primeira delas é o count. Nesse caso, a própria função vai contar as ocorrências para gerar o gráfico. No segundo caso, a variável numérica já está presente no meu conjunto de dados. Então, a estatísticas mais apropriada é identity.
+No `geom_bar`, há duas formas de estatísticas mais usadas. A primeira delas é o `count`. Nesse caso, a própria função vai contar as ocorrências para gerar o gráfico. No segundo caso, a variável numérica já está presente no meu conjunto de dados. Então, a estatísticas mais apropriada é `identity`.
 
 ```
 pinguins %>% 
@@ -191,7 +191,7 @@ pinguins %>%
   # Empilhar (stack) valores de acordo com uma terceira variável categórica.
 ```
 
-Em geom_bar, o empilhamento pode ser realizado de múltiplas formas. É possível utilizar também o parâmetro position para definir a forma mais apropriada para esta operação. Observe:
+Em `geom_bar`, o empilhamento pode ser realizado de múltiplas formas. É possível utilizar também o parâmetro `position` para definir a forma mais apropriada para esta operação. Observe:
 
 ```
 pinguins %>% 
@@ -239,7 +239,7 @@ pinguins %>%
 
 # geom_line()
 
-`geom_line`: O geom_line corresponde ao gráfico de linha simples. Para utilizá-lo, é preciso haver duas variáveis numéricas e sequenciais a serem relacionadas. Geralmente, é empregado para visualizar flutuações ao longo do tempo, mas não apenas.
+`geom_line`: O `geom_line` corresponde ao gráfico de linha simples. Para utilizá-lo, é preciso haver duas variáveis numéricas e sequenciais a serem relacionadas. Geralmente, é empregado para visualizar flutuações ao longo do tempo, mas não apenas.
 
 * Importando os dados
 
@@ -255,7 +255,7 @@ pinguins %>%
   geom_line(aes(x = year), stat = "count")
 ```
 
-* Gerando um gráfico de linha simples com stat_identity
+* Gerando um gráfico de linha simples com `stat_identity`
 
 ```
 pinguins %>% 
@@ -275,7 +275,7 @@ pinguins %>%
 
 # geom_area()
 
-`geom_area`: Este geom funciona de modo similar ao geom_line, mas, ao invés de uma linha, ele plota uma área sólida. Além disso, é possível também empilhar as áreas.
+`geom_area`: Este *geom* funciona de modo similar ao `geom_line`, mas, ao invés de uma linha, ele plota uma área sólida. Além disso, é possível também empilhar as áreas.
 
 * Gerando um gráfico de área simples
 
@@ -307,7 +307,7 @@ pinguins %>%
 
 # geom_histogram()
 
-`geom_histogram`: O geom_histogram apresenta uma visualização gráfica em que uma variável numérica e sequencial tem sua frequência calculada.
+`geom_histogram`: O `geom_histogram` apresenta uma visualização gráfica em que uma variável numérica e sequencial tem sua frequência calculada.
 
 * Gerando um histograma simples
 
@@ -328,7 +328,7 @@ pinguins %>%
 
 # geom_tile()
 
-`geom_tile`: Este geom apresenta um mapa de calor (heatmap) a partir do cruzamento entre duas variáveis categóricas com uma terceira variável numérica sequencial.
+`geom_tile`: Este *geom* apresenta um mapa de calor (*heatmap*) a partir do cruzamento entre duas variáveis categóricas com uma terceira variável numérica sequencial.
 
 * Gerando um mapa de calor
 
@@ -341,7 +341,7 @@ pinguins %>%
 
 # geom_boxplot()
 
-`geom_boxplot`: Este objeto geométrico corresponde a um gráfico de caixa e bigode na sintaxe do ggplot2. O gráfico de caixa sintetiza um conjunto importante de informações em uma visualização extremamente condensada. É o tipo de gráfico mais comum para comparar diferentes grupos de observações. O boxplot pode ser utilizado para comparar duas variáveis numéricas ou uma variável numérica e uma categórica.
+`geom_boxplot`: Este objeto geométrico corresponde a um gráfico de caixa e bigode na sintaxe do `ggplot2`. O gráfico de caixa sintetiza um conjunto importante de informações em uma visualização extremamente condensada. É o tipo de gráfico mais comum para comparar diferentes grupos de observações. O *boxplot* pode ser utilizado para comparar duas variáveis numéricas ou uma variável numérica e uma categórica.
 
 ```
 magick::image_read("https://raw.githubusercontent.com/ombudsmanviktor/workshop_rstats/main/aula10/boxplot_explanation.png") %>% 
@@ -358,7 +358,7 @@ pinguins %>%
   geom_boxplot(aes(x = sex, y = body_mass_g))
 ```
 
-O boxplot acima é bem simples e compara uma variável categórica (sex) com uma variável numérica (body_mass_g). Vamos incrementar este gráfico com cores?
+O *boxplot* acima é bem simples e compara uma variável categórica (*sex*) com uma variável numérica (*body_mass_g*). Vamos incrementar este gráfico com cores?
 
 ```
 pinguins %>% 
@@ -374,7 +374,7 @@ pinguins %>%
   geom_boxplot(aes(x = sex, y = body_mass_g, fill = sex), color = "red")
 ```
 
-Vamos adicionar mais uma variável com fill?
+Vamos adicionar mais uma variável com *fill*?
 
 ```
 pinguins %>% 
@@ -398,24 +398,24 @@ pinguins %>%
 
 # Exportando os gráficos
 
-É possível exportar seus gráficos em diferentes formatos. Os mais comuns são em formato PDF e em formato PNG. Acesse o botão Export na área Plots do seu R Studio, para uma exportação facilitada. Depois, é só escolher a pasta onde o gráfico será salvo, o tamanho da imagem e salvar.
+É possível exportar seus gráficos em diferentes formatos. Os mais comuns são em formato PDF e em formato PNG. Acesse o botão **Export** na área **Plots** do seu R Studio, para uma exportação facilitada. Depois, é só escolher a pasta onde o gráfico será salvo, o tamanho da imagem e salvar.
 
 
 # EXERCÍCIOS
 
-Para os exercícios a seguir, compartilhe no grupo da disciplina as imagens dos gráficos exportadas em formato PNG, e, somente com o professor, o seu script R utilizado para fazer os exercícios.
+Para os exercícios a seguir, compartilhe no grupo da disciplina as imagens dos gráficos exportadas em formato PNG, e, somente com o professor, o seu *script* R utilizado para fazer os exercícios.
 
 ## EXERCÍCIO 1
 
-1. Com base nos dados que você coletou na aula anterior, crie um gráfico de dispersão que apresente os RTs de cada tweet coletado e o número de seguidores do usuário que publicou o tweet.
+1. Com base nos dados que você coletou na aula anterior, crie um gráfico de dispersão que apresente os RTs de cada *tweet* coletado e o número de seguidores do usuário que publicou o *tweet*.
 
 ## EXERCÍCIO 2
 
-1. Com base nos dados que você coletou na aula anterior, crie um gráfico de barras que apresente os cinco idiomas (lang) mais comumente empregados em sua amostra.
+1. Com base nos dados que você coletou na aula anterior, crie um gráfico de barras que apresente os cinco idiomas (*lang*) mais comumente empregados em sua amostra.
 
-Dica: Combine funções do dplyr com outra do ggplot2.
+Dica: Combine funções do `dplyr` com outra do `ggplot2`.
 
 ## EXERCÍCIO 3
 
-1. Com base nos dados que você coletou na aula anterior, crie um gráfico de caixa que apresente os tweets que obtiveram acima de 100 retweets na sua amostra, categorizados de acordo com os principais dispositivos (source) utilizados por usuários para acessar o Twitter.
+1. Com base nos dados que você coletou na aula anterior, crie um gráfico de caixa que apresente os tweets que obtiveram acima de 100 *retweets* na sua amostra, categorizados de acordo com os principais dispositivos (*source*) utilizados por usuários para acessar o Twitter.
 
