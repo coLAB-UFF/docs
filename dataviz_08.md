@@ -63,7 +63,7 @@ magick::image_read(
 
 Ocorre que nem todos os bancos de dados, inicialmente, se encontram arrumados dessa forma. Por isso, muitas vezes, é necessário arrumar esses dados.
 
-Considere, por exemplo, os conjuntos de dados a seguir. Qual(quais) desse(s) conjunto(s) é(são) tidy? E por quê?
+Considere, por exemplo, os conjuntos de dados a seguir. Qual(quais) desse(s) conjunto(s) é(são) *tidy*? E por quê?
 
 ```
 #> tabela 1 # A tibble: 6 x 4
@@ -118,7 +118,7 @@ Os dois problemas mais comuns com bancos de dados não arrumados são:
 
 2. Uma observação pode estar espalhada por várias linhas
 
-Para solucionar esses dois problemas comuns, utilizaremos o pacote tidyr e seus dois principais verbos: gather() e spread()
+Para solucionar esses dois problemas comuns, utilizaremos o pacote `tidyr` e seus dois principais verbos: `gather()` e `spread()`. 
 
 # Reunir
 
@@ -268,7 +268,7 @@ representatividade_2018 <- read.csv(
   "https://raw.githubusercontent.com/ombudsmanviktor/workshop_rstats/main/aula6/representatividade_2018.csv")
 ```
 
-Arrume os dados de modo a tornar a estrutura do banco tidy.
+Arrume os dados de modo a tornar a estrutura do banco *tidy*.
 
 DICA: Mantenha três colunas na tabela e transforme negros_pardos e mulheres em uma só variável.
 
@@ -282,5 +282,5 @@ bbb21_mensagens <- read.csv(
   "https://raw.githubusercontent.com/ombudsmanviktor/workshop_rstats/main/aula6/bbb21_mensagens.csv")
 ```
 
-A coluna métricas possui dois valores associados na mesma célula. Transforme esses dois valores em duas variáveis diferentes, considerando o primeiro valor como de RTs recebidos por um determinado tweet, e o segundo valor como o de vezes em que esse mesmo tweet foi favoritado.
+A coluna métricas possui dois valores associados na mesma célula. Transforme esses dois valores em duas variáveis diferentes, considerando o primeiro valor como de RTs recebidos por um determinado *tweet*, e o segundo valor como o de vezes em que esse mesmo *tweet* foi favoritado.
 
