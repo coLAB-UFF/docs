@@ -155,6 +155,16 @@ pinguins1 <- penguins %>%
   select(id, species, island, sex, body_mass_g, bico, medidas) # Selecionar colunas
 ```
 
+## pivot_longer
+
+Versões mais recentes do 'tidyr' vêm substituindo gradativamente a função 'gather()' pela função 'pivot_longer()', conforme o exemplo abaixo:
+
+```
+pinguins_longer <- palmerpenguins::penguins %>%
+  mutate(id = row_number()) %>% # Adicionar Chave Primária
+  tidyr::pivot_longer(cols=c("bill_length_mm", "bill_depth_mm"), names_to = "bico", values_to = "medidas")
+```
+
 # Espalhar
 
 `spread()` espalha duas ou mais colunas que representam variáveis diferentes e encontram-se reunidas. O resultado é um banco de dados mais horizontal, com um número maior de colunas, e com colunas que representam, cada uma, uma variável diferente.
@@ -184,6 +194,15 @@ pinguins2 <- pinguins1 %>%
   spread(
     bico, medidas # Espalhar colunas
     ) 
+```
+
+## pivot_wider
+
+Versões mais recentes do 'tidyr' vêm substituindo gradativamente a função 'spread()' pela função 'pivot_wider()', conforme o exemplo abaixo:
+
+```
+pinguins_wider <- pinguins_longer %>%
+  tidyr::pivot_wider(names_from = bico, values_from = medidas)
 ```
 
 # Unir
