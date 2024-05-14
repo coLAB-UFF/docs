@@ -1,21 +1,9 @@
-# Curso: Introdução à Análise de Pesquisa Quantitativa
-# Professor: Viktor Chagas
-# Semestre Letivo: 2020.2
-# Aula: 6
-# Programa de curso: https://rpubs.com/viktor/workshop_rstats
-
-library(dplyr)
-library(tidyr)
-library(stringr)
-library(magick)
-library(palmerpenguins)
 
 ### EXERCÍCIO 1
 
 # Considere o conjunto de dados abaixo:
 
-representatividade_2018 <- read.csv(
-  "https://raw.githubusercontent.com/ombudsmanviktor/workshop_rstats/main/aula6/representatividade_2018.csv")
+representatividade_2018 <- read.csv("https://raw.githubusercontent.com/ombudsmanviktor/workshop_rstats/main/aula6/representatividade_2018.csv")
 
 # Arrume os dados de modo a tornar a estrutura do banco tidy.
 # DICA: Mantenha três colunas na tabela e transforme negros_pardos e mulheres em uma só variável.
