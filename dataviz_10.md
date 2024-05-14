@@ -23,9 +23,6 @@ page_nav:
     prev:
         content: Visualização de Dados 1
         url: '/dataviz_09'
-    next:
-        content: Visualização de Dados 3
-        url: '/dataviz_11'
 
 ---
 
