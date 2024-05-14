@@ -1,80 +1,61 @@
-## CRIANDO OS DATASETS
+# EXERCÍCIO 1
 
-install.packages("devtools")
-devtools::install_github("tbrugz/ribge")
-populacao2022 <- ribge::populacao_municipios(2022)
+### Considere o conjunto de dados abaixo:
 
-install.packages("electionsBR")
-candidato_brasil <- electionsBR::elections_tse(2022, type = "candidate") %>% filter(DS_CARGO == "DEPUTADO FEDERAL")
+### bbb21_mensagens <- read.csv("https://raw.githubusercontent.com/ombudsmanviktor/workshop_rstats/main/aula6/bbb21_mensagens.csv")
 
+## 1. Procure quantas vezes Juliette é mencionada nesse conjunto de mensagens.
 
-## EXERCÍCIO 1
+### OPÇÃO A
 
-# Considere os dados do IBGE sobre a população brasileira dividida em municípios em 2019
-install.packages("devtools")
-devtools::install_github("tbrugz/ribge")
-populacao2022 <- ribge::populacao_municipios(2022)
+bbb21_mensagens$text %>% 
+  str_detect("Juliette|Juliete|juliette|juliete") %>% 
+  sum(TRUE)
 
-# 1. Quais os cinco municípios com maior população no estado do Rio de Janeiro?
-# 2. Qual a média populacional dos municípios do Rio de Janeiro?
-# 3. Quantos municípios do Rio de Janeiro estão acima dessa média?
+### OPÇÃO B
 
-populacao2022 %>% 
-  filter(uf == "RJ") %>% 
-  arrange(desc(populacao))
-
-populacao2022 %>% 
-  group_by(uf) %>% 
-  summarise(media = mean(populacao)) %>% 
-  filter(uf == "RJ")
-
-populacao2022 %>% 
-  filter(uf == "RJ") %>% 
-  filter(populacao >= mean(populacao)) %>% 
+bbb21_mensagens %>% 
+  mutate(new_text = str_detect(text, "Juliette|Juliete|juliette|juliete")) %>% 
+  filter(new_text == "TRUE") %>% 
   count()
 
-## EXERCÍCIO 2
+### OPÇÃO C
 
-# Considere os dados oficiais do TSE a respeito dos candidatos nas eleições de 2018
-install.packages("electionsBR")
-candidato_brasil <- electionsBR::elections_tse(2022, type = "candidate") %>% filter(DS_CARGO == "DEPUTADO FEDERAL")
+bbb21_mensagens %>% 
+  filter(grepl("Juliette", text)) %>% count()
 
-# 1. Crie uma tabela somente com os dados dos nomes dos candidatos na urna, siglas dos partidos,
-# estado por que se candidataram, estado em que nasceram, idade, sexo, raça e 
-# grau de instrução, nessa ordem.
-# 2. Quais partidos têm mais pretos ou pardos como candidatos?
-# 3. Quais partidos têm mais mulheres como candidatas?
-# 4. Quais partidos têm mais mulheres pretas como candidatas?
-# 5. Quantos e quais candidatos se candidataram por um estado diferente daquele que nasceram?
 
-candidato_resumo <- candidato_brasil %>% 
-  select(NM_URNA_CANDIDATO, SG_PARTIDO, SG_UF, SG_UF_NASCIMENTO, NR_IDADE_DATA_POSSE,
-         DS_GENERO, DS_COR_RACA, DS_GRAU_INSTRUCAO)
+## 2. Substitua todas as menções a Bolsonaro (ou bolsonaro ou BOLSONARO) por Bozo
 
-candidato_resumo %>% 
-  filter(DS_COR_RACA == "PARDA" | DS_COR_RACA == "PRETA") %>% 
-  group_by(SG_PARTIDO) %>% 
-  reframe(DS_COR_RACA) %>% 
-  count(SG_PARTIDO) %>% 
-  arrange(desc(n))
+### OPÇÃO A
 
-candidato_resumo %>% 
-  filter(DS_GENERO == "FEMININO") %>% 
-  group_by(SG_PARTIDO) %>% 
-  reframe(DS_GENERO) %>% 
-  count(SG_PARTIDO) %>% 
-  arrange(desc(n))
+bbb21_mensagens$text <- bbb21_mensagens$text %>% 
+  str_replace("Bolsonaro|bolsonaro|BOLSONARO", "Bozo")
 
-candidato_resumo %>% 
-  filter(DS_COR_RACA == "PRETA" & DS_GENERO == "FEMININO") %>% 
-  group_by(SG_PARTIDO) %>% 
-  reframe(DS_COR_RACA, DS_GENERO) %>% 
-  count(SG_PARTIDO) %>% 
-  arrange(desc(n))
+### OPÇÃO B
 
-candidato_resumo %>% 
-  filter(SG_UF != SG_UF_NASCIMENTO)
+bbb21_mensagens$text <- bbb21_mensagens$text %>% 
+  str_replace("Bolsonaro", "Bozo") %>% 
+  str_replace("bolsonaro", "Bozo") %>% 
+  str_replace("BOLSONARO", "Bozo")
 
-candidato_resumo %>% 
-  filter(SG_UF != SG_UF_NASCIMENTO) %>% 
-  count()
+### OPÇÃO C
+
+bozo <- bbb21_mensagens %>%
+  #filter(grepl("Bolsonaro|bolsonaro|BOLSONARO", text)) %>% 
+  mutate(text = gsub("Bolsonaro", "Bozo", text)) %>% 
+  mutate(text = gsub("bolsonaro", "Bozo", text)) %>% 
+  mutate(text = gsub("BOLSONARO", "Bozo", text))
+
+
+## 3. Transforme todos os caracteres das mensagens nos tweets em minúsculas.
+
+### OPÇÃO A
+
+bbb21_mensagens %>% mutate(text = stringr::str_to_lower(text))
+
+### OPÇÃO B
+
+bbb21_mensagens$text <- bbb21_mensagens$text %>% 
+  str_to_lower()
+
