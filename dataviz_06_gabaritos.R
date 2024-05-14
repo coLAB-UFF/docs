@@ -2,7 +2,7 @@
 
 ### Considere o conjunto de dados abaixo:
 
-### bbb21_mensagens <- read.csv("https://raw.githubusercontent.com/ombudsmanviktor/workshop_rstats/main/aula6/bbb21_mensagens.csv")
+bbb21_mensagens <- read.csv("https://raw.githubusercontent.com/ombudsmanviktor/workshop_rstats/main/aula6/bbb21_mensagens.csv")
 
 ## 1. Procure quantas vezes Juliette é mencionada nesse conjunto de mensagens.
 
