@@ -43,9 +43,7 @@ library(ggplot2)
 library(cowplot)
 ```
 
-# Plotar um mapa simples do Brasil
-
-# Plotar mapa do Brasil em cores com divisas dos estados
+# Plotar um mapa simples do Brasil (com divisas de estados)
 
 ```
 # Coletar dados de divisas de estados no mapa brasileiro em 2020
@@ -66,7 +64,7 @@ ggplot() +
   labs(subtitle="Mapa do Brasil", size=8)
 ```
 
-# Plotar mapa do Rio de Janeiro
+# Plotar mapa do Rio de Janeiro (com divisas de municípios)
 
 ```
 # Coletar dados de divisas de municípios no mapa do Rio de Janeiro em 2022
