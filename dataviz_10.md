@@ -70,6 +70,8 @@ pinguins %>%
 
 # Customizando os Eixos do Gráfico
 
+* Redefinindo as escalas
+
 ```
 pinguins %>% 
   ggplot() +
@@ -77,6 +79,21 @@ pinguins %>%
   ylim(0,300) +
   xlim(0,6500)
 ```
+
+* Rotacionando os rótulos dos eixos
+
+```
+p + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+
+* Prevenindo notação científica
+
+```
+p + scale_y_continuous(labels = ~ format(., scientific = FALSE))
+
+p + scale_x_continuous(labels = ~ format(., scientific = FALSE))
+```
+
 
 # Indicando os Valores
 
@@ -90,6 +107,7 @@ pinguins %>%
 ```
 
 * DICA: Outras customizações em: https://www.r-graph-gallery.com/
+
 
 # Customizando as Cores do Gráfico
 
