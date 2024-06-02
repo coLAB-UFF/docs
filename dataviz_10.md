@@ -23,6 +23,9 @@ page_nav:
     prev:
         content: Visualização de Dados 1
         url: '/dataviz_09'
+    next:
+        content: Mapas Coropléticos
+        url: '/dataviz_11'
 
 ---
 
