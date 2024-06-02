@@ -26,202 +26,202 @@ page_nav:
 
 ---
 
-# Percepção Gráfica
+# Mapas Coropléticos
 
-Os gráficos plotados por meio do `ggplot2` podem ser customizados em muitos níveis. Vejamos abaixo algumas possibilidades.
+Mapas são objetos poligonais. Para produzirmos um mapa coroplético, precisamos de uma variável georreferenciada, que indique as coordenadas de cada polígono a ser representado. O pacote 'geobr' facilita este processo, incorporando as coordenadas geográficas de mapas brasileiros produzidos pelo IBGE. O pacote 'sf' provê operações geométricas que interpretam as coordenadas poligonais como vetores no R.
 
 # Solicitar pacotes
 
 ```
-#install.packages("ggplot2")
+#install.packages("geobr")
+#install.packages("sf")
+#install.packages("cowplot")
+
+library(geobr)
+library(sf)
 library(ggplot2)
-library(dplyr)
-library(palmerpenguins)
-library(RColorBrewer)
+library(cowplot)
 ```
 
-# Importando os dados
+# Plotar um mapa simples do Brasil
+
+# Plotar mapa do Brasil em cores com divisas dos estados
 
 ```
-pinguins <- penguins %>% tidyr::drop_na()
-```
+# Coletar dados de divisas de estados no mapa brasileiro em 2020
+divisoes_uf <- read_state(code_state="all", year=2020)
 
-# Customizando os Títulos do Gráfico
-
-```
-pinguins %>% 
+# Plotar mapa
+divisoes_uf %>% 
   ggplot() +
-  geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
-  labs(title = "Um título bem bonito", 
-       subtitle = "Seguido de um subtítulo",
-       x = "O eixo X",
-       y = "O eixo Y",
-       caption = "A sua legenda")
+  geom_sf(fill="green4", color="yellow2", size=.15)
+
+# Customizando o mapa
+ggplot() +
+  geom_sf(data = divisoes_uf, fill="#2D3E50", color="#FEBF57", size=.15) +
+  theme_minimal() +
+  theme(axis.title=element_blank(),
+        axis.text=element_blank(),
+        axis.ticks=element_blank()) +
+  labs(subtitle="Mapa do Brasil", size=8)
 ```
 
-# Customizando o Fundo
+# Plotar mapa do Rio de Janeiro
 
 ```
-pinguins %>% 
-  ggplot() +
-  geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
-  theme(panel.background = element_rect(fill="white", colour="red"))
-```
+# Coletar dados de divisas de municípios no mapa do Rio de Janeiro em 2022
+RJ_municipios <- read_municipality(
+  code_muni = "RJ", 
+  year= 2022,
+  showProgress = FALSE
+)
 
-# Customizando os Eixos do Gráfico
-
-* Redefinindo as escalas
-
-```
-pinguins %>% 
-  ggplot() +
-  geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
-  ylim(0,300) +
-  xlim(0,6500)
-```
-
-* Rotacionando os rótulos dos eixos
-
-```
-p + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
-```
-
-* Prevenindo notação científica
-
-```
-p + scale_y_continuous(labels = ~ format(., scientific = FALSE))
-
-p + scale_x_continuous(labels = ~ format(., scientific = FALSE))
-```
-
-
-# Indicando os Valores
-
-```
-pinguins %>%
-  filter(species == "Adelie") %>% 
-  ggplot() +
-  geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
-  geom_text(aes(label = body_mass_g, x = body_mass_g, y = flipper_length_mm), 
-            color = "#000000", size = 2, hjust = -1, vjust = 0)
-```
-
-* DICA: Outras customizações em: https://www.r-graph-gallery.com/
-
-
-# Customizando as Cores do Gráfico
-
-```
-pinguins %>% 
-  ggplot() +
-  geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
-  scale_color_manual(values=c("black", "red", "yellow"))
-
-pinguins %>% 
-  ggplot() +
-  geom_bar(aes(x = sex, y = body_mass_g, fill = sex), stat = "identity") +
-  coord_flip() +
-  scale_fill_manual(values=c("black", "red"))
-
-RColorBrewer::display.brewer.all()
-
-pinguins %>% 
-  ggplot() +
-  geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
-  scale_colour_brewer(palette = "Dark2", direction = 1)
-
-pinguins %>% 
-  ggplot() +
-  geom_bar(aes(x = sex, y = body_mass_g, fill = sex), stat = "identity") +
-  coord_flip() +
-  scale_fill_brewer(palette = "Set2", direction = 1)
-```
-
-# Customizando o Tema
-
-```
-pinguins %>% 
-  ggplot() +
-  geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
-  theme_bw()
-
-pinguins %>% 
-  ggplot() +
-  geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
-  theme_classic()
-
-pinguins %>% 
-  ggplot() +
-  geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
-  theme_dark()
-
-pinguins %>% 
-  ggplot() +
-  geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
-  theme_light()
-
-pinguins %>% 
-  ggplot() +
-  geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
+# Plotar mapa
+ggplot() +
+  geom_sf(data=RJ_municipios, fill="blue3", color="white", size=.10) +
+  labs(subtitle="Municípios do Rio de Janeiro, 2022", size=8) +
   theme_minimal()
-
-pinguins %>% 
-  ggplot() +
-  geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
-  theme_void()
 ```
 
-# Gráficos Interativos
-
-Você também pode criar gráficos interativos no R. Para isso, vamos usar os seguintes pacotes:
+# Para conhecer todas as funções do pacote `geobr`
 
 ```
-#install.packages("ggplot2")
-#install.packages("plotly")
-library(ggplot2)
-library(plotly)
-library(dplyr)
-library(palmerpenguins)
+# Criar dataframe para apresentar os dados disponíveis
+geobr_funcoes <- list_geobr()
 ```
 
-* *Scatterplot* Interativo
+# Plotar evolução dos mapas brasileiros lado a lado
 
 ```
-grafico1 <- pinguins %>% 
-  ggplot() +
-  geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species))
+# Coletando dados históricos de fronteiras
+fronteiras_1872 <- read_state(code_state="all", year=1872)
+fronteiras_1900 <- read_state(code_state="all", year=1900)
+fronteiras_1933 <- read_state(code_state="all", year=1933)
+fronteiras_1960 <- read_state(code_state="all", year=1960)
+fronteiras_1991 <- read_state(code_state="all", year=1991)
+fronteiras_2020 <- read_state(code_state="all", year=2020)
 
-ggplotly(grafico1)
+# Gerandos os mapas individuais
+mapa1872 <- ggplot() +
+  geom_sf(data=fronteiras_1872, fill="grey25", color="grey75", size=.07) +
+  theme_minimal() +
+  theme(axis.title=element_blank(),
+        axis.text=element_blank(),
+        axis.ticks=element_blank()) +
+  labs(subtitle="1872", size=8)
+
+mapa1900 <- ggplot() +
+  geom_sf(data=fronteiras_1900, fill="grey25", color="grey75", size=.07) +
+  theme_minimal() +
+  theme(axis.title=element_blank(),
+        axis.text=element_blank(),
+        axis.ticks=element_blank()) +
+  labs(subtitle="1900", size=8)
+
+mapa1933 <- ggplot() +
+  geom_sf(data=fronteiras_1933, fill="grey25", color="grey75", size=.07) +
+  theme_minimal() +
+  theme(axis.title=element_blank(),
+        axis.text=element_blank(),
+        axis.ticks=element_blank()) +
+  labs(subtitle="1933", size=8)
+
+mapa1960 <- ggplot() +
+  geom_sf(data=fronteiras_1960, fill="grey25", color="grey75", size=.07) +
+  theme_minimal() +
+  theme(axis.title=element_blank(),
+        axis.text=element_blank(),
+        axis.ticks=element_blank()) +
+  labs(subtitle="1960", size=8)
+
+mapa1991 <- ggplot() +
+  geom_sf(data=fronteiras_1991, fill="grey25", color="grey75", size=.07) +
+  theme_minimal() +
+  theme(axis.title=element_blank(),
+        axis.text=element_blank(),
+        axis.ticks=element_blank()) +
+  labs(subtitle="1991", size=8)
+
+mapa2020 <- ggplot() +
+  geom_sf(data=fronteiras_2020, fill="grey25", color="grey75", size=.07) +
+  theme_minimal() +
+  theme(axis.title=element_blank(),
+        axis.text=element_blank(),
+        axis.ticks=element_blank()) +
+  labs(subtitle="2020", size=8)
+
+# Plotando os mapas lado a lado
+(mapa1872 | mapa1900 | mapa1933) / (mapa1960 | mapa1991 | mapa2020)
 ```
 
-* *Lineplot* Interativo
+# Plotar mapa de reservas indígenas
 
 ```
-grafico2 <- pinguins %>% 
-  count(year, species) %>% 
-  ggplot() +
-  geom_line(aes(x = year, y = n, group = species, color = species))
+# Coletar dados de reservas indígenas
+reservas <- geobr::read_indigenous_land(201907)
 
-ggplotly(grafico2)
+# Criar objeto para selecionar o estado do Acre
+AC_municipios <- read_municipality( code_muni = "AC", year= 2020)
+
+# Plotar o estado do Acre com divisas dos municípios
+plot(AC_municipios$geom)
+
+# Plotar o estado do Acre com divisas dos municípios e em cores
+ggplot() +
+    geom_sf(data=AC_municipios, fill="#2D3E50", color="#FEBF57", size=.15) + 
+      theme_minimal() +
+      theme(axis.title=element_blank(),
+        axis.text=element_blank(),
+        axis.ticks=element_blank()) +
+      labs(subtitle="Acre", size=8)
+
+# Selecionar somente as reservas Kaxinawá
+reservas %>% 
+  mutate(row = row_number()) %>% 
+  mutate(kaxinawa = stringr::str_detect(etnia_nome, "[K|k]axinaw[a|á]")) %>% 
+  filter(kaxinawa == TRUE) %>% 
+  select(row)
+
+# Plotar apenas áreas específicas de reservas no Acre (todas as áreas Kaxinawá)
+ggplot() +
+  geom_sf(data=AC_municipios$geom, color="#bcbcbc", size=.15, show.legend = FALSE) +
+  geom_sf(data=reservas$geom[14], fill="#FE0000", color="#FE0000", size=.15) +
+  geom_sf(data=reservas$geom[189], fill="#FE0000", color="#FE0000", size=.15) +
+  geom_sf(data=reservas$geom[257], fill="#FE0000", color="#FE0000", size=.15) +
+  geom_sf(data=reservas$geom[260], fill="#FE0000", color="#FE0000", size=.15) +
+  geom_sf(data=reservas$geom[261], fill="#FE0000", color="#FE0000", size=.15) +
+  geom_sf(data=reservas$geom[262], fill="#FE0000", color="#FE0000", size=.15) +
+  geom_sf(data=reservas$geom[263], fill="#FE0000", color="#FE0000", size=.15) +
+  geom_sf(data=reservas$geom[264], fill="#FE0000", color="#FE0000", size=.15) +
+  geom_sf(data=reservas$geom[265], fill="#FE0000", color="#FE0000", size=.15) +
+  geom_sf(data=reservas$geom[266], fill="#FE0000", color="#FE0000", size=.15) +
+  geom_sf(data=reservas$geom[267], fill="#FE0000", color="#FE0000", size=.15) +
+  geom_sf(data=reservas$geom[281], fill="#FE0000", color="#FE0000", size=.15) +
+    labs(subtitle="Kaxinawá", size=8) +
+  theme_minimal() +
+  theme(axis.title=element_blank(),
+        axis.text=element_blank(),
+        axis.ticks=element_blank())
 ```
 
-* *Boxplot* Interativo
+# Plotar mapa eleitoral do segundo turno em 2022
 
 ```
-grafico3 <- pinguins %>% 
-  ggplot() +
-  geom_boxplot(aes(x = sex, y = body_mass_g))
+# Coletando os dados de resultados eleitorais por estados em 2022
+resultados_uf_2022 <- read.csv(
+  "https://raw.githubusercontent.com/coLAB-UFF/docs/main/data/resultados_uf_2022.csv")
 
-ggplotly(grafico3)
-```
+# Mergindo as bases de dados (resultados eleitorais + divisas de estados)
+divisoes_uf <- read_state(code_state="all", year=2020) %>% 
+  mutate(uf = abbrev_state)
 
-* *Barplot* Interativo
+mapa <- left_join(divisoes_uf, resultados_uf_2022, by = "uf")
 
-```
-grafico4 <- pinguins %>% 
-  ggplot() +
-  geom_bar(aes(x = island), stat = "count")
-
-ggplotly(grafico4)
+# Plotando o mapa eleitoral
+ggplot() +
+  geom_sf(data = mapa, aes(fill = vencedor), color = NA, size = .15) +
+  labs(subtitle = "Resultado: Eleições Presidenciais 2022", size = 8) +
+  scale_fill_manual(values = c("seagreen", "red3")) +
+  theme_minimal()
 ```
 
