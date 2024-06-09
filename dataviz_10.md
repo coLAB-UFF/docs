@@ -97,6 +97,13 @@ p + scale_y_continuous(labels = ~ format(., scientific = FALSE))
 p + scale_x_continuous(labels = ~ format(., scientific = FALSE))
 ```
 
+* Alterando as fontes e tamanhos do título e subtítulo
+
+```
+p + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1), legend.text = element_text(size = 14), plot.title = element_text(family="Times New Roman", size=14), plot.subtitle = element_text(family="Times New Roman", size=14))
+```
+
+
 
 # Indicando os Valores
 
