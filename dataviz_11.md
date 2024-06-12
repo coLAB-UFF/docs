@@ -35,12 +35,12 @@ Mapas são objetos poligonais. Para produzirmos um mapa coroplético, precisamos
 ```
 #install.packages("geobr")
 #install.packages("sf")
-#install.packages("cowplot")
+#install.packages("patchwork")
 
 library(geobr)
 library(sf)
 library(ggplot2)
-library(cowplot)
+library(patchwork)
 ```
 
 # Plotar um mapa simples do Brasil (com divisas de estados)
