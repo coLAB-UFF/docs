@@ -60,9 +60,11 @@ Instale sempre primeiro o software R e depois o R Studio. Usuários de Mac Os de
 # Programação
 
 <details>
+    
     <summary><strong>Quadro de Encontros e Atividades</strong></summary>
 
 | Data | Discussão Conceitual | Prática Laboratorial |
+| -------- | -------- | -------- | 
 | 17/03 | Definições Iniciais. Origens da Visualização de Dados. | Instalação do R e R Studio. Apresentação e Primeiros Passos na Linguagem R. |
 | 24/03 | Arquitetura da Informação. Formatos de Tabelas de Dados. Repositórios. | Objetos e Estruturas de Dados. |
 
@@ -95,6 +97,7 @@ Instale sempre primeiro o software R e depois o R Studio. Usuários de Mac Os de
 30/06
 
 07/07
+
 </details>
 
 
