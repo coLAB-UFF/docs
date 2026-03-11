@@ -5,8 +5,8 @@ keywords:
 comments: false
 
 # Hero section
-title: dataviz2
-description: Curso de análise e visualização de dados 2
+title: dataviz
+description: Curso de análise e visualização de dados
 
 # Author box
 author:
