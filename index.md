@@ -24,9 +24,13 @@ grid_navigation:
       excerpt: Raspagem de dados das mídias sociais
       cta: Mais
       url: '/zeeschuimer'
-    - title: dataviz
+    - title: dataviz (curso rápido)
       excerpt: Análise e visualização de dados
       cta: Mais
       url: '/dataviz'
+    - title: dataviz
+      excerpt: Análise e visualização de dados
+      cta: Mais
+      url: '/dataviz2'
       
 ---
