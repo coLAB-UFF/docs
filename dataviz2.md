@@ -60,7 +60,7 @@ Instale sempre primeiro o software R e depois o R Studio. Usuários de Mac Os de
 # Programação
 
 <details>
-    <summary>**Programação**</summary>
+    <summary><strong>Programação</strong></summary>
 17/03
 
 24/03
