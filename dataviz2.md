@@ -65,37 +65,22 @@ Instale sempre primeiro o software R e depois o R Studio. Usuários de Mac Os de
 | Data | Discussão Conceitual | Prática Laboratorial |
 | -------- | -------- | -------- | 
 | 17/03 | Definições Iniciais. Origens da Visualização de Dados. | Instalação do R e R Studio. Apresentação e Primeiros Passos na Linguagem R. |
-| 24/03 | Arquitetura da Informação. Formatos de Tabelas de Dados. Repositórios. | Objetos e Estruturas de Dados. |
-
-31/03
-
-07/04
-
-14/04
-
-21/04
-
-28/04
-
-05/05
-
-12/05
-
-19/05
-
-26/05
-
-02/06
-
-09/06
-
-16/06
-
-23/06
-
-30/06
-
-07/07
+| 24/03 | Arquitetura da Informação. Formatos de Tabelas de Dados. Repositórios. | Objetos e Estruturas de Dados (vetor, lista, dataframe). |
+| 31/03 | Amostra e Amostragem. Tipos de Dados e Tipos de Variáveis. | Instalação de Pacotes. dplyr |
+| 07/04 | Estatísticas Descritivas 1. | Estatísticas de Frequência ou Posição. Manipulação de Dados 1 a 4 dplyr |
+| 14/04 | Estatísticas Descritivas 2. | Estatísticas de Variabilidade ou Dispersão. tidyr | 
+| 21/04 | Feriado | Feriado |
+| 28/04 | Métodos Gráficos 1. | Gráfico de Barras, Gráfico de Linha, Gráfico de Pizza. ggplot2 |
+| 05/05 | Métodos Gráficos 2. | Histograma, Dispersão, Boxplot. Diagramas e Mapas Coropléticos. ggplot2 |
+| 12/05 | Percepção Gráfica 1. |  |
+| 19/05 | Percepção Gráfica 2. |  |
+| 26/05 | Introdução à Correlação e Regressão 1. |  |
+| 02/06 | Introdução à Correlação e Regressão 2. |  |
+| 09/06 | Introdução à Análise Lexical. OU Teste de Hipóteses OU RMarkdown 1 |  |
+| 16/06 | Introdução à Análise de Redes. OU RMarkdown 2 OU Mapas | | 
+| 23/06 | Encerramento. |  |
+| 30/06 | Livre |  |
+| 07/07 | Livre |  |
 
 </details>
 
