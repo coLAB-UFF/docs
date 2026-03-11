@@ -27,16 +27,16 @@ page_nav:
 
 # Proposta do Curso
 
-A disciplina se propõe a introduzir fundamentos básicos da análise e da visualização de dados. O curso pretende munir os alunos de conhecimento prático e laboratorial acerca da análise exploratória de dados. Os alunos aprenderão a ler e criar diferentes tipos de gráficos, a produzir análises sobre estatísticas descritivas, análises textuais lexicométricas, análises georreferenciadas e análises de redes sociais. Além disso, eles receberão treinamento para a coleta de dados de diferentes repositórios públicos, bem como para limpar e organizar bancos de dados (data wrangling).
+O desenvolvimento da assim chamada ciência de dados é francamente devedor de experiências pregressas no campo da estatística, que tornaram-se mais sofisticadas com a introdução de técnicas inovadoras de visualização de dados. Fundamentos hoje extensamente difundidos, como os gráficos de barra ou de linha, primeiro surgiram no século XVIII, com William Playfair, e décadas mais adiante foram aprimoradas por pioneiras como Florence Nightingale. Mas só no século XX, com a ciência computacional, e o princípio da dataficação da vida social permitiram avançar naquilo que John Tukey apropriadamente denominou de análise exploratória de dados. Nos últimos anos, em decorrência da penetração cada vez maior das plataformas digitais nas múltiplas dimensões do cotidiano, ganharam novo impulso habilidades como o design da informação, a percepção gráfica, e, claro, a mineração de dados.
 
-Com caráter de oficina, o curso utilizará variados softwares e aplicativos para suas operações, e poderá fornecer ainda capacitação básica e instrumental em linguagem R e na gramática de gráficos de seu principal pacote de visualização de dados, ggplot2. Os conhecimentos adquiridos poderão instrumentalizar futuros profissionais analistas de dados, cientistas de dados e business intelligence (BI).
-
+Este curso se propõe a introduzir fundamentos básicos da análise e da visualização de dados para pesquisadores em formação no campo das humanidades. Seu principal objetivo é munir alunos e alunas de conhecimento prático e laboratorial acerca da análise exploratória de dados, de modo que possam se apropriar dessa técnica para o desenvolvimento metodológico de suas próprias investigações. Com caráter de oficina, o curso se utilizará, de forma instrumental, de variadas aplicações opensource, com ênfase na linguagem R e na gramática de gráficos de seu principal pacote de visualização de dados, o ggplot2, para fornecer tanto uma discussão conceitual, quanto capacidades empíricas para lidar com formatos de dados abertos. As aulas contarão com momentos expositivos e práticas orientadas. Alunos e alunas aprenderão a ler e criar diferentes tipos de gráficos, a produzir análises sobre estatísticas descritivas, análises textuais lexicométricas, análises georreferenciadas e análises de redes sociais. Além disso, receberão treinamento para a coleta de dados de repositórios públicos, bem como para limpar e organizar grandes bancos de dados (data wrangling).
 
 # Requisitos e Funcionamento
 
-O curso tem caráter de oficina. Serão ministradas três aulas síncronas com 4h de duração cada. Os alunos receberão material de apoio, documentação e scripts com os principais comandos executados a cada aula. É necessário ter um computador (desktop ou laptop) com acesso à internet para o curso. Solicita-se a instalação prévia dos seguintes softwares, todos opensource:
+O curso tem caráter de oficina. Os alunos receberão material de apoio, documentação e scripts com os principais comandos executados a cada aula. É necessário ter um computador (desktop ou laptop) com acesso à internet para o curso. Solicita-se a instalação prévia dos seguintes softwares, todos opensource:
 
 * [R <https://cran-r.c3sl.ufpr.br/>](https://cran-r.c3sl.ufpr.br/) *(versões para Linux, Mac OS e Windows disponíveis)* 
+
 * [R Studio <https://www.rstudio.com/products/rstudio/download/#download>](https://www.rstudio.com/products/rstudio/download/#download) *(versões para Linux, Mac OS e Windows disponíveis)*
 
 Instale sempre primeiro o software R e depois o R Studio. Usuários de Mac Os devem instalar também o [X Quartz <https://www.xquartz.org/>](https://www.xquartz.org/). Durante o curso, outros pacotes e plugins serão instalados, conforme orientação do(a) professor(a) responsável.
@@ -48,13 +48,53 @@ Instale sempre primeiro o software R e depois o R Studio. Usuários de Mac Os de
 
 # Principais Pacotes R
 
-**dplyr** &middot; # O dplyr é um dos pacotes do Tidyverse e é voltado especificamente para o trabalho de manipulação de dados. O dplyr se estrutura em torno de um conjunto de verbos, que operam como funções para a manipulação de grandes bancos de dados. Para mais detalhes, acesse: https://dplyr.tidyverse.org/
+**dplyr** &middot; # O dplyr é um dos pacotes do Tidyverse e é voltado especificamente para o trabalho de manipulação de dados. O dplyr se estrutura em torno de um conjunto de verbos, que operam como funções para a manipulação de grandes bancos de dados. Para mais detalhes, acesse: [dplyr](https://dplyr.tidyverse.org/)
 
-**tidyr** &middot; # O tidyr é um dos pacotes do Tidyverse e é voltado especificamente para a arrumação de bancos de dados. Para mais detalhes, acesse: https://tidyr.tidyverse.org/
+**tidyr** &middot; # O tidyr é um dos pacotes do Tidyverse e é voltado especificamente para a arrumação de bancos de dados. Para mais detalhes, acesse: [tidyr](https://tidyr.tidyverse.org/)
 
-**stringr** &middot; # O stringr é um dos pacotes do Tidyverse e é voltado para a manipulação de strings textuais. Para mais detalhes, acesse: https://stringr.tidyverse.org/
+**stringr** &middot; # O stringr é um dos pacotes do Tidyverse e é voltado para a manipulação de strings textuais. Para mais detalhes, acesse: [stringr](https://stringr.tidyverse.org/)
 
-**ggplot2** &middot; # O ggplot2 é um sistema para criação de gráficos, baseado em uma grámática própria e em camadas estéticas. Para mais detalhes, acesse: https://ggplot2.tidyverse.org/
+**ggplot2** &middot; # O ggplot2 é um sistema para criação de gráficos, baseado em uma grámática própria e em camadas estéticas. Para mais detalhes, acesse: [ggplot2](https://ggplot2.tidyverse.org/)
+
+
+# Programação
+
+<details>
+    <summary>Programação</summary>
+17/03
+
+24/03
+
+31/03
+
+07/04
+
+14/04
+
+21/04
+
+28/04
+
+05/05
+
+12/05
+
+19/05
+
+26/05
+
+02/06
+
+09/06
+
+16/06
+
+23/06
+
+30/06
+
+07/07
+</details>
 
 
 # Referências Adicionais
