@@ -28,7 +28,7 @@ grid_navigation:
       excerpt: Análise e visualização de dados
       cta: Mais
       url: '/dataviz'
-    - title: dataviz
+    - title: dataviz (completo)
       excerpt: Análise e visualização de dados
       cta: Mais
       url: '/dataviz2'
