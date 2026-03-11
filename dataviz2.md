@@ -60,7 +60,6 @@ Instale sempre primeiro o software R e depois o R Studio. Usuários de Mac Os de
 # Programação
 
 <details>
-    
     <summary><strong>Quadro de Encontros e Atividades</strong></summary>
 
 | Data | Discussão Conceitual | Prática Laboratorial |
