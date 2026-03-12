@@ -64,19 +64,19 @@ Instale sempre primeiro o software R e depois o R Studio. Usuários de Mac Os de
 
 | Data | Discussão Conceitual | Prática Laboratorial | Leituras Recomendadas |
 | -------- | -------- | -------- | -------- | 
-| 17/03 | Definições Iniciais. Origens da Visualização de Dados | Instalação do R e R Studio. Apresentação e Primeiros Passos na Linguagem R | D’Ignazio; Aquino |
-| 24/03 | Arquitetura da Informação. Formatos de Tabelas de Dados. Repositórios | Objetos e Estruturas de Dados (vetor, lista, dataframe). Instalação de Pacotes | Wurman, R.; Spiegelhalter, D. |
-| 31/03 | Amostra e Amostragem. Tipos de Dados e Tipos de Variáveis |  Manipulação de Dados 1 (dplyr): select, filter, mutate, arrange, group_by, sommarise, count | Figueiredo Filho, D.; Wickham |
-| 07/04 | Estatísticas Descritivas 1. Estatísticas de Frequência ou Posição | Manipulação de Dados 2 (dplyr, stringr): sample_n, between, case_when, str_ | Bruce, P. & Bruce, A.; Wickham |
-| 14/04 | Estatísticas Descritivas 2. Estatísticas de Variabilidade ou Dispersão | Manipulação de Dados 3 (dplyr): joins, binds | Wickham |
+| 17/03 | Definições Iniciais. Origens da Visualização de Dados | Instalação do R e R Studio. Apresentação e Primeiros Passos na Linguagem R | Cervi (a); D’Ignazio; Aquino; Oliveira, Guerra & McDonnell |
+| 24/03 | Arquitetura da Informação. Formatos de Tabelas de Dados. Repositórios | Objetos e Estruturas de Dados (vetor, lista, dataframe). Instalação de Pacotes | Wurman; Spiegelhalter; Aquino |
+| 31/03 | Amostra e Amostragem. Tipos de Dados e Tipos de Variáveis |  Manipulação de Dados 1 (dplyr): select, filter, mutate, arrange, group_by, sommarise, count | Figueiredo Filho (a); Wickham (a) |
+| 07/04 | Estatísticas Descritivas 1. Estatísticas de Tendência Central ou Posição | Manipulação de Dados 2 (dplyr, stringr, lubridate): sample_n, between, case_when, str_ | Bruce & Bruce; Wickham (a) |
+| 14/04 | Estatísticas Descritivas 2. Estatísticas de Variabilidade ou Dispersão | Manipulação de Dados 3 (dplyr): joins, binds | Wickham (a) |
 | 21/04 | Feriado | Feriado | Feriado |
-| 28/04 | Métodos Gráficos 1. Gráfico de Barras, Gráfico de Linha, Gráfico de Pizza | Manipulação de Dados 4 + Arrumação de Dados (tidyr): gather, spread, pivot_longer, pivot_wider, unite, separate | Cleveland; Knaflic |
-| 05/05 | Métodos Gráficos 2. Histograma, Dispersão, Boxplot. Diagramas e Mapas Coropléticos | Visualização de Dados 1 (ggplot2) | Knaflic |
+| 28/04 | Métodos Gráficos 1. Gráfico de Barras, Gráfico de Linha, Gráfico de Pizza | Manipulação de Dados 4 + Arrumação de Dados (tidyr): gather, spread, pivot_longer, pivot_wider, unite, separate | Wilkinson; Knaflic |
+| 05/05 | Métodos Gráficos 2. Histograma, Dispersão, Boxplot. Diagramas e Mapas Coropléticos | Visualização de Dados 1 (ggplot2) | Tukey; Knaflic |
 | 12/05 | Percepção Gráfica 1 | Visualização de Dados 2 (ggplot2) | Cleveland; Cairo |
-| 19/05 | Percepção Gráfica 2 | Visualização de Dados 3 (ggplot2) | Krause, Rennie & Tarran; Wickham |
-| 26/05 | Introdução à Correlação e Regressão 1 | Correlação de Pearson. Linear Models (LM) | Figueiredo Filho |
+| 19/05 | Percepção Gráfica 2 | Visualização de Dados 3 (ggplot2) | Tufte; Krause, Rennie & Tarran; Nordmann et al.; Wickham (b) |
+| 26/05 | Introdução à Correlação e Regressão 1 | Correlação de Pearson. Linear Models (LM) | Figueiredo Filho (b) E Figueiredo Filho (c) |
 | 02/06 | Introdução à Correlação e Regressão 2 | Generalized Linear Models (GLM) |  |
-| 09/06 | Introdução à Análise Lexical *OU* Introdução aos Testes de Hipóteses (Qui-Quadrado de Pearson, Teste t, ANOVA etc.) *OU* RMarkdown 1 | IramuteQ *OU* R + RMarkdown | Salviati *OU* Cervi |
+| 09/06 | Introdução à Análise Lexical *OU* Introdução aos Testes de Hipóteses (Resíduos Padronizados, Qui-Quadrado de Pearson, Teste t, ANOVA etc.) *OU* RMarkdown 1 | IramuteQ *OU* R + RMarkdown | Salviati *OU* Costa; Cervi (b); Cervi (c) |
 | 16/06 | Introdução à Análise de Redes *OU* Mapas Coropléticos *OU* RMarkdown 2 | Gephi *OU* R + RMarkdown | Cherven |
 | 23/06 | Encerramento | Definição de Trabalhos Finais |  |
 | 30/06 | Livre | Livre | Livre |
@@ -93,6 +93,8 @@ Instale sempre primeiro o software R e depois o R Studio. Usuários de Mac Os de
 
 * Cairo, A. (2016). Truthful Art Data: Charts, and Maps for Communication.
 
+* Cervi, E. (2009). Métodos Quantitativos nas Ciências Sociais: Uma Abordagem Alternativa ao Fetichismo dos Números e ao Debate dos Qualitativistas.
+
 * Cervi, E. (2019). Manual de Métodos Quantitativos para Iniciantes em Ciência Política, vol. 1.
 
 * Cervi, E. (2019). Manual de Métodos Quantitativos para Iniciantes em Ciência Política, vol. 2.
@@ -101,23 +103,39 @@ Instale sempre primeiro o software R e depois o R Studio. Usuários de Mac Os de
 
 * Cleveland, W. S. (1985). The Elements of Graphing Data.
 
+* Costa, S. F. (1992). Introdução Ilustrada à Estatística (com Muito Humor).
+
 * D’Ignazio, C. (2020). Data Feminism.
 
 * Figueiredo Filho, D. (2019). Métodos Quantitativos em Ciência Política.
+
+* Figueiredo Filho, D. (2024). Correlação de Pearson para Bebês.
+
+* Figueiredo Filho, D. (2024). Regressão Linear para Bebês.
 
 * Knaflic, C. N. (2019). Storytelling com Dados: um Guia sobre Visualização de Dados para Profissionais de Negócios.
 
 * Krause, A., Rennie, N., & Tarran, B. (2023). Best Practices for Data Visualisation Insights.
 
+* Nordmann, E., McAleer, P., Toivo, W., Paterson, H., & DeBruine, L. M. (2022). Data Visualization Using R forResearchers Who Do Not Use R.
+
 * Oliveira, P. F., Guerra, S., & McDonnell, R. (2018). Ciência de Dados com R: Introdução.
+
+* Playfair, W. (1801). The Commercial and Political Atlas.
 
 * Salviati, M. E. (2017). Manual do Aplicativo Iramuteq.
 
 * Spiegelhalter, D. (2022). A arte da estatística: Como Aprender a Partir de Dados.
 
+* Tuft, E. (). Envisioning Information.
+
+* Tukey, J. (1977). Exploratory Data Analysis.
+
 * Wickham, H. (2019). R para Ciência de Dados: importe, arrume, transforme, visualize e modele dados.
 
 * Wickham, H. (2010). ggplot2: Elegant Graphics for Data Analysis.
+
+* Wilkinson, L. (2005). The Grammar of Graphics.
 
 * Wurman, R. S. (1999). Ansiedade De Informação: Como Transformar Informação em Compreensão.
 
