@@ -62,25 +62,25 @@ Instale sempre primeiro o software R e depois o R Studio. Usuários de Mac Os de
 <details>
     <summary><strong>Quadro de Encontros e Atividades</strong></summary>
 
-| Data | Discussão Conceitual | Prática Laboratorial |
-| -------- | -------- | -------- | 
-| 17/03 | Definições Iniciais. Origens da Visualização de Dados | Instalação do R e R Studio. Apresentação e Primeiros Passos na Linguagem R |
-| 24/03 | Arquitetura da Informação. Formatos de Tabelas de Dados. Repositórios | Objetos e Estruturas de Dados (vetor, lista, dataframe). Instalação de Pacotes |
-| 31/03 | Amostra e Amostragem. Tipos de Dados e Tipos de Variáveis |  Manipulação de Dados 1 (dplyr): select, filter, mutate, arrange, group_by, sommarise, count |
-| 07/04 | Estatísticas Descritivas 1. Estatísticas de Frequência ou Posição | Manipulação de Dados 2 (dplyr, stringr): sample_n, between, case_when, str_ |
-| 14/04 | Estatísticas Descritivas 2. Estatísticas de Variabilidade ou Dispersão | Manipulação de Dados 3 (dplyr): joins, binds | 
-| 21/04 | Feriado | Feriado |
-| 28/04 | Métodos Gráficos 1. Gráfico de Barras, Gráfico de Linha, Gráfico de Pizza | Manipulação de Dados 4 + Arrumação de Dados (tidyr): gather, spread, pivot_longer, pivot_wider, unite, separate |
-| 05/05 | Métodos Gráficos 2. Histograma, Dispersão, Boxplot. Diagramas e Mapas Coropléticos | Visualização de Dados 1 (ggplot2) |
-| 12/05 | Percepção Gráfica 1 | Visualização de Dados 2 (ggplot2) |
-| 19/05 | Percepção Gráfica 2 | Visualização de Dados 3 (ggplot2) |
-| 26/05 | Introdução à Correlação e Regressão 1 | Correlação de Pearson. Linear Models (LM) |
-| 02/06 | Introdução à Correlação e Regressão 2 | Generalized Linear Models (GLM) |
-| 09/06 | Introdução à Análise Lexical *OU* Introdução aos Testes de Hipóteses (Qui-Quadrado de Pearson, Teste t, ANOVA etc.) *OU* RMarkdown 1 | IramuteQ *OU* R + RMarkdown |
-| 16/06 | Introdução à Análise de Redes *OU* Mapas Coropléticos *OU* RMarkdown 2 | Gephi *OU* R + RMarkdown |
-| 23/06 | Encerramento | Definição de Trabalhos Finais |
-| 30/06 | Livre | Livre |
-| 07/07 | Livre | Livre |
+| Data | Discussão Conceitual | Prática Laboratorial | Leituras Recomendadas |
+| -------- | -------- | -------- | -------- | 
+| 17/03 | Definições Iniciais. Origens da Visualização de Dados | Instalação do R e R Studio. Apresentação e Primeiros Passos na Linguagem R | D’Ignazio; Aquino |
+| 24/03 | Arquitetura da Informação. Formatos de Tabelas de Dados. Repositórios | Objetos e Estruturas de Dados (vetor, lista, dataframe). Instalação de Pacotes | Wurman, R.; Spiegelhalter, D. |
+| 31/03 | Amostra e Amostragem. Tipos de Dados e Tipos de Variáveis |  Manipulação de Dados 1 (dplyr): select, filter, mutate, arrange, group_by, sommarise, count | Figueiredo Filho, D.; Wickham |
+| 07/04 | Estatísticas Descritivas 1. Estatísticas de Frequência ou Posição | Manipulação de Dados 2 (dplyr, stringr): sample_n, between, case_when, str_ | Bruce, P. & Bruce, A.; Wickham |
+| 14/04 | Estatísticas Descritivas 2. Estatísticas de Variabilidade ou Dispersão | Manipulação de Dados 3 (dplyr): joins, binds | Wickham |
+| 21/04 | Feriado | Feriado | Feriado |
+| 28/04 | Métodos Gráficos 1. Gráfico de Barras, Gráfico de Linha, Gráfico de Pizza | Manipulação de Dados 4 + Arrumação de Dados (tidyr): gather, spread, pivot_longer, pivot_wider, unite, separate | Cleveland; Knaflic |
+| 05/05 | Métodos Gráficos 2. Histograma, Dispersão, Boxplot. Diagramas e Mapas Coropléticos | Visualização de Dados 1 (ggplot2) | Knaflic |
+| 12/05 | Percepção Gráfica 1 | Visualização de Dados 2 (ggplot2) | Cleveland; Cairo |
+| 19/05 | Percepção Gráfica 2 | Visualização de Dados 3 (ggplot2) | Krause, Rennie & Tarran; Wickham |
+| 26/05 | Introdução à Correlação e Regressão 1 | Correlação de Pearson. Linear Models (LM) | Figueiredo Filho |
+| 02/06 | Introdução à Correlação e Regressão 2 | Generalized Linear Models (GLM) |  |
+| 09/06 | Introdução à Análise Lexical *OU* Introdução aos Testes de Hipóteses (Qui-Quadrado de Pearson, Teste t, ANOVA etc.) *OU* RMarkdown 1 | IramuteQ *OU* R + RMarkdown | Salviati *OU* Cervi |
+| 16/06 | Introdução à Análise de Redes *OU* Mapas Coropléticos *OU* RMarkdown 2 | Gephi *OU* R + RMarkdown | Cherven |
+| 23/06 | Encerramento | Definição de Trabalhos Finais |  |
+| 30/06 | Livre | Livre | Livre |
+| 07/07 | Livre | Livre | Livre |
 
 </details>
 
