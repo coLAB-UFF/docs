@@ -57,10 +57,7 @@ Instale sempre primeiro o software R e depois o R Studio. Usuários de Mac Os de
 **ggplot2** &middot; # O ggplot2 é um sistema para criação de gráficos, baseado em uma grámática própria e em camadas estéticas. Para mais detalhes, acesse: [ggplot2](https://ggplot2.tidyverse.org/)
 
 
-# Programação
-
-<details>
-    <summary><strong>Quadro de Encontros e Atividades</strong></summary>
+# Quadro de Encontros e Atividades
 
 | Data | Discussão Conceitual | Prática Laboratorial | Leituras Recomendadas |
 | -------- | -------- | -------- | -------- | 
@@ -81,8 +78,6 @@ Instale sempre primeiro o software R e depois o R Studio. Usuários de Mac Os de
 | 23/06 | Encerramento | Definição de Trabalhos Finais |  |
 | 30/06 | Livre | Livre | Livre |
 | 07/07 | Livre | Livre | Livre |
-
-</details>
 
 
 # Referências Adicionais
