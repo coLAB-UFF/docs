@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: Importação e Exportação de Dados
+title: Estatísticas Descritivas
 description: Curso de análise e visualização de dados
 
 # Author box
@@ -21,52 +21,42 @@ micro_nav: false
 # Page navigation
 page_nav:
     prev:
-        content: Estatísticas Descritivas
+        content: Tipos de Variáveis
         url: '/dataviz2_03'
     next:
         content: Manipulação de Dados 1
         url: '/dataviz2_05'
 ---
 
-# Instalação de Pacotes no R
+# Estatísticas de Posição
 
-Para instalar pacotes, utilize o comando `install.packages()`, indicando entre aspas o nome do pacote pretendido. É possível também proceder uma instalação pelo modo gráfico, no menu **Packages > Install do R Studio**.
+A média de um conjunto de dados é encontrada somando-se todos os números do conjunto de dados e então dividindo o resultado pelo número de valores do conjunto. A média é influenciada por todos os valores, inclusive os extremos.
 
-Sempre que um pacote é instalado, é preciso requisitá-lo, antes de começar a usar. Você pode requisitar um pacote por meio da função `library()` ou da função `require()`.
+A mediana é o valor do meio quando o conjunto de dados está ordenado do menor para o maior. É necessário ordenar os valores para reconhecer a mediana. A mediana ignora os *outliers*.
 
-O R fornece uma série de pacotes com *datasets* para testar manipulação de dados. Alguns desses pacotes já estão integrados à *R Base*, como `mtcars` (pacote com dados sobre modelos de carros esportivos). Outros, precisam de instalação adicional, como `palmerpenguins` (pacote com dados sobre pinguins catalogados na Antártida). Vamos visualizar esses dados?
-
-* `mtcars`
+A moda é o número que aparece mais vezes em um conjunto de dados. Não há no R Base uma função específica para o cálculo da moda.
 
 ```
-mtcars
-
-carros <- mtcars
-
-View(carros)
+mean(c(1,7,3,2,4))
+median(c(1,7,3,2,4))
+mean(c(6.0, 7.1, 5.5, 3.0, 10.0, 100.0, 6.5, 8.2, 2.9, 3.5, 9.9, 
+       9.1, 8.2, 7.6, 9.9, 10.0, 6.7, 4.9, 10.0, 6.8, 6.0))
+median(c(6.0, 7.1, 5.5, 3.0, 10.0, 100.0, 6.5, 8.2, 2.9, 3.5, 9.9, 
+         9.1, 8.2, 7.6, 9.9, 10.0, 6.7, 4.9, 10.0, 6.8, 6.0))
+## 2.9, 3.0, 3.5, 4.9, 5.5, 6.0, 6.0, 6.5, 6.7, 6.8,
+## 7.1, 7.6, 8.2, 8.2, 9.1, 9.9, 9.9, 10.0, 10.0, 10.0, 100.0
 ```
 
-*  `palmerpenguins`
+Para resumir algumas variáveis, há funções que descrevem o conjunto de valores.
 
 ```
-install.packages("palmerpenguins")
-library(palmerpenguins)
-penguins
-
-dados_aves <- penguins
-View(dados_aves)
+notas <- c(6.0, 7.1, 5.5, 3.0, 10.0, 100.0, 6.5, 8.2, 2.9, 3.5, 9.9, 
+           9.1, 8.2, 7.6, 9.9, 10.0, 6.7, 4.9, 10.0, 6.8, 6.0)
+summary(notas)
+head(notas)
+dplyr::glimpse(notas)
 ```
 
-Para utilizar as funções de um pacote, há duas maneiras. A primeira delas é requisitar o pacote, por meio da função `library()`. A segunda é indicar o nome do pacote imediatamente antes de executar a função. Veja os exemplos abaixo.
-
-```
-palmerpenguins::penguins
-
-library(palmerpenguins)
-penguins
-
-dados_aves <- penguins
-```
 
 Vamos agora conhecer um pouco mais sobre manipulação de bancos de dados?
 
