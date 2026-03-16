@@ -263,7 +263,7 @@ dados_aves_import <- read.csv("C:\Users\NomeDoUsuario\Downloads\dados_aves.csv")
 
 Ou pela própria UI:
 
-[Importar Dados](images/dataviz2_readcsv.png)
+![Importar Dados](images/dataviz2_readcsv.png)
 
-[Importar Dados](dataviz2_readcsv2.png)
+![Importar Dados](dataviz2_readcsv2.png)
 
