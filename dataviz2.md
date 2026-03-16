@@ -62,8 +62,8 @@ Instale sempre primeiro o software R e depois o R Studio. Usuários de Mac Os de
 | Data | Discussão Conceitual | Prática Laboratorial | Leituras Recomendadas |
 | -------- | -------- | -------- | -------- | 
 | 17/03 | Definições Iniciais. Origens da Visualização de Dados | Instalação do R e R Studio. Apresentação e Primeiros Passos na Linguagem R | Cervi (a); D’Ignazio; Aquino; Oliveira, Guerra & McDonnell |
-| 24/03 | Arquitetura da Informação. Formatos de Tabelas de Dados. Repositórios | Objetos e Estruturas de Dados (vetor, lista, dataframe). Instalação de Pacotes | Wurman; Spiegelhalter; Aquino |
-| 31/03 | Amostra e Amostragem. Tipos de Dados e Tipos de Variáveis |  Manipulação de Dados 1 (dplyr): select, filter, mutate, arrange, group_by, sommarise, count | Figueiredo Filho (a); Wickham (a) |
+| 24/03 | Arquitetura da Informação. Formatos de Tabelas de Dados. Tipos de Dados e Tipos de Variáveis. Repositórios | Objetos e Estruturas de Dados (vetor, lista, dataframe). Instalação de Pacotes | Wurman; Spiegelhalter; Aquino |
+| 31/03 | Amostra e Amostragem |  Manipulação de Dados 1 (dplyr): select, filter, mutate, arrange, group_by, sommarise, count | Figueiredo Filho (a); Wickham (a) |
 | 07/04 | Estatísticas Descritivas 1. Estatísticas de Tendência Central ou Posição | Manipulação de Dados 2 (dplyr, stringr, lubridate): sample_n, between, case_when, str_ | Bruce & Bruce; Wickham (a) |
 | 14/04 | Estatísticas Descritivas 2. Estatísticas de Variabilidade ou Dispersão | Manipulação de Dados 3 (dplyr): joins, binds | Wickham (a) |
 | 21/04 | Feriado | Feriado | Feriado |
