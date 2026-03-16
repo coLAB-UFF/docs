@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: Tipos de Variáveis
+title: Estruturas de Dados
 description: Curso de análise e visualização de dados
 
 # Author box
@@ -24,7 +24,7 @@ page_nav:
         content: Funções Básicas
         url: '/dataviz2_01'
     next:
-        content: Estatísticas Descritivas
+        content: Tipos de Variáveis
         url: '/dataviz2_03'
 ---
 
@@ -48,7 +48,128 @@ notas >= 6.0
 notas[notas >= 6.0]
 ```
 
-O R apresenta também outros tipos de vetores multidimensionais, que podem representar tabelas ou matrizes de dados. O formato mais comum é o `data.frame`, uma espécie de tabela simples de dados, que combina linhas e colunas.
+O R apresenta também outros tipos de vetores uni, bi, e multidimensionais, que podem representar tabelas ou matrizes de dados. O formato mais comum e intelegível, além do vetor, é o `data.frame`, uma espécie de tabela simples de dados, que combina linhas e colunas. Mas outras estruturas são igualmente frequentes. Abaixo, seguem algumas das principais.
+
+# Listas
+
+Estrutura unidimensional e heterogênea, podendo conter elementos de tipos diferentes, inclusive outras estruturas. Os valores de uma lista são chamados de elementos.
+
+```
+lista <- list(1, "texto", TRUE, c(2,3))
+```
+
+É possível atribuir nomes aos elementos de uma lista.
+
+```
+pessoa <-list(nome = "José da Silva", idade = 27, hobbies = c("Programar, assistir filmes"))
+```
+
+Também é possível usar listas como elementos de outras listas. Isso pode ser útil, por exemplo, para combinar listas di­fe­ren­tes em um único registro.
+
+```
+pessoa <- list(list(nome = "José da Silva", idade = 27, hobbies = c("Programar, assistir filmes")), list(nome = "Margarida Souza", idade = 32, hobbies = c("Teatro, videogames")), list(nome = "Pedro Antero", idade =23, hobbies = c("Futebol, música")))
+```
+
+E, ainda, desaninhar uma lista:
+
+```
+lista <- list(1, "texto", TRUE, c(2,3))
+vetor <- unlist(lista)
+```
+
+Ou transformá-la em uma tabela bidimensional:
+
+```
+pessoas <- list(nome=c("José da Silva", "Margarida Souza", "Pedro Antero"), age=c(27, 32, 23))
+tabela <- data.frame(pessoas)
+print(tabela)
+```
+
+A principal diferença entre a lista e o vetor não é a sua condição unidimensional, mas a propriedade de abrigar dados de múltiplas naturezas.
+
+
+| Estrutura | Tipos de dados                                     | Ideia intuitiva                          |
+| --------- | -------------------------------------------------- | ---------------------------------------- |
+| **Vetor** | Homogêneo (todos os elementos do mesmo tipo)       | Uma sequência uniforme de valores        |
+| **Lista** | Heterogênea (elementos podem ter tipos diferentes) | Um contêiner que guarda objetos variados |
+
+# Matrizes
+
+Estrutura bidimensional homogênea (linhas × colunas), onde todos os elementos têm o mesmo tipo.
+
+```
+matriz <- matrix(1:6, nrow = 2, ncol = 3)
+```
+
+A matriz, embora uma estrutura bidimensional, não é exatamente o equivalente a uma tabela, visto que somente comporta valores e dados da mesma natureza em todas as suas colunas. Assim, a matriz difere de outra estrutura de dados muito comum no R, o dataframe.
+
+
+| Estrutura      | Tipos de dados                               | Estrutura interna                             | Uso típico           |
+| -------------- | -------------------------------------------- | --------------------------------------------- | -------------------- |
+| **Matrix**     | Homogêneo (todos os elementos do mesmo tipo) | Um único vetor organizado em linhas e colunas | Cálculos matemáticos |
+| **Data frame** | Heterogêneo por coluna                       | Lista de vetores (cada coluna é um vetor)     | Dados tabulares      |
+
+Todos os elementos precisam ter o mesmo tipo. Se você misturar tipos, o R converte tudo para um tipo comum.
+
+```
+matrix(c(1, "a", 3), nrow = 1)
+
+#Todos os campos são automaticamente transformados em texto.
+```
+
+# Dataframes
+
+Estrutura tabular bidimensional semelhante a uma planilha. Cada coluna é um vetor e pode ter tipos diferentes.
+
+```
+df <- data.frame(
+  nome = c("Ana","João"),
+  idade = c(30, 25)
+)
+```
+
+# Factors
+
+Estrutura usada para variáveis categóricas, armazenando níveis (levels). Internamente é um vetor inteiro com rótulos.
+
+```
+f <- factor(c("baixo","alto","baixo"))
+levels(f)
+```
+
+É possível também determinar quais são os fatores (categorias) e até ordená-los.
+
+```
+f <- factor(
+  c("baixo","alto","baixo","médio"),
+  levels = c("baixo","médio","alto")
+)
+levels(f)
+```
+
+Isso é importante para modelos estatísticos e gráficos, pois a ordem influencia resultados.
+
+```
+f <- factor(
+  c("baixo","alto","médio"),
+  levels = c("baixo","médio","alto"),
+  ordered = TRUE
+)
+levels(f)
+```
+
+# Tibbles
+
+Versão moderna de dataframe usada no ecossistema `Tidyverse`, com melhor visualização e comportamento mais consistente.
+
+```
+library(tibble)
+tb <- tibble(x = 1:3, y = c("a","b","c"))
+```
+
+# Criando Tabelas e Convertendo Estruturas de Dados
+
+É possível criar um dataframe a partir de múltiplos vetores:
 
 ```
 notas <- (c(6.0, 7.1, 5.5, 3.0, 10.0, 100.0, 6.5, 8.2, 2.9, 3.5, 9.9, 
@@ -57,63 +178,92 @@ nomes <- (c("João", "Maria", "Joaquim", "Ana", "Enzo", "Valentina", "Júlia", "
             "Daniela", "Daniel", "Manuela", "Luiz", "Fátima", "Gilberto", "Roberta", "Otávio", "Josias", "Helena"))
 boletim <- cbind(nomes,notas)
 View(boletim)
+```
 
+E também converter uma estrutura de dados em outra.
+
+```
 boletim <- as.matrix(boletim) # Matrix
 boletim_lista <- as.list(boletim) # List
 boletim <- as.data.frame(boletim) # Dataframe
 boletim <- tibble::as_tibble(boletim) # Tibble
 ```
 
-# Tipos de Variavel
+# Instalação de Pacotes no R
 
-Existem diferentes tipos de variáveis comportadas pelo R. As mais comuns são as seguintes:
+Para instalar pacotes, utilize o comando `install.packages()`, indicando entre aspas o nome do pacote pretendido. É possível também proceder uma instalação pelo modo gráfico, no menu **Packages > Install do R Studio**.
 
-* Numéricas (`numeric`): Números inteiros ou reais, como idade, renda, número de filhos.
+Sempre que um pacote é instalado, é preciso requisitá-lo, antes de começar a usar. Você pode requisitar um pacote por meio da função `library()` ou da função `require()`.
 
-* Datas (`Date`): São um tipo especial de variável numérica.
+O R fornece uma série de pacotes com *datasets* para testar manipulação de dados. Alguns desses pacotes já estão integrados à *R Base*, como `mtcars` (pacote com dados sobre modelos de carros esportivos). Outros, precisam de instalação adicional, como `palmerpenguins` (pacote com dados sobre pinguins catalogados na Antártida). Vamos visualizar esses dados?
 
-* Categóricas (`factor`): Variáveis qualitativas, ou seja, características dos indivíduos para as quais não é possível atribuir um valor numérico, como sexo, religião, estado civil, opinião sobre algum tema. É possível agrupar os indivíduos em categorias e contar quantos indivíduos pertencem a cada categoria, mas se, por exemplo, um indivíduo afirma ser católico, e outro, protestante, não podemos, com base nessas afirmações, considerar um mais religioso do que o outro.
-
-* Categóricas ordenáveis (`ordered`): Tipo de variável categórica cujas categorias podem ser hierarquizáveis, como grau de escolaridade, alguns tipos de respostas a perguntas de questionário. Se à pergunta “Qual o papel do governo?”, as opções de resposta forem “O governo deve mandar em tudo”, “O governo deve controlar algumas coisas” e “Não precisamos de governo”, poderíamos considerar aqueles que optaram pela primeira opção adeptos de uma ideologia mais estatizante do que aqueles que escolheram a terceira opção.
-
-* Texto (`character`): Características puramente individuais que não podem ser utilizadas para categorizar os indivíduos. Geralmente aparecem nos bancos de dados apenas para ajudar em análises qualitativas e não estatísticas. Exemplo: o nome dos candidatos num banco de dados de resultados eleitorais. Em alguns casos, os textos são passíveis de categorização, como as respostas a uma pergunta aberta. Neste caso, seria preciso manualmente recodificar as respostas abertas numa nova variável contendo um número limitado de categorias.
-
-* Booleanas (`logical`): Variáveis cujos valores podem ser VERDADEIRO ou FALSO; no R, TRUE ou FALSE.
+* `mtcars`
 
 ```
-variavel <- seq(1,60)
-summary(variavel)
-class(variavel)
+mtcars
 
-numero <- 1:10
-class(numero)
-summary(numero)
+carros <- mtcars
 
-numero <- 1
-class(numero)
-
-numero <- "1"
-class(numero)
-summary(numero)
-
-numero <- 1 == 1
-class(numero)
-
-numero <- 2021-02-09
-numero
-numero <- "2021-02-09"
-class(numero)
-
-numero <- as.Date("2021-02-09")
-class(numero)
-
-tamanho <- factor(c("pequeno", "grande", "grande", "pequeno", "medio")) # factor com três diferentes níveis
-tamanho
-class(tamanho)
-
-tamanho <- factor(c("pequeno", "grande", "grande", "pequeno", "medio"),
-                  levels = c("pequeno", "medio", "grande"), ordered = TRUE) # determinando a ordem do fator
-tamanho
-class(tamanho)
+View(carros)
 ```
+
+*  `palmerpenguins`
+
+```
+install.packages("palmerpenguins")
+library(palmerpenguins)
+penguins
+
+dados_aves <- penguins
+View(dados_aves)
+```
+
+Para utilizar as funções de um pacote, há duas maneiras. A primeira delas é requisitar o pacote, por meio da função `library()`. A segunda é indicar o nome do pacote imediatamente antes de executar a função. Veja os exemplos abaixo.
+
+```
+palmerpenguins::penguins
+
+library(palmerpenguins)
+penguins
+
+dados_aves <- penguins
+```
+
+# Exportando Dados
+
+Para exportar dados do R, utilize a função `write.csv()`.
+
+* No Mac OS ou no Linux:
+
+```
+write.csv(dados_aves, "./Downloads/dados_aves.csv")
+```
+
+* No Windows:
+
+```
+write.csv(dados_aves, "C:\Users\NomeDoUsuario\Downloads\dados_aves.csv")
+```
+
+# Importando Dados
+
+Para importar dados do R, utilize a função `read.csv()`.
+
+* No Mac OS ou no Linux:
+
+```
+dados_aves_import <- read.csv("./Downloads/dados_aves.csv")
+```
+
+* No Windows:
+
+```
+dados_aves_import <- read.csv("C:\Users\NomeDoUsuario\Downloads\dados_aves.csv")
+```
+
+Ou pela própria UI:
+
+[Importar Dados](images/dataviz2_readcsv.png)
+
+[Importar Dados](dataviz2_readcsv2.png)
 
