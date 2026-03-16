@@ -265,5 +265,5 @@ Ou pela própria UI:
 
 ![Importar Dados](images/dataviz2_readcsv.png)
 
-![Importar Dados](dataviz2_readcsv2.png)
+![Importar Dados](images/dataviz2_readcsv2.png)
 
