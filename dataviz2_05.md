@@ -21,7 +21,7 @@ micro_nav: false
 # Page navigation
 page_nav:
     prev:
-        content: Importação e Exportação de Dados
+        content: Estatísticas Descritivas
         url: '/dataviz2_04'
     next:
         content: Manipulação de Dados 2
