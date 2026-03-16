@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: Estatísticas Descritivas
+title: Tipos de Variáveis
 description: Curso de análise e visualização de dados
 
 # Author box
@@ -21,39 +21,62 @@ micro_nav: false
 # Page navigation
 page_nav:
     prev:
-        content: Tipos de Variáveis
+        content: Estruturas de Dados
         url: '/dataviz2_02'
     next:
-        content: Importação e Exportação de Dados
+        content: Estatísticas Descritivas
         url: '/dataviz2_04'
 ---
 
-# Estatísticas de Posição
+# Tipos de Variavel
 
-A média de um conjunto de dados é encontrada somando-se todos os números do conjunto de dados e então dividindo o resultado pelo número de valores do conjunto. A média é influenciada por todos os valores, inclusive os extremos.
+Existem diferentes tipos de variáveis comportadas pelo R. As mais comuns são as seguintes:
 
-A mediana é o valor do meio quando o conjunto de dados está ordenado do menor para o maior. É necessário ordenar os valores para reconhecer a mediana. A mediana ignora os *outliers*.
+* Numéricas (`numeric`): Números inteiros ou reais, como idade, renda, número de filhos.
 
-A moda é o número que aparece mais vezes em um conjunto de dados. Não há no R Base uma função específica para o cálculo da moda.
+* Datas (`Date`): São um tipo especial de variável numérica.
 
-```
-mean(c(1,7,3,2,4))
-median(c(1,7,3,2,4))
-mean(c(6.0, 7.1, 5.5, 3.0, 10.0, 100.0, 6.5, 8.2, 2.9, 3.5, 9.9, 
-       9.1, 8.2, 7.6, 9.9, 10.0, 6.7, 4.9, 10.0, 6.8, 6.0))
-median(c(6.0, 7.1, 5.5, 3.0, 10.0, 100.0, 6.5, 8.2, 2.9, 3.5, 9.9, 
-         9.1, 8.2, 7.6, 9.9, 10.0, 6.7, 4.9, 10.0, 6.8, 6.0))
-## 2.9, 3.0, 3.5, 4.9, 5.5, 6.0, 6.0, 6.5, 6.7, 6.8,
-## 7.1, 7.6, 8.2, 8.2, 9.1, 9.9, 9.9, 10.0, 10.0, 10.0, 100.0
-```
+* Categóricas (`factor`): Variáveis qualitativas, ou seja, características dos indivíduos para as quais não é possível atribuir um valor numérico, como sexo, religião, estado civil, opinião sobre algum tema. É possível agrupar os indivíduos em categorias e contar quantos indivíduos pertencem a cada categoria, mas se, por exemplo, um indivíduo afirma ser católico, e outro, protestante, não podemos, com base nessas afirmações, considerar um mais religioso do que o outro.
 
-Para resumir algumas variáveis, há funções que descrevem o conjunto de valores.
+* Categóricas ordenáveis (`ordered`): Tipo de variável categórica cujas categorias podem ser hierarquizáveis, como grau de escolaridade, alguns tipos de respostas a perguntas de questionário. Se à pergunta “Qual o papel do governo?”, as opções de resposta forem “O governo deve mandar em tudo”, “O governo deve controlar algumas coisas” e “Não precisamos de governo”, poderíamos considerar aqueles que optaram pela primeira opção adeptos de uma ideologia mais estatizante do que aqueles que escolheram a terceira opção.
+
+* Texto (`character`): Características puramente individuais que não podem ser utilizadas para categorizar os indivíduos. Geralmente aparecem nos bancos de dados apenas para ajudar em análises qualitativas e não estatísticas. Exemplo: o nome dos candidatos num banco de dados de resultados eleitorais. Em alguns casos, os textos são passíveis de categorização, como as respostas a uma pergunta aberta. Neste caso, seria preciso manualmente recodificar as respostas abertas numa nova variável contendo um número limitado de categorias.
+
+* Booleanas (`logical`): Variáveis cujos valores podem ser VERDADEIRO ou FALSO; no R, TRUE ou FALSE.
 
 ```
-notas <- c(6.0, 7.1, 5.5, 3.0, 10.0, 100.0, 6.5, 8.2, 2.9, 3.5, 9.9, 
-           9.1, 8.2, 7.6, 9.9, 10.0, 6.7, 4.9, 10.0, 6.8, 6.0)
-summary(notas)
-head(notas)
-dplyr::glimpse(notas)
-```
+variavel <- seq(1,60)
+summary(variavel)
+class(variavel)
 
+numero <- 1:10
+class(numero)
+summary(numero)
+
+numero <- 1
+class(numero)
+
+numero <- "1"
+class(numero)
+summary(numero)
+
+numero <- 1 == 1
+class(numero)
+
+numero <- 2021-02-09
+numero
+numero <- "2021-02-09"
+class(numero)
+
+numero <- as.Date("2021-02-09")
+class(numero)
+
+tamanho <- factor(c("pequeno", "grande", "grande", "pequeno", "medio")) # factor com três diferentes níveis
+tamanho
+class(tamanho)
+
+tamanho <- factor(c("pequeno", "grande", "grande", "pequeno", "medio"),
+                  levels = c("pequeno", "medio", "grande"), ordered = TRUE) # determinando a ordem do fator
+tamanho
+class(tamanho)
+```
