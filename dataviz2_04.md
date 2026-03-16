@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: Estatísticas Descritivas 1
+title: Estatísticas Descritivas
 description: Curso de análise e visualização de dados
 
 # Author box
@@ -24,7 +24,7 @@ page_nav:
         content: Tipos de Variáveis
         url: '/dataviz2_03'
     next:
-        content: Estatísticas Descritivas 2
+        content: Manipulação de Dados 1
         url: '/dataviz2_05'
 ---
 
