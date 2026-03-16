@@ -24,7 +24,7 @@ page_nav:
         content: Proposta do Curso
         url: '/dataviz2'
     next:
-        content: Tipos de Variáveis
+        content: Estruturas de Dados
         url: '/dataviz2_02'
 ---
 
