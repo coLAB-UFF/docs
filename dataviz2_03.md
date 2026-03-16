@@ -28,7 +28,7 @@ page_nav:
         url: '/dataviz2_04'
 ---
 
-# Tipos de Variavel
+# Tipos de Variáveis
 
 Existem diferentes tipos de variáveis comportadas pelo R. As mais comuns são as seguintes:
 
