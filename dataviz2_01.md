@@ -37,7 +37,7 @@ page_nav:
     src="https://www.canva.com/design/DAHED5qu3d4/wTeTdz41ew7F6eBzwPB8iw/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
   </iframe>
 </div>
-<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAHED5qu3d4&#x2F;wTeTdz41ew7F6eBzwPB8iw&#x2F;view?utm_content=DAHED5qu3d4&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Dataviz Aula 1</a> de Viktor Chagas
+
 
 # Funções Básicas
 
