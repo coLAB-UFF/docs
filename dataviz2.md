@@ -61,6 +61,9 @@ Instale sempre primeiro o software R e depois o R Studio. Usuários de Mac Os de
 
 [- Grupo de WhatsApp](https://chat.whatsapp.com/CtnUAOEZj4P9M2vZ5CVSAM)
 
+[- Pasta de Textos](https://drive.google.com/drive/folders/1Lem-3U7RyLF-Swu7-fQRoEzTVOl_Ru00?usp=sharing)
+
+
 # Quadro de Encontros e Atividades
 
 | Data | Discussão Conceitual | Prática Laboratorial | Leituras Recomendadas |
