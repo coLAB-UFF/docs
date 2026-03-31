@@ -81,6 +81,13 @@ tamanho
 class(tamanho)
 ```
 
+# Primeiro Contato com Arrumação de Dados
+
+Observe a planilha a seguir. Vamos discutir quais os tipos de variáveis presentes nela? E que tal discutirmos os problemas na arrumação desses dados?
+
+[📈](https://docs.google.com/spreadsheets/d/1sBzeaeW-NwsguxWqrIeLjZ7r88G24zia/edit?usp=sharing&ouid=104873921600174573229&rtpof=true&sd=true)
+
+
 # Amostra e Amostragem
 
 <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
