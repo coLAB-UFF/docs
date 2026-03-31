@@ -91,3 +91,14 @@ class(tamanho)
   </iframe>
 </div>
 
+# Criando uma Amostra
+
+Para criar uma amostra aleatória dos dados disponíveis na sua base, estabeleça um valor amostral e requisite que o R crie essa amostra com a função `sample_n` do pacote `dplyr`:
+
+```
+amostra <- candidato_brasil %>% 
+  sample_n(500)
+```
+
+
+
