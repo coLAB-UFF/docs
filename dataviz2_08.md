@@ -29,6 +29,13 @@ page_nav:
 
 ---
 
+# Primeiro Contato com Arrumação de Dados
+
+Observe a planilha a seguir. Vamos discutir quais os tipos de variáveis presentes nela? E que tal discutirmos os problemas na arrumação desses dados?
+
+[📈 Planilha de Exemplo (Fernanda Peres)](https://docs.google.com/spreadsheets/d/1sBzeaeW-NwsguxWqrIeLjZ7r88G24zia/edit?usp=sharing&ouid=104873921600174573229&rtpof=true&sd=true)
+
+
 # Requisitar os Pacotes de Trabalho
 
 ```
