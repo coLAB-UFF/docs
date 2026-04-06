@@ -81,12 +81,6 @@ tamanho
 class(tamanho)
 ```
 
-# Primeiro Contato com Arrumação de Dados
-
-Observe a planilha a seguir. Vamos discutir quais os tipos de variáveis presentes nela? E que tal discutirmos os problemas na arrumação desses dados?
-
-[📈 Planilha de Exemplo (Fernanda Peres)](https://docs.google.com/spreadsheets/d/1sBzeaeW-NwsguxWqrIeLjZ7r88G24zia/edit?usp=sharing&ouid=104873921600174573229&rtpof=true&sd=true)
-
 
 # Amostra e Amostragem
 
@@ -100,7 +94,7 @@ Observe a planilha a seguir. Vamos discutir quais os tipos de variáveis present
 
 # Criando uma Amostra
 
-Para criar uma amostra aleatória dos dados disponíveis na sua base, estabeleça um valor amostral e requisite que o R crie essa amostra com a função `sample_n` do pacote `dplyr`:
+Para criar uma amostra aleatória simples dos dados disponíveis na sua base, estabeleça um valor amostral e requisite que o R crie essa amostra com a função `sample_n` do pacote `dplyr`:
 
 ```
 amostra <- candidato_brasil %>% 
