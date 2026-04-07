@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: Manipulação de Dados 1
+title: Estatísticas Descritivas
 description: Curso de análise e visualização de dados
 
 # Author box
