@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: Estatísticas Descritivas
+title: Amostras
 description: Curso de análise e visualização de dados
 
 # Author box
