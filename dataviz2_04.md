@@ -24,51 +24,26 @@ page_nav:
         content: Tipos de Variáveis
         url: '/dataviz2_03'
     next:
-        content: Manipulação de Dados 1
+        content: Estatísticas Descritivas
         url: '/dataviz2_05'
 ---
 
-# Estatísticas Descritivas
+# Amostra e Amostragem
 
 <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
  padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
  border-radius: 8px; will-change: transform;">
   <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-    src="https://www.canva.com/design/DAHEElt9aKc/CRRd2GqgvsGg-SS7m-3LQg/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+    src="https://www.canva.com/design/DAHEEsaf55k/qgyrndd0UeCX5BTDnNH1Tg/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
   </iframe>
 </div>
 
+# Criando uma Amostra
 
-# Estatísticas de Localização
-
-A média de um conjunto de dados é encontrada somando-se todos os números do conjunto de dados e então dividindo o resultado pelo número de valores do conjunto. A média é influenciada por todos os valores, inclusive os extremos.
-
-A mediana é o valor do meio quando o conjunto de dados está ordenado do menor para o maior. É necessário ordenar os valores para reconhecer a mediana. A mediana ignora os *outliers*.
-
-A moda é o número que aparece mais vezes em um conjunto de dados. Não há no R Base uma função específica para o cálculo da moda.
+Para criar uma amostra aleatória simples dos dados disponíveis na sua base, estabeleça um valor amostral e requisite que o R crie essa amostra com a função `sample_n` do pacote `dplyr`:
 
 ```
-mean(c(1,7,3,2,4))
-median(c(1,7,3,2,4))
-mean(c(6.0, 7.1, 5.5, 3.0, 10.0, 100.0, 6.5, 8.2, 2.9, 3.5, 9.9, 
-       9.1, 8.2, 7.6, 9.9, 10.0, 6.7, 4.9, 10.0, 6.8, 6.0))
-median(c(6.0, 7.1, 5.5, 3.0, 10.0, 100.0, 6.5, 8.2, 2.9, 3.5, 9.9, 
-         9.1, 8.2, 7.6, 9.9, 10.0, 6.7, 4.9, 10.0, 6.8, 6.0))
-## 2.9, 3.0, 3.5, 4.9, 5.5, 6.0, 6.0, 6.5, 6.7, 6.8,
-## 7.1, 7.6, 8.2, 8.2, 9.1, 9.9, 9.9, 10.0, 10.0, 10.0, 100.0
+amostra <- candidato_brasil %>% 
+  sample_n(500)
 ```
-
-Para resumir algumas variáveis, há funções que descrevem o conjunto de valores.
-
-```
-notas <- c(6.0, 7.1, 5.5, 3.0, 10.0, 100.0, 6.5, 8.2, 2.9, 3.5, 9.9, 
-           9.1, 8.2, 7.6, 9.9, 10.0, 6.7, 4.9, 10.0, 6.8, 6.0)
-summary(notas)
-head(notas)
-dplyr::glimpse(notas)
-```
-
-
-Vamos agora conhecer um pouco mais sobre manipulação de bancos de dados?
-
 
