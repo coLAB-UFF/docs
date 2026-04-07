@@ -39,6 +39,10 @@ page_nav:
 </div>
 
 
+# Frequências
+
+
+
 # Estatísticas de Localização
 
 A média de um conjunto de dados é encontrada somando-se todos os números do conjunto de dados e então dividindo o resultado pelo número de valores do conjunto. A média é influenciada por todos os valores, inclusive os extremos.
@@ -49,24 +53,72 @@ A moda é o número que aparece mais vezes em um conjunto de dados. Não há no 
 
 ```
 mean(c(1,7,3,2,4))
+
 median(c(1,7,3,2,4))
-mean(c(6.0, 7.1, 5.5, 3.0, 10.0, 100.0, 6.5, 8.2, 2.9, 3.5, 9.9, 
-       9.1, 8.2, 7.6, 9.9, 10.0, 6.7, 4.9, 10.0, 6.8, 6.0))
-median(c(6.0, 7.1, 5.5, 3.0, 10.0, 100.0, 6.5, 8.2, 2.9, 3.5, 9.9, 
-         9.1, 8.2, 7.6, 9.9, 10.0, 6.7, 4.9, 10.0, 6.8, 6.0))
-## 2.9, 3.0, 3.5, 4.9, 5.5, 6.0, 6.0, 6.5, 6.7, 6.8,
-## 7.1, 7.6, 8.2, 8.2, 9.1, 9.9, 9.9, 10.0, 10.0, 10.0, 100.0
+```
+
+Por que a mediana é uma estatística descritiva pouco sensível a valores extremos?
+
+```
+notas <- c(6.0, 7.1, 5.5, 3.0, 10.0, 100.0, 6.5, 8.2, 2.9, 3.5, 9.9, 
+           9.1, 8.2, 7.6, 9.9, 10.0, 6.7, 4.9, 10.0, 6.8, 6.0)
+
+mean(notas)
+
+median(notas)
 ```
 
 Para resumir algumas variáveis, há funções que descrevem o conjunto de valores.
 
 ```
-notas <- c(6.0, 7.1, 5.5, 3.0, 10.0, 100.0, 6.5, 8.2, 2.9, 3.5, 9.9, 
-           9.1, 8.2, 7.6, 9.9, 10.0, 6.7, 4.9, 10.0, 6.8, 6.0)
 summary(notas)
+
 head(notas)
+
 dplyr::glimpse(notas)
 ```
+
+Para calcular a moda, é preciso utilizar um pacote adicional no R.
+
+```
+> DescTools::Mode(notas)
+
+# O resultado indicará o valor de moda e a frequência desse valor na amostra.
+```
+
+Para calcular os quantis:
+
+```
+quantile(notas, na.rm = T, probs = c(0.01, 0.25, 0.5, 0.75, 0.99))
+```
+
+
+# Estatísticas de Dispersão
+
+Amplitude corresponde à diferença entre o valor máximo e o mínimo encontrados em nossa amostra.
+
+```
+min(notas)
+
+max(notas)
+```
+
+Variância e Desvio Padrão correspondem à diferença entre valores observados e a estimativa de localização de um determinado dado.
+
+```
+var(notas)
+
+sd(notas)
+```
+
+Com o pacote `rstatix`, é possível obter todas essas estatísticas descritivas de uma só vez:
+
+```
+notas <- as.data.frame(notas)
+
+rstatix::get_summary_stats(notas)
+```
+
 
 
 Vamos agora conhecer um pouco mais sobre manipulação de bancos de dados?
