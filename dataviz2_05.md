@@ -39,10 +39,6 @@ page_nav:
 </div>
 
 
-# Frequências
-
-
-
 # Estatísticas de Localização
 
 A média de um conjunto de dados é encontrada somando-se todos os números do conjunto de dados e então dividindo o resultado pelo número de valores do conjunto. A média é influenciada por todos os valores, inclusive os extremos.
