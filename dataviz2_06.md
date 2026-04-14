@@ -21,10 +21,10 @@ micro_nav: false
 # Page navigation
 page_nav:
     prev:
-        content: Manipulação de Dados 1
+        content: Estatísticas Descritivas
         url: '/dataviz2_05'
     next:
-        content: Manipulação de Dados 3
+        content: Manipulação de Dados 2
         url: '/dataviz2_07'
 
 ---
