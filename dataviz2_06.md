@@ -252,7 +252,7 @@ candidato_brasil %>% mutate(DT_NASCIMENTO = lubridate::dmy(DT_NASCIMENTO)) %>%
   filter(between(DT_NASCIMENTO, lubridate::as_date("1980-01-01"), lubridate::as_date("2000-01-01")))
 ```
 
-# Criando uma Variável Categórica a partir de Outra
+# Criando uma Variável Categórica a partir de Outra (case_when)
 
 É possível recodificar uma variável com novos valores e categorias. Para isso, utilize, mais uma vez, a função `grepl()`, e combine-a com a função `case_when()` do pacote `dplyr`.
 
@@ -294,7 +294,7 @@ Muitas vezes, os valores dispostos em nosso banco de dados se apresentam como va
 
 Vamos aprender algumas funções de manipulação de *strings* a seguir.
 
-1. Convertendo *strings* em minúsculas e em maiúsculas:
+## Convertendo *strings* em minúsculas e em maiúsculas:
 
 * `str_to_lower`
 
@@ -318,7 +318,7 @@ candidato_versalete <- candidato_maiuscula %>%
   mutate(versalete = str_to_title(maiuscula))
 ```
 
-2. Localizando texto e/ou detectando padrões textuais em um vetor de *strings*
+## Localizando texto e/ou detectando padrões textuais em um vetor de *strings*
 
 ```
 candidato_sobrenome <- candidato_brasil %>% 
@@ -341,8 +341,7 @@ candidato_nome <- candidato_brasil %>%
   filter(grepl("JO(ÃO|ANA)|JOSÉ|MARIA", NM_CANDIDATO))
 ```
 
-
-3. Substituindo padrões textuais em um vetor de *strings*
+## Substituindo padrões textuais em um vetor de *strings*
 
 ```
 candidato_profissoes <- candidato_brasil %>% 
