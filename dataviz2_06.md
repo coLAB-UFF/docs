@@ -243,7 +243,6 @@ candidato_brasil <- electionsBR::elections_tse(2022, type = "candidate") %>% fil
 5. Quantos e quais candidatos se candidataram por um estado diferente daquele que nasceram?
 
 
-
 # Filtrando a Base de Dados por Períodos Específicos
 
 Em algumas ocasiões pode ser necessário filtrar a base de dados por um período específico no tempo. Para isso, utilize a função `between`, do pacote `dplyr`. Vamos descobrir, por exemplo, quem são os candidatos jovens que disputaram as últimas eleições?
@@ -251,25 +250,6 @@ Em algumas ocasiões pode ser necessário filtrar a base de dados por um períod
 ```
 candidato_brasil %>% mutate(DT_NASCIMENTO = lubridate::dmy(DT_NASCIMENTO)) %>%
   filter(between(DT_NASCIMENTO, lubridate::as_date("1980-01-01"), lubridate::as_date("2000-01-01")))
-```
-
-# Buscando por Palavras-Chaves
-
-Caso seja necessário filtrar a base de dados por palavras ou expressões no corpo do texto das mensagens, utilize a função `grepl()` do R Base. A função comporta sintaxe em Regex. Mas, para efeito de simplificação, pesquisaremos apenas por operadores mais simples. Que tal descobrirmos quais candidatos e candidatas têm João, José ou Maria no nome?
-
-```
-candidato_brasil %>% 
-  filter(grepl("JO[ÃO|OANA]|JOSÉ|MARIA", NM_CANDIDATO))
-```
-
-# Alterando o Texto de Algumas Strings
-
-Para realizar algumas padronizações no banco de dados, pode ser importante uniformizar algumas *strings*. Uma operação que permite realizar essas alterações é substituir e alterar o texto com a função `gsub`.
-
-```
-candidato_brasil %>% 
-  filter(DS_OCUPACAO == "JORNALISTA E REDATOR") %>% 
-  mutate(DS_OCUPACAO = gsub("JORNALISTA E REDATOR", "JORNALISTA", DS_OCUPACAO))
 ```
 
 # Criando uma Variável Categórica a partir de Outra
@@ -316,44 +296,69 @@ Vamos aprender algumas funções de manipulação de *strings* a seguir.
 
 1. Convertendo *strings* em minúsculas e em maiúsculas:
 
-* `str_to_upper`
-
-```
-pinguins5 <- pinguins1 %>% 
-  mutate(maiuscula = str_to_upper(island))
-```
-
 * `str_to_lower`
 
 ```
-pinguins6 <- pinguins5 %>% 
-  mutate(minuscula = str_to_lower(species))
+candidato_minuscula <- candidato_brasil %>% 
+  select(NM_CANDIDATO, SG_PARTIDO) %>% 
+  mutate(minuscula = str_to_lower(NM_CANDIDATO))
+```
+
+* `str_to_upper`
+
+```
+candidato_maiuscula <- candidato_minuscula %>% 
+  mutate(maiuscula = str_to_upper(minuscula))
 ```
 
 * `str_to_title`
 
 ```
-pinguins7 <- pinguins6 %>% 
-  mutate(titulo = str_to_title(sex))
+candidato_versalete <- candidato_maiuscula %>% 
+  mutate(versalete = str_to_title(maiuscula))
 ```
 
-2. Detectando padrões textuais em um vetor de *strings*
+2. Localizando texto e/ou detectando padrões textuais em um vetor de *strings*
 
 ```
-pinguins7 <- pinguins7 %>% 
-  mutate(string_teste = sex)
-
-pinguins7$string_teste <- pinguins7$string_teste %>% 
-  str_detect("ale")
+candidato_sobrenome <- candidato_brasil %>% 
+  select(NM_CANDIDATO, SG_PARTIDO) %>% 
+  mutate(SOBRENOME = str_detect(NM_CANDIDATO, "SOUZA|SOUSA|SILVA|SANTOS"))
 ```
+
+E, se, ao invés de simplesmente detectar a ocorrência de um padrão textual, eu quiser efetivamente localizar e filtrar somente o texto correspondente?
+
+```
+candidato_sobrenome <- candidato_brasil %>% 
+  select(NM_CANDIDATO, SG_PARTIDO) %>% 
+  filter(str_detect(NM_CANDIDATO, "SOUZA|SOUSA|SILVA|SANTOS"))
+```
+
+Caso seja necessário filtrar a base de dados por palavras ou expressões no corpo do texto das mensagens, também é possível utilizar a função `grepl()`, nativa do `R Base`. A função comporta sintaxe em Regex. Mas, para efeito de simplificação, pesquisaremos apenas por operadores mais simples. Que tal descobrirmos quais candidatos e candidatas têm João, Joana, José ou Maria no nome?
+
+```
+candidato_nome <- candidato_brasil %>% 
+  filter(grepl("JO(ÃO|ANA)|JOSÉ|MARIA", NM_CANDIDATO))
+```
+
 
 3. Substituindo padrões textuais em um vetor de *strings*
 
 ```
-pinguins7$sex <- pinguins7$sex %>% 
-  str_replace("female", "fêmea") %>% 
-  str_replace("male", "macho")
+candidato_profissoes <- candidato_brasil %>% 
+  select(NM_CANDIDATO, SG_PARTIDO, DS_OCUPACAO) %>% 
+  mutate(DS_OCUPACAO = str_replace(DS_OCUPACAO, "JORNALISTA E REDATOR", "JORNALISTA")) %>% 
+  mutate(DS_OCUPACAO = str_replace(DS_OCUPACAO, "LOCUTOR E COMENTARISTA DE RÁDIO E TELEVISÃO E RADIALISTA", "RADIALISTA"))
 ```
+
+Também é possível realizar esse tipo de edição no banco de dados com a função `gsub`, nativa do `R Base`.
+
+```
+candidato_brasil %>% 
+  filter(DS_OCUPACAO == "JORNALISTA E REDATOR") %>% 
+  mutate(DS_OCUPACAO = gsub("JORNALISTA E REDATOR", "JORNALISTA", DS_OCUPACAO))
+```
+
 
 # EXERCÍCIO 1
 
