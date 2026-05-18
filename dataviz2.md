@@ -80,8 +80,8 @@ Instale sempre primeiro o software R e depois o R Studio. Usuários de Mac Os de
 | 19/05 | Percepção Gráfica 2 | Visualização de Dados 3 (ggplot2) | Tufte; Krause, Rennie & Tarran; Nordmann et al.; Wickham (b) |
 | 26/05 | Introdução à Correlação e Regressão 1 | Correlação de Pearson. Linear Models (LM) | Figueiredo Filho (b) E Figueiredo Filho (c) |
 | 02/06 | Introdução à Correlação e Regressão 2 | Generalized Linear Models (GLM) |  |
-| 09/06 | Introdução à Análise Lexical *OU* Introdução aos Testes de Hipóteses (Resíduos Padronizados, Qui-Quadrado de Pearson, Teste t, ANOVA etc.) *OU* RMarkdown 1 | IramuteQ *OU* R + RMarkdown | Salviati *OU* Costa; Cervi (b); Cervi (c) |
-| 16/06 | Introdução à Análise de Redes *OU* Mapas Coropléticos *OU* RMarkdown 2 | Gephi *OU* R + RMarkdown | Cherven |
+| 09/06 | Compós | Compós | Compós |
+| 16/06 | Introdução à Análise de Redes *OU* Mapas Coropléticos *OU* RMarkdown *OU* Introdução à Análise Lexical *OU* Introdução aos Testes de Hipóteses (Resíduos Padronizados, Qui-Quadrado de Pearson, Teste t, ANOVA etc.)  | Gephi *OU* R + RMarkdown *OU* IramuteQ | Salviati *OU* Costa; Cervi (b); Cervi (c); Cherven |
 | 23/06 | Encerramento | Definição de Trabalhos Finais |  |
 | 30/06 | Livre | Livre | Livre |
 | 07/07 | Livre | Livre | Livre |
