@@ -410,6 +410,31 @@ pinguins %>%
 
 É possível exportar seus gráficos em diferentes formatos. Os mais comuns são em formato PDF e em formato PNG. Acesse o botão **Export** na área **Plots** do seu R Studio, para uma exportação facilitada. Depois, é só escolher a pasta onde o gráfico será salvo, o tamanho da imagem e salvar.
 
+Outra possibilidade é utilizar as funções do R para salvar imagens em alta resolução.
+
+```
+plot1 <- pinguins %>% 
+  ggplot() +
+  geom_boxplot(aes(x = sex, y = body_mass_g, fill = sex)) +
+  geom_jitter(aes(x = sex, y = body_mass_g, color = species), size=0.4, alpha=0.9)
+
+tiff("~/Downloads/plot1.tiff", units="in", width=12, height=5, res=600)
+plot1
+dev.off()
+```
+
+*OU*
+
+```
+plot1 <- pinguins %>% 
+  ggplot() +
+  geom_boxplot(aes(x = sex, y = body_mass_g, fill = sex)) +
+  geom_jitter(aes(x = sex, y = body_mass_g, color = species), size=0.4, alpha=0.9)
+
+png("~/Downloads/plot1.png", units="in", width=12, height=5, res=600)
+plot1
+dev.off()
+```
 
 # EXERCÍCIOS
 
