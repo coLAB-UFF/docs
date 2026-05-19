@@ -449,7 +449,9 @@ db_tiktok <- read.csv("https://raw.githubusercontent.com/coLAB-UFF/docs/refs/hea
 1. Crie um gráfico de dispersão que apresente correlação entre a quantidade de seguidores de um determinado usuário e os likes em vídeos individuais.
 
 2. Crie um gráfico de barras que apresente os vinte principais títulos de músicas mais comumente empregados em sua amostra.
-Dica: Combine funções do `dplyr` com funções do `ggplot2`.
+
+**Dica**: Combine funções do `dplyr` com funções do `ggplot2`.
 
 3. Crie um gráfico de caixa que apresente a quantidade de vídeos publicados por perfis políticos no TikTok de acordo com seu espectro político-ideológico.
-Dica: Utilize a variável simplificada para determinar o espectro político-ideológico considerando somente Centro, Esquerda e Direita. Elimine os valores NA da variável. Aprimore a visualização de seu gráfico rotacionando-o 90º.
+
+**Dica**: Utilize a variável simplificada para determinar o espectro político-ideológico considerando somente Centro, Esquerda e Direita. Elimine os valores NA da variável. Aprimore a visualização de seu gráfico rotacionando-o 90º.
