@@ -438,19 +438,18 @@ dev.off()
 
 # EXERCÍCIOS
 
-Para os exercícios a seguir, compartilhe no grupo da disciplina as imagens dos gráficos exportadas em formato PNG, e, somente com o professor, o seu *script* R utilizado para fazer os exercícios.
+Para os exercícios a seguir, compartilhe no grupo da disciplina as imagens dos gráficos exportadas em formato PNG e o seu *script* R utilizado para fazer os exercícios.
 
-## EXERCÍCIO 1
+Com base no banco de dados a seguir,
 
-1. Com base nos dados que você coletou na aula anterior, crie um gráfico de dispersão que apresente os RTs de cada *tweet* coletado e o número de seguidores do usuário que publicou o *tweet*.
+```
+db_tiktok <- read.csv("https://raw.githubusercontent.com/coLAB-UFF/docs/refs/heads/main/data/db_tiktok_polarizacao.csv")
+```
 
-## EXERCÍCIO 2
+1. Crie um gráfico de dispersão que apresente correlação entre a quantidade de seguidores de um determinado usuário e os likes em vídeos individuais.
 
-1. Com base nos dados que você coletou na aula anterior, crie um gráfico de barras que apresente os cinco idiomas (*lang*) mais comumente empregados em sua amostra.
+2. Crie um gráfico de barras que apresente os vinte principais títulos de músicas mais comumente empregados em sua amostra.
+Dica: Combine funções do `dplyr` com funções do `ggplot2`.
 
-Dica: Combine funções do `dplyr` com outra do `ggplot2`.
-
-## EXERCÍCIO 3
-
-1. Com base nos dados que você coletou na aula anterior, crie um gráfico de caixa que apresente os tweets que obtiveram acima de 100 *retweets* na sua amostra, categorizados de acordo com os principais dispositivos (*source*) utilizados por usuários para acessar o Twitter.
-
+3. Crie um gráfico de caixa que apresente a quantidade de vídeos publicados por perfis políticos no TikTok de acordo com seu espectro político-ideológico.
+Dica: Utilize a variável simplificada para determinar o espectro político-ideológico considerando somente Centro, Esquerda e Direita. Elimine os valores NA da variável. Aprimore a visualização de seu gráfico rotacionando-o 90º.
