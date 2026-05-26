@@ -68,15 +68,9 @@ Em `cor.test()`, observar:
   
 * **df (graus de liberdade)**: quantidade de informação independente disponível para estimar o teste estatístico. Quanto maior o df, maior a quantidade de dados sustentando o teste; isso torna a estimativa mais estável e o teste mais confiável.
 
-# Regressão Linear
-
-```
-pinguins <- penguins %>% tidyr::drop_na()
-```
-
 # Matriz de Correlação
 
-Para gerar uma visualização de matriz de correlação, instale o pacote `corrplot`.
+Para gerar uma visualização de matriz de correlação de forma simples, instale o pacote `corrplot`.
 
 ```
 library(corrplot)
@@ -88,194 +82,57 @@ pinguins <- penguins %>%
 corrplot(cor(pinguins))
 ```
 
-# Customizando os Títulos do Gráfico
+# Regressão Linear Simples
+
+Para criar um modelo de regressão linear simples ou múltipla, utilize a função `lm()` do R Base.
 
 ```
-pinguins %>% 
-  ggplot() +
-  geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
-  labs(title = "Um título bem bonito", 
-       subtitle = "Seguido de um subtítulo",
-       x = "O eixo X",
-       y = "O eixo Y",
-       caption = "A sua legenda")
+pinguins <- penguins %>% tidyr::drop_na()
+
+modelo1 <- lm(flipper_length_mm ~ body_mass_g, pinguins)
+
+summary(modelo1)
+
+broom::tidy(modelo1)
+
+modelo2 <- lm(body_mass_g ~ flipper_length_mm + bill_length_mm + bill_depth_mm + sex + species, pinguins)
+
+summary(modelo2)
 ```
 
-# Customizando o Fundo
+# Teste de Qui Quadrado
+
+Para avaliar a associação entre duas variáveis categóricas, utilize a função `chisq.test()` do R Base.
 
 ```
-pinguins %>% 
-  ggplot() +
-  geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
-  theme(panel.background = element_rect(fill="white", colour="red"))
+chisq.test(pinguins$species, pinguins$island)
 ```
 
-# Customizando os Eixos do Gráfico
+# Análise de Correspondência
 
-* Redefinindo as escalas
-
-```
-pinguins %>% 
-  ggplot() +
-  geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
-  ylim(0,300) +
-  xlim(0,6500)
-```
-
-* Rotacionando os rótulos dos eixos
+Para visualizar a associação entre duas variáveis categóricas binárias ou multinomiais, utilize o pacote `ca`.
 
 ```
-p + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+library(ca)
+
+ca(table(pinguins$species, pinguins$island))
+
+plot(ca(table(pinguins$species, pinguins$island)))
 ```
 
-* Prevenindo notação científica
+Pode-se utilizar um pacote adicional, como `ggplotit` para simplificar o uso e melhor customizar os elementos estéticos do gráfico.
 
 ```
-p + scale_y_continuous(labels = ~ format(., scientific = FALSE))
+library(ggplotit)
 
-p + scale_x_continuous(labels = ~ format(., scientific = FALSE))
-```
-
-* Alterando as fontes e tamanhos do título e subtítulo
-
-```
-p + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1), legend.text = element_text(size = 14), plot.title = element_text(family="Times New Roman", size=14), plot.subtitle = element_text(family="Times New Roman", size=14))
-```
-
-* Centralizando título
-
-```
-p + theme(plot.title = element_text(hjust=0.5))
-```
-
-
-# Indicando os Valores
-
-```
-pinguins %>%
-  filter(species == "Adelie") %>% 
-  ggplot() +
-  geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
-  geom_text(aes(label = body_mass_g, x = body_mass_g, y = flipper_length_mm), 
-            color = "#000000", size = 2, hjust = -1, vjust = 0)
-```
-
-* DICA: Outras customizações em: https://www.r-graph-gallery.com/
-
-
-# Customizando as Cores do Gráfico
-
-```
-pinguins %>% 
-  ggplot() +
-  geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
-  scale_color_manual(values=c("black", "red", "yellow"))
-
-pinguins %>% 
-  ggplot() +
-  geom_bar(aes(x = sex, y = body_mass_g, fill = sex), stat = "identity") +
-  coord_flip() +
-  scale_fill_manual(values=c("black", "red"))
-
-RColorBrewer::display.brewer.all()
-
-pinguins %>% 
-  ggplot() +
-  geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
-  scale_colour_brewer(palette = "Dark2", direction = 1)
-
-pinguins %>% 
-  ggplot() +
-  geom_bar(aes(x = sex, y = body_mass_g, fill = sex), stat = "identity") +
-  coord_flip() +
-  scale_fill_brewer(palette = "Set2", direction = 1)
-```
-
-# Customizando o Tema
-
-```
-pinguins %>% 
-  ggplot() +
-  geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
-  theme_bw()
-
-pinguins %>% 
-  ggplot() +
-  geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
-  theme_classic()
-
-pinguins %>% 
-  ggplot() +
-  geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
-  theme_dark()
-
-pinguins %>% 
-  ggplot() +
-  geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
-  theme_light()
-
-pinguins %>% 
-  ggplot() +
-  geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
-  theme_minimal()
-
-pinguins %>% 
-  ggplot() +
-  geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
-  theme_void()
-```
-
-# Gráficos Interativos
-
-Você também pode criar gráficos interativos no R. Para isso, vamos usar os seguintes pacotes:
-
-```
-#install.packages("ggplot2")
-#install.packages("plotly")
 library(ggplot2)
-library(plotly)
-library(dplyr)
-library(palmerpenguins)
+
+dataca <- ca(table(pinguins$species, pinguins$island))
+
+ggplotit(dataca) +
+  ggplot2::geom_vline(xintercept = 0) +
+  ggplot2::geom_hline(yintercept = 0)
 ```
 
-* *Scatterplot* Interativo
-
-```
-grafico1 <- pinguins %>% 
-  ggplot() +
-  geom_point(aes(x = body_mass_g, y = flipper_length_mm, color = species))
-
-ggplotly(grafico1)
-```
-
-* *Lineplot* Interativo
-
-```
-grafico2 <- pinguins %>% 
-  count(year, species) %>% 
-  ggplot() +
-  geom_line(aes(x = year, y = n, group = species, color = species))
-
-ggplotly(grafico2)
-```
-
-* *Boxplot* Interativo
-
-```
-grafico3 <- pinguins %>% 
-  ggplot() +
-  geom_boxplot(aes(x = sex, y = body_mass_g))
-
-ggplotly(grafico3)
-```
-
-* *Barplot* Interativo
-
-```
-grafico4 <- pinguins %>% 
-  ggplot() +
-  geom_bar(aes(x = island), stat = "count")
-
-ggplotly(grafico4)
 ```
 
