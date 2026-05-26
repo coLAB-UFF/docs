@@ -134,5 +134,4 @@ ggplotit(dataca) +
   ggplot2::geom_hline(yintercept = 0)
 ```
 
-```
 
