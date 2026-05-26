@@ -21,8 +21,8 @@ micro_nav: false
 # Page navigation
 page_nav:
     prev:
-        content: Visualização de Dados 2
-        url: '/dataviz2_10'
+        content: Correlação de Pearson e Regressão Linear
+        url: '/dataviz2_11'
 
 ---
 
