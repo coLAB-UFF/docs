@@ -24,7 +24,7 @@ page_nav:
         content: Visualização de Dados 1
         url: '/dataviz_09'
     next:
-        content: Mapas Coropléticos
+        content: Correlação de Pearson e Regressão Linear
         url: '/dataviz_11'
 
 ---
